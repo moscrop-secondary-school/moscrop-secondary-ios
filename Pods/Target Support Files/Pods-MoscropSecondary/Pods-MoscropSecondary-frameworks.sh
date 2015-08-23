@@ -53,9 +53,11 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-MoscropSecondary/Bolts.framework'
+  install_framework 'Pods-MoscropSecondary/KYDrawerController.framework'
   install_framework 'Pods-MoscropSecondary/Parse.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-MoscropSecondary/Bolts.framework'
+  install_framework 'Pods-MoscropSecondary/KYDrawerController.framework'
   install_framework 'Pods-MoscropSecondary/Parse.framework'
 fi

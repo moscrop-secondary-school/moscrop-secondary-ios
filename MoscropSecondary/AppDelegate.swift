@@ -2,13 +2,14 @@
 //  AppDelegate.swift
 //  MoscropSecondary
 //
-//  Created by Ivon Liu on 8/22/15.
-//  Copyright © 2015 Ivon Liu. All rights reserved.
+//  Created by Ivon Liu on 8/23/15.
+//  Copyright (c) 2015 Ivon Liu. All rights reserved.
 //
 
 import UIKit
 import Parse
 import Bolts
+import KYDrawerController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,8 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        // Initialize Parse
         Parse.enableLocalDatastore()
         Parse.setApplicationId(ApiConfig.Parse.API_KEY, clientKey: ApiConfig.Parse.CLIENT_KEY)
+        
+        // Setup drawer
+        let mainViewController = UICollectionViewController()
+        let drawerViewController = UITableViewController()
+        let drawerController = KYDrawerController()
+        drawerController.mainViewController = UINavigationController(rootViewController: mainViewController)
+        drawerController.drawerViewController = drawerViewController
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.rootViewController = drawerController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

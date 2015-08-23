@@ -3,7 +3,8 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'MoscropSecondary' do
-	pod 'Parse', '~> 1.8'
+	pod 'Parse'
+	pod 'KYDrawerController'
 end
 
 target 'MoscropSecondaryTests' do

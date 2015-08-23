@@ -7,56 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		147628B91B898069009C5645 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147628B81B898069009C5645 /* AppDelegate.swift */; };
-		147628BB1B898069009C5645 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147628BA1B898069009C5645 /* ViewController.swift */; };
-		147628BE1B898069009C5645 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147628BC1B898069009C5645 /* Main.storyboard */; };
-		147628C01B898069009C5645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 147628BF1B898069009C5645 /* Assets.xcassets */; };
-		147628C31B898069009C5645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147628C11B898069009C5645 /* LaunchScreen.storyboard */; };
-		147628CE1B89806A009C5645 /* MoscropSecondaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147628CD1B89806A009C5645 /* MoscropSecondaryTests.swift */; };
-		147628D91B898268009C5645 /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147628D81B898268009C5645 /* RSSItem.swift */; };
-		147628DA1B898268009C5645 /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147628D81B898268009C5645 /* RSSItem.swift */; };
-		147628DC1B89B7D6009C5645 /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147628DB1B89B7D6009C5645 /* ApiConfig.swift */; };
-		A747F2ABF2F71B18DA96E3B2 /* Pods_MoscropSecondary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219DEB954DAF24409D2568EB /* Pods_MoscropSecondary.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1496884E1B8A7FE300F4271E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1496884D1B8A7FE300F4271E /* AppDelegate.swift */; };
+		149688501B8A7FE300F4271E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1496884F1B8A7FE300F4271E /* ViewController.swift */; };
+		149688531B8A7FE300F4271E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149688511B8A7FE300F4271E /* Main.storyboard */; };
+		149688551B8A7FE300F4271E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 149688541B8A7FE300F4271E /* Images.xcassets */; };
+		149688581B8A7FE300F4271E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149688561B8A7FE300F4271E /* LaunchScreen.xib */; };
+		149688641B8A7FE300F4271E /* MoscropSecondaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149688631B8A7FE300F4271E /* MoscropSecondaryTests.swift */; };
+		149688701B8A822200F4271E /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1496886F1B8A822200F4271E /* ApiConfig.swift */; };
+		149688751B8A82BA00F4271E /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149688741B8A82BA00F4271E /* RSSItem.swift */; };
+		149688761B8A82BA00F4271E /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149688741B8A82BA00F4271E /* RSSItem.swift */; };
+		9843522DEC7BF4F6C806E279 /* Pods_MoscropSecondary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3358C48928125D78C4682CFC /* Pods_MoscropSecondary.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		147628CA1B89806A009C5645 /* PBXContainerItemProxy */ = {
+		1496885E1B8A7FE300F4271E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 147628AD1B898069009C5645 /* Project object */;
+			containerPortal = 149688401B8A7FE300F4271E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 147628B41B898069009C5645;
+			remoteGlobalIDString = 149688471B8A7FE300F4271E;
 			remoteInfo = MoscropSecondary;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		147628B51B898069009C5645 /* MoscropSecondary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoscropSecondary.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		147628B81B898069009C5645 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		147628BA1B898069009C5645 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		147628BD1B898069009C5645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		147628BF1B898069009C5645 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		147628C21B898069009C5645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		147628C41B898069009C5645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		147628C91B89806A009C5645 /* MoscropSecondaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoscropSecondaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		147628CD1B89806A009C5645 /* MoscropSecondaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoscropSecondaryTests.swift; sourceTree = "<group>"; };
-		147628CF1B89806A009C5645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		147628D81B898268009C5645 /* RSSItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSItem.swift; sourceTree = "<group>"; };
-		147628DB1B89B7D6009C5645 /* ApiConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiConfig.swift; path = MoscropSecondary/ApiConfig.swift; sourceTree = SOURCE_ROOT; };
-		1B44F79D687E74A3A4AFF5C3 /* Pods-MoscropSecondary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoscropSecondary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary.release.xcconfig"; sourceTree = "<group>"; };
-		219DEB954DAF24409D2568EB /* Pods_MoscropSecondary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoscropSecondary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE284C445AEFF66B1C948A59 /* Pods-MoscropSecondary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoscropSecondary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary.debug.xcconfig"; sourceTree = "<group>"; };
+		149688481B8A7FE300F4271E /* MoscropSecondary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoscropSecondary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1496884C1B8A7FE300F4271E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1496884D1B8A7FE300F4271E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1496884F1B8A7FE300F4271E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		149688521B8A7FE300F4271E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		149688541B8A7FE300F4271E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		149688571B8A7FE300F4271E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		1496885D1B8A7FE300F4271E /* MoscropSecondaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoscropSecondaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		149688621B8A7FE300F4271E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		149688631B8A7FE300F4271E /* MoscropSecondaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoscropSecondaryTests.swift; sourceTree = "<group>"; };
+		1496886F1B8A822200F4271E /* ApiConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
+		149688741B8A82BA00F4271E /* RSSItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSItem.swift; sourceTree = "<group>"; };
+		3358C48928125D78C4682CFC /* Pods_MoscropSecondary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoscropSecondary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5081576821233AA2798C6575 /* Pods-MoscropSecondary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoscropSecondary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary.release.xcconfig"; sourceTree = "<group>"; };
+		8A93B3EEDDD0BCA1B5E637FC /* Pods-MoscropSecondary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoscropSecondary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		147628B21B898069009C5645 /* Frameworks */ = {
+		149688451B8A7FE300F4271E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A747F2ABF2F71B18DA96E3B2 /* Pods_MoscropSecondary.framework in Frameworks */,
+				9843522DEC7BF4F6C806E279 /* Pods_MoscropSecondary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		147628C61B89806A009C5645 /* Frameworks */ = {
+		1496885A1B8A7FE300F4271E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -66,63 +66,79 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		147628AC1B898069009C5645 = {
+		1496883F1B8A7FE300F4271E = {
 			isa = PBXGroup;
 			children = (
-				147628B71B898069009C5645 /* MoscropSecondary */,
-				147628CC1B89806A009C5645 /* MoscropSecondaryTests */,
-				147628B61B898069009C5645 /* Products */,
-				185DCEDD608D18F8381CE927 /* Pods */,
-				8037467E204C01F8839DED5F /* Frameworks */,
+				1496884A1B8A7FE300F4271E /* MoscropSecondary */,
+				149688601B8A7FE300F4271E /* MoscropSecondaryTests */,
+				149688491B8A7FE300F4271E /* Products */,
+				4791B1DC31E6D379B242CF08 /* Pods */,
+				8843C3039802EC0454B1C4E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		147628B61B898069009C5645 /* Products */ = {
+		149688491B8A7FE300F4271E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				147628B51B898069009C5645 /* MoscropSecondary.app */,
-				147628C91B89806A009C5645 /* MoscropSecondaryTests.xctest */,
+				149688481B8A7FE300F4271E /* MoscropSecondary.app */,
+				1496885D1B8A7FE300F4271E /* MoscropSecondaryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		147628B71B898069009C5645 /* MoscropSecondary */ = {
+		1496884A1B8A7FE300F4271E /* MoscropSecondary */ = {
 			isa = PBXGroup;
 			children = (
-				147628DB1B89B7D6009C5645 /* ApiConfig.swift */,
-				147628D81B898268009C5645 /* RSSItem.swift */,
-				147628B81B898069009C5645 /* AppDelegate.swift */,
-				147628BA1B898069009C5645 /* ViewController.swift */,
-				147628BC1B898069009C5645 /* Main.storyboard */,
-				147628BF1B898069009C5645 /* Assets.xcassets */,
-				147628C11B898069009C5645 /* LaunchScreen.storyboard */,
-				147628C41B898069009C5645 /* Info.plist */,
+				1496886F1B8A822200F4271E /* ApiConfig.swift */,
+				149688741B8A82BA00F4271E /* RSSItem.swift */,
+				1496884D1B8A7FE300F4271E /* AppDelegate.swift */,
+				1496884F1B8A7FE300F4271E /* ViewController.swift */,
+				149688511B8A7FE300F4271E /* Main.storyboard */,
+				149688541B8A7FE300F4271E /* Images.xcassets */,
+				149688561B8A7FE300F4271E /* LaunchScreen.xib */,
+				1496884B1B8A7FE300F4271E /* Supporting Files */,
 			);
 			path = MoscropSecondary;
 			sourceTree = "<group>";
 		};
-		147628CC1B89806A009C5645 /* MoscropSecondaryTests */ = {
+		1496884B1B8A7FE300F4271E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				147628CD1B89806A009C5645 /* MoscropSecondaryTests.swift */,
-				147628CF1B89806A009C5645 /* Info.plist */,
+				1496884C1B8A7FE300F4271E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		149688601B8A7FE300F4271E /* MoscropSecondaryTests */ = {
+			isa = PBXGroup;
+			children = (
+				149688631B8A7FE300F4271E /* MoscropSecondaryTests.swift */,
+				149688611B8A7FE300F4271E /* Supporting Files */,
 			);
 			path = MoscropSecondaryTests;
 			sourceTree = "<group>";
 		};
-		185DCEDD608D18F8381CE927 /* Pods */ = {
+		149688611B8A7FE300F4271E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BE284C445AEFF66B1C948A59 /* Pods-MoscropSecondary.debug.xcconfig */,
-				1B44F79D687E74A3A4AFF5C3 /* Pods-MoscropSecondary.release.xcconfig */,
+				149688621B8A7FE300F4271E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4791B1DC31E6D379B242CF08 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A93B3EEDDD0BCA1B5E637FC /* Pods-MoscropSecondary.debug.xcconfig */,
+				5081576821233AA2798C6575 /* Pods-MoscropSecondary.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		8037467E204C01F8839DED5F /* Frameworks */ = {
+		8843C3039802EC0454B1C4E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				219DEB954DAF24409D2568EB /* Pods_MoscropSecondary.framework */,
+				3358C48928125D78C4682CFC /* Pods_MoscropSecondary.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -130,16 +146,16 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		147628B41B898069009C5645 /* MoscropSecondary */ = {
+		149688471B8A7FE300F4271E /* MoscropSecondary */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 147628D21B89806A009C5645 /* Build configuration list for PBXNativeTarget "MoscropSecondary" */;
+			buildConfigurationList = 149688671B8A7FE300F4271E /* Build configuration list for PBXNativeTarget "MoscropSecondary" */;
 			buildPhases = (
-				FFF50B8EBCD7FE70DBBC9237 /* Check Pods Manifest.lock */,
-				147628B11B898069009C5645 /* Sources */,
-				147628B21B898069009C5645 /* Frameworks */,
-				147628B31B898069009C5645 /* Resources */,
-				12AC3C3C24515C95606FAA20 /* Embed Pods Frameworks */,
-				177E365DAE906071462981A4 /* Copy Pods Resources */,
+				4447076CEA8929747A34596F /* Check Pods Manifest.lock */,
+				149688441B8A7FE300F4271E /* Sources */,
+				149688451B8A7FE300F4271E /* Frameworks */,
+				149688461B8A7FE300F4271E /* Resources */,
+				ED3A8D089F49410C3BAB8420 /* Embed Pods Frameworks */,
+				3744CFAE2EF1F16161417700 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -147,46 +163,46 @@
 			);
 			name = MoscropSecondary;
 			productName = MoscropSecondary;
-			productReference = 147628B51B898069009C5645 /* MoscropSecondary.app */;
+			productReference = 149688481B8A7FE300F4271E /* MoscropSecondary.app */;
 			productType = "com.apple.product-type.application";
 		};
-		147628C81B89806A009C5645 /* MoscropSecondaryTests */ = {
+		1496885C1B8A7FE300F4271E /* MoscropSecondaryTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 147628D51B89806A009C5645 /* Build configuration list for PBXNativeTarget "MoscropSecondaryTests" */;
+			buildConfigurationList = 1496886A1B8A7FE300F4271E /* Build configuration list for PBXNativeTarget "MoscropSecondaryTests" */;
 			buildPhases = (
-				147628C51B89806A009C5645 /* Sources */,
-				147628C61B89806A009C5645 /* Frameworks */,
-				147628C71B89806A009C5645 /* Resources */,
+				149688591B8A7FE300F4271E /* Sources */,
+				1496885A1B8A7FE300F4271E /* Frameworks */,
+				1496885B1B8A7FE300F4271E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				147628CB1B89806A009C5645 /* PBXTargetDependency */,
+				1496885F1B8A7FE300F4271E /* PBXTargetDependency */,
 			);
 			name = MoscropSecondaryTests;
 			productName = MoscropSecondaryTests;
-			productReference = 147628C91B89806A009C5645 /* MoscropSecondaryTests.xctest */;
+			productReference = 1496885D1B8A7FE300F4271E /* MoscropSecondaryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		147628AD1B898069009C5645 /* Project object */ = {
+		149688401B8A7FE300F4271E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Ivon Liu";
 				TargetAttributes = {
-					147628B41B898069009C5645 = {
-						CreatedOnToolsVersion = 7.0;
+					149688471B8A7FE300F4271E = {
+						CreatedOnToolsVersion = 6.4;
 					};
-					147628C81B89806A009C5645 = {
-						CreatedOnToolsVersion = 7.0;
-						TestTargetID = 147628B41B898069009C5645;
+					1496885C1B8A7FE300F4271E = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 149688471B8A7FE300F4271E;
 					};
 				};
 			};
-			buildConfigurationList = 147628B01B898069009C5645 /* Build configuration list for PBXProject "MoscropSecondary" */;
+			buildConfigurationList = 149688431B8A7FE300F4271E /* Build configuration list for PBXProject "MoscropSecondary" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -194,29 +210,29 @@
 				en,
 				Base,
 			);
-			mainGroup = 147628AC1B898069009C5645;
-			productRefGroup = 147628B61B898069009C5645 /* Products */;
+			mainGroup = 1496883F1B8A7FE300F4271E;
+			productRefGroup = 149688491B8A7FE300F4271E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				147628B41B898069009C5645 /* MoscropSecondary */,
-				147628C81B89806A009C5645 /* MoscropSecondaryTests */,
+				149688471B8A7FE300F4271E /* MoscropSecondary */,
+				1496885C1B8A7FE300F4271E /* MoscropSecondaryTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		147628B31B898069009C5645 /* Resources */ = {
+		149688461B8A7FE300F4271E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				147628C31B898069009C5645 /* LaunchScreen.storyboard in Resources */,
-				147628C01B898069009C5645 /* Assets.xcassets in Resources */,
-				147628BE1B898069009C5645 /* Main.storyboard in Resources */,
+				149688531B8A7FE300F4271E /* Main.storyboard in Resources */,
+				149688581B8A7FE300F4271E /* LaunchScreen.xib in Resources */,
+				149688551B8A7FE300F4271E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		147628C71B89806A009C5645 /* Resources */ = {
+		1496885B1B8A7FE300F4271E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -226,22 +242,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		12AC3C3C24515C95606FAA20 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		177E365DAE906071462981A4 /* Copy Pods Resources */ = {
+		3744CFAE2EF1F16161417700 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,7 +257,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FFF50B8EBCD7FE70DBBC9237 /* Check Pods Manifest.lock */ = {
+		4447076CEA8929747A34596F /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -271,60 +272,75 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		ED3A8D089F49410C3BAB8420 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		147628B11B898069009C5645 /* Sources */ = {
+		149688441B8A7FE300F4271E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				147628D91B898268009C5645 /* RSSItem.swift in Sources */,
-				147628BB1B898069009C5645 /* ViewController.swift in Sources */,
-				147628DC1B89B7D6009C5645 /* ApiConfig.swift in Sources */,
-				147628B91B898069009C5645 /* AppDelegate.swift in Sources */,
+				149688501B8A7FE300F4271E /* ViewController.swift in Sources */,
+				149688701B8A822200F4271E /* ApiConfig.swift in Sources */,
+				1496884E1B8A7FE300F4271E /* AppDelegate.swift in Sources */,
+				149688751B8A82BA00F4271E /* RSSItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		147628C51B89806A009C5645 /* Sources */ = {
+		149688591B8A7FE300F4271E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				147628CE1B89806A009C5645 /* MoscropSecondaryTests.swift in Sources */,
-				147628DA1B898268009C5645 /* RSSItem.swift in Sources */,
+				149688641B8A7FE300F4271E /* MoscropSecondaryTests.swift in Sources */,
+				149688761B8A82BA00F4271E /* RSSItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		147628CB1B89806A009C5645 /* PBXTargetDependency */ = {
+		1496885F1B8A7FE300F4271E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 147628B41B898069009C5645 /* MoscropSecondary */;
-			targetProxy = 147628CA1B89806A009C5645 /* PBXContainerItemProxy */;
+			target = 149688471B8A7FE300F4271E /* MoscropSecondary */;
+			targetProxy = 1496885E1B8A7FE300F4271E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		147628BC1B898069009C5645 /* Main.storyboard */ = {
+		149688511B8A7FE300F4271E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				147628BD1B898069009C5645 /* Base */,
+				149688521B8A7FE300F4271E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		147628C11B898069009C5645 /* LaunchScreen.storyboard */ = {
+		149688561B8A7FE300F4271E /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				147628C21B898069009C5645 /* Base */,
+				149688571B8A7FE300F4271E /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		147628D01B89806A009C5645 /* Debug */ = {
+		149688651B8A7FE300F4271E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -343,9 +359,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -354,13 +369,14 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -369,7 +385,7 @@
 			};
 			name = Debug;
 		};
-		147628D11B89806A009C5645 /* Release */ = {
+		149688661B8A7FE300F4271E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -399,7 +415,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -407,49 +423,57 @@
 			};
 			name = Release;
 		};
-		147628D31B89806A009C5645 /* Debug */ = {
+		149688681B8A7FE300F4271E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE284C445AEFF66B1C948A59 /* Pods-MoscropSecondary.debug.xcconfig */;
+			baseConfigurationReference = 8A93B3EEDDD0BCA1B5E637FC /* Pods-MoscropSecondary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MoscropSecondary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ivon.MoscropSecondary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		147628D41B89806A009C5645 /* Release */ = {
+		149688691B8A7FE300F4271E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B44F79D687E74A3A4AFF5C3 /* Pods-MoscropSecondary.release.xcconfig */;
+			baseConfigurationReference = 5081576821233AA2798C6575 /* Pods-MoscropSecondary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MoscropSecondary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ivon.MoscropSecondary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
-		147628D61B89806A009C5645 /* Debug */ = {
+		1496886B1B8A7FE300F4271E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = MoscropSecondaryTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ivon.MoscropSecondaryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoscropSecondary.app/MoscropSecondary";
 			};
 			name = Debug;
 		};
-		147628D71B89806A009C5645 /* Release */ = {
+		1496886C1B8A7FE300F4271E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = MoscropSecondaryTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ivon.MoscropSecondaryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoscropSecondary.app/MoscropSecondary";
 			};
@@ -458,34 +482,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		147628B01B898069009C5645 /* Build configuration list for PBXProject "MoscropSecondary" */ = {
+		149688431B8A7FE300F4271E /* Build configuration list for PBXProject "MoscropSecondary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				147628D01B89806A009C5645 /* Debug */,
-				147628D11B89806A009C5645 /* Release */,
+				149688651B8A7FE300F4271E /* Debug */,
+				149688661B8A7FE300F4271E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		147628D21B89806A009C5645 /* Build configuration list for PBXNativeTarget "MoscropSecondary" */ = {
+		149688671B8A7FE300F4271E /* Build configuration list for PBXNativeTarget "MoscropSecondary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				147628D31B89806A009C5645 /* Debug */,
-				147628D41B89806A009C5645 /* Release */,
+				149688681B8A7FE300F4271E /* Debug */,
+				149688691B8A7FE300F4271E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		147628D51B89806A009C5645 /* Build configuration list for PBXNativeTarget "MoscropSecondaryTests" */ = {
+		1496886A1B8A7FE300F4271E /* Build configuration list for PBXNativeTarget "MoscropSecondaryTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				147628D61B89806A009C5645 /* Debug */,
-				147628D71B89806A009C5645 /* Release */,
+				1496886B1B8A7FE300F4271E /* Debug */,
+				1496886C1B8A7FE300F4271E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 147628AD1B898069009C5645 /* Project object */;
+	rootObject = 149688401B8A7FE300F4271E /* Project object */;
 }

@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  MoscropSecondary
 //
-//  Created by Ivon Liu on 8/22/15.
-//  Copyright © 2015 Ivon Liu. All rights reserved.
+//  Created by Ivon Liu on 8/23/15.
+//  Copyright (c) 2015 Ivon Liu. All rights reserved.
 //
 
 import UIKit
