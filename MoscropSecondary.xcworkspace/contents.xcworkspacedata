@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:MoscropSecondary/DrawerTableViewCell.swift">
+   </FileRef>
+   <FileRef
       location = "group:MoscropSecondary.xcodeproj">
    </FileRef>
    <FileRef

@@ -23,17 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.enableLocalDatastore()
         Parse.setApplicationId(ApiConfig.Parse.API_KEY, clientKey: ApiConfig.Parse.CLIENT_KEY)
         
-        // Setup drawer
-        let mainViewController = UICollectionViewController()
-        let drawerViewController = UITableViewController()
-        let drawerController = KYDrawerController()
-        drawerController.mainViewController = UINavigationController(rootViewController: mainViewController)
-        drawerController.drawerViewController = drawerViewController
-        
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window?.rootViewController = drawerController
-        window?.makeKeyAndVisible()
-        
         return true
     }
 
