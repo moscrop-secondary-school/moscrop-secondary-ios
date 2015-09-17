@@ -7,56 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1496884E1B8A7FE300F4271E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1496884D1B8A7FE300F4271E /* AppDelegate.swift */; };
-		149688501B8A7FE300F4271E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1496884F1B8A7FE300F4271E /* ViewController.swift */; };
-		149688531B8A7FE300F4271E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149688511B8A7FE300F4271E /* Main.storyboard */; };
-		149688551B8A7FE300F4271E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 149688541B8A7FE300F4271E /* Images.xcassets */; };
-		149688581B8A7FE300F4271E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149688561B8A7FE300F4271E /* LaunchScreen.xib */; };
-		149688641B8A7FE300F4271E /* MoscropSecondaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149688631B8A7FE300F4271E /* MoscropSecondaryTests.swift */; };
-		149688701B8A822200F4271E /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1496886F1B8A822200F4271E /* ApiConfig.swift */; };
-		149688751B8A82BA00F4271E /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149688741B8A82BA00F4271E /* RSSItem.swift */; };
-		149688761B8A82BA00F4271E /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149688741B8A82BA00F4271E /* RSSItem.swift */; };
-		9843522DEC7BF4F6C806E279 /* Pods_MoscropSecondary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3358C48928125D78C4682CFC /* Pods_MoscropSecondary.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		145084371BAA797200B51F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145084361BAA797200B51F48 /* AppDelegate.swift */; };
+		145084391BAA797200B51F48 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145084381BAA797200B51F48 /* FirstViewController.swift */; };
+		1450843B1BAA797200B51F48 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1450843A1BAA797200B51F48 /* SecondViewController.swift */; };
+		1450843E1BAA797200B51F48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1450843C1BAA797200B51F48 /* Main.storyboard */; };
+		145084401BAA797200B51F48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1450843F1BAA797200B51F48 /* Images.xcassets */; };
+		145084431BAA797200B51F48 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 145084411BAA797200B51F48 /* LaunchScreen.xib */; };
+		1450844F1BAA797200B51F48 /* MoscropSecondaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1450844E1BAA797200B51F48 /* MoscropSecondaryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1496885E1B8A7FE300F4271E /* PBXContainerItemProxy */ = {
+		145084491BAA797200B51F48 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 149688401B8A7FE300F4271E /* Project object */;
+			containerPortal = 145084291BAA797100B51F48 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 149688471B8A7FE300F4271E;
+			remoteGlobalIDString = 145084301BAA797200B51F48;
 			remoteInfo = MoscropSecondary;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		149688481B8A7FE300F4271E /* MoscropSecondary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoscropSecondary.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1496884C1B8A7FE300F4271E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1496884D1B8A7FE300F4271E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1496884F1B8A7FE300F4271E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		149688521B8A7FE300F4271E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		149688541B8A7FE300F4271E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		149688571B8A7FE300F4271E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		1496885D1B8A7FE300F4271E /* MoscropSecondaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoscropSecondaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		149688621B8A7FE300F4271E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		149688631B8A7FE300F4271E /* MoscropSecondaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoscropSecondaryTests.swift; sourceTree = "<group>"; };
-		1496886F1B8A822200F4271E /* ApiConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
-		149688741B8A82BA00F4271E /* RSSItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSItem.swift; sourceTree = "<group>"; };
-		3358C48928125D78C4682CFC /* Pods_MoscropSecondary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoscropSecondary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5081576821233AA2798C6575 /* Pods-MoscropSecondary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoscropSecondary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary.release.xcconfig"; sourceTree = "<group>"; };
-		8A93B3EEDDD0BCA1B5E637FC /* Pods-MoscropSecondary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoscropSecondary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary.debug.xcconfig"; sourceTree = "<group>"; };
+		145084311BAA797200B51F48 /* MoscropSecondary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoscropSecondary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		145084351BAA797200B51F48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		145084361BAA797200B51F48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		145084381BAA797200B51F48 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		1450843A1BAA797200B51F48 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		1450843D1BAA797200B51F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1450843F1BAA797200B51F48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		145084421BAA797200B51F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		145084481BAA797200B51F48 /* MoscropSecondaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoscropSecondaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1450844D1BAA797200B51F48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1450844E1BAA797200B51F48 /* MoscropSecondaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoscropSecondaryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		149688451B8A7FE300F4271E /* Frameworks */ = {
+		1450842E1BAA797200B51F48 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9843522DEC7BF4F6C806E279 /* Pods_MoscropSecondary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1496885A1B8A7FE300F4271E /* Frameworks */ = {
+		145084451BAA797200B51F48 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -66,96 +58,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1496883F1B8A7FE300F4271E = {
+		145084281BAA797100B51F48 = {
 			isa = PBXGroup;
 			children = (
-				1496884A1B8A7FE300F4271E /* MoscropSecondary */,
-				149688601B8A7FE300F4271E /* MoscropSecondaryTests */,
-				149688491B8A7FE300F4271E /* Products */,
-				4791B1DC31E6D379B242CF08 /* Pods */,
-				8843C3039802EC0454B1C4E1 /* Frameworks */,
+				145084331BAA797200B51F48 /* MoscropSecondary */,
+				1450844B1BAA797200B51F48 /* MoscropSecondaryTests */,
+				145084321BAA797200B51F48 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		149688491B8A7FE300F4271E /* Products */ = {
+		145084321BAA797200B51F48 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				149688481B8A7FE300F4271E /* MoscropSecondary.app */,
-				1496885D1B8A7FE300F4271E /* MoscropSecondaryTests.xctest */,
+				145084311BAA797200B51F48 /* MoscropSecondary.app */,
+				145084481BAA797200B51F48 /* MoscropSecondaryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1496884A1B8A7FE300F4271E /* MoscropSecondary */ = {
+		145084331BAA797200B51F48 /* MoscropSecondary */ = {
 			isa = PBXGroup;
 			children = (
-				1496886F1B8A822200F4271E /* ApiConfig.swift */,
-				149688741B8A82BA00F4271E /* RSSItem.swift */,
-				1496884D1B8A7FE300F4271E /* AppDelegate.swift */,
-				1496884F1B8A7FE300F4271E /* ViewController.swift */,
-				149688511B8A7FE300F4271E /* Main.storyboard */,
-				149688541B8A7FE300F4271E /* Images.xcassets */,
-				149688561B8A7FE300F4271E /* LaunchScreen.xib */,
-				1496884B1B8A7FE300F4271E /* Supporting Files */,
+				145084361BAA797200B51F48 /* AppDelegate.swift */,
+				145084381BAA797200B51F48 /* FirstViewController.swift */,
+				1450843A1BAA797200B51F48 /* SecondViewController.swift */,
+				1450843C1BAA797200B51F48 /* Main.storyboard */,
+				1450843F1BAA797200B51F48 /* Images.xcassets */,
+				145084411BAA797200B51F48 /* LaunchScreen.xib */,
+				145084341BAA797200B51F48 /* Supporting Files */,
 			);
 			path = MoscropSecondary;
 			sourceTree = "<group>";
 		};
-		1496884B1B8A7FE300F4271E /* Supporting Files */ = {
+		145084341BAA797200B51F48 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1496884C1B8A7FE300F4271E /* Info.plist */,
+				145084351BAA797200B51F48 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		149688601B8A7FE300F4271E /* MoscropSecondaryTests */ = {
+		1450844B1BAA797200B51F48 /* MoscropSecondaryTests */ = {
 			isa = PBXGroup;
 			children = (
-				149688631B8A7FE300F4271E /* MoscropSecondaryTests.swift */,
-				149688611B8A7FE300F4271E /* Supporting Files */,
+				1450844E1BAA797200B51F48 /* MoscropSecondaryTests.swift */,
+				1450844C1BAA797200B51F48 /* Supporting Files */,
 			);
 			path = MoscropSecondaryTests;
 			sourceTree = "<group>";
 		};
-		149688611B8A7FE300F4271E /* Supporting Files */ = {
+		1450844C1BAA797200B51F48 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				149688621B8A7FE300F4271E /* Info.plist */,
+				1450844D1BAA797200B51F48 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4791B1DC31E6D379B242CF08 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8A93B3EEDDD0BCA1B5E637FC /* Pods-MoscropSecondary.debug.xcconfig */,
-				5081576821233AA2798C6575 /* Pods-MoscropSecondary.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		8843C3039802EC0454B1C4E1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3358C48928125D78C4682CFC /* Pods_MoscropSecondary.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		149688471B8A7FE300F4271E /* MoscropSecondary */ = {
+		145084301BAA797200B51F48 /* MoscropSecondary */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 149688671B8A7FE300F4271E /* Build configuration list for PBXNativeTarget "MoscropSecondary" */;
+			buildConfigurationList = 145084521BAA797200B51F48 /* Build configuration list for PBXNativeTarget "MoscropSecondary" */;
 			buildPhases = (
-				4447076CEA8929747A34596F /* Check Pods Manifest.lock */,
-				149688441B8A7FE300F4271E /* Sources */,
-				149688451B8A7FE300F4271E /* Frameworks */,
-				149688461B8A7FE300F4271E /* Resources */,
-				ED3A8D089F49410C3BAB8420 /* Embed Pods Frameworks */,
-				3744CFAE2EF1F16161417700 /* Copy Pods Resources */,
+				1450842D1BAA797200B51F48 /* Sources */,
+				1450842E1BAA797200B51F48 /* Frameworks */,
+				1450842F1BAA797200B51F48 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -163,46 +132,46 @@
 			);
 			name = MoscropSecondary;
 			productName = MoscropSecondary;
-			productReference = 149688481B8A7FE300F4271E /* MoscropSecondary.app */;
+			productReference = 145084311BAA797200B51F48 /* MoscropSecondary.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1496885C1B8A7FE300F4271E /* MoscropSecondaryTests */ = {
+		145084471BAA797200B51F48 /* MoscropSecondaryTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1496886A1B8A7FE300F4271E /* Build configuration list for PBXNativeTarget "MoscropSecondaryTests" */;
+			buildConfigurationList = 145084551BAA797200B51F48 /* Build configuration list for PBXNativeTarget "MoscropSecondaryTests" */;
 			buildPhases = (
-				149688591B8A7FE300F4271E /* Sources */,
-				1496885A1B8A7FE300F4271E /* Frameworks */,
-				1496885B1B8A7FE300F4271E /* Resources */,
+				145084441BAA797200B51F48 /* Sources */,
+				145084451BAA797200B51F48 /* Frameworks */,
+				145084461BAA797200B51F48 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1496885F1B8A7FE300F4271E /* PBXTargetDependency */,
+				1450844A1BAA797200B51F48 /* PBXTargetDependency */,
 			);
 			name = MoscropSecondaryTests;
 			productName = MoscropSecondaryTests;
-			productReference = 1496885D1B8A7FE300F4271E /* MoscropSecondaryTests.xctest */;
+			productReference = 145084481BAA797200B51F48 /* MoscropSecondaryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		149688401B8A7FE300F4271E /* Project object */ = {
+		145084291BAA797100B51F48 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Ivon Liu";
 				TargetAttributes = {
-					149688471B8A7FE300F4271E = {
+					145084301BAA797200B51F48 = {
 						CreatedOnToolsVersion = 6.4;
 					};
-					1496885C1B8A7FE300F4271E = {
+					145084471BAA797200B51F48 = {
 						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 149688471B8A7FE300F4271E;
+						TestTargetID = 145084301BAA797200B51F48;
 					};
 				};
 			};
-			buildConfigurationList = 149688431B8A7FE300F4271E /* Build configuration list for PBXProject "MoscropSecondary" */;
+			buildConfigurationList = 1450842C1BAA797100B51F48 /* Build configuration list for PBXProject "MoscropSecondary" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -210,29 +179,29 @@
 				en,
 				Base,
 			);
-			mainGroup = 1496883F1B8A7FE300F4271E;
-			productRefGroup = 149688491B8A7FE300F4271E /* Products */;
+			mainGroup = 145084281BAA797100B51F48;
+			productRefGroup = 145084321BAA797200B51F48 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				149688471B8A7FE300F4271E /* MoscropSecondary */,
-				1496885C1B8A7FE300F4271E /* MoscropSecondaryTests */,
+				145084301BAA797200B51F48 /* MoscropSecondary */,
+				145084471BAA797200B51F48 /* MoscropSecondaryTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		149688461B8A7FE300F4271E /* Resources */ = {
+		1450842F1BAA797200B51F48 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				149688531B8A7FE300F4271E /* Main.storyboard in Resources */,
-				149688581B8A7FE300F4271E /* LaunchScreen.xib in Resources */,
-				149688551B8A7FE300F4271E /* Images.xcassets in Resources */,
+				1450843E1BAA797200B51F48 /* Main.storyboard in Resources */,
+				145084431BAA797200B51F48 /* LaunchScreen.xib in Resources */,
+				145084401BAA797200B51F48 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1496885B1B8A7FE300F4271E /* Resources */ = {
+		145084461BAA797200B51F48 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -241,98 +210,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		3744CFAE2EF1F16161417700 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4447076CEA8929747A34596F /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		ED3A8D089F49410C3BAB8420 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		149688441B8A7FE300F4271E /* Sources */ = {
+		1450842D1BAA797200B51F48 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				149688501B8A7FE300F4271E /* ViewController.swift in Sources */,
-				149688701B8A822200F4271E /* ApiConfig.swift in Sources */,
-				1496884E1B8A7FE300F4271E /* AppDelegate.swift in Sources */,
-				149688751B8A82BA00F4271E /* RSSItem.swift in Sources */,
+				1450843B1BAA797200B51F48 /* SecondViewController.swift in Sources */,
+				145084371BAA797200B51F48 /* AppDelegate.swift in Sources */,
+				145084391BAA797200B51F48 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		149688591B8A7FE300F4271E /* Sources */ = {
+		145084441BAA797200B51F48 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				149688641B8A7FE300F4271E /* MoscropSecondaryTests.swift in Sources */,
-				149688761B8A82BA00F4271E /* RSSItem.swift in Sources */,
+				1450844F1BAA797200B51F48 /* MoscropSecondaryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1496885F1B8A7FE300F4271E /* PBXTargetDependency */ = {
+		1450844A1BAA797200B51F48 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 149688471B8A7FE300F4271E /* MoscropSecondary */;
-			targetProxy = 1496885E1B8A7FE300F4271E /* PBXContainerItemProxy */;
+			target = 145084301BAA797200B51F48 /* MoscropSecondary */;
+			targetProxy = 145084491BAA797200B51F48 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		149688511B8A7FE300F4271E /* Main.storyboard */ = {
+		1450843C1BAA797200B51F48 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				149688521B8A7FE300F4271E /* Base */,
+				1450843D1BAA797200B51F48 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		149688561B8A7FE300F4271E /* LaunchScreen.xib */ = {
+		145084411BAA797200B51F48 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				149688571B8A7FE300F4271E /* Base */,
+				145084421BAA797200B51F48 /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -340,7 +259,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		149688651B8A7FE300F4271E /* Debug */ = {
+		145084501BAA797200B51F48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -385,7 +304,7 @@
 			};
 			name = Debug;
 		};
-		149688661B8A7FE300F4271E /* Release */ = {
+		145084511BAA797200B51F48 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -423,9 +342,8 @@
 			};
 			name = Release;
 		};
-		149688681B8A7FE300F4271E /* Debug */ = {
+		145084531BAA797200B51F48 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A93B3EEDDD0BCA1B5E637FC /* Pods-MoscropSecondary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MoscropSecondary/Info.plist;
@@ -434,9 +352,8 @@
 			};
 			name = Debug;
 		};
-		149688691B8A7FE300F4271E /* Release */ = {
+		145084541BAA797200B51F48 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5081576821233AA2798C6575 /* Pods-MoscropSecondary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MoscropSecondary/Info.plist;
@@ -445,7 +362,7 @@
 			};
 			name = Release;
 		};
-		1496886B1B8A7FE300F4271E /* Debug */ = {
+		145084561BAA797200B51F48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -464,7 +381,7 @@
 			};
 			name = Debug;
 		};
-		1496886C1B8A7FE300F4271E /* Release */ = {
+		145084571BAA797200B51F48 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -482,34 +399,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		149688431B8A7FE300F4271E /* Build configuration list for PBXProject "MoscropSecondary" */ = {
+		1450842C1BAA797100B51F48 /* Build configuration list for PBXProject "MoscropSecondary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				149688651B8A7FE300F4271E /* Debug */,
-				149688661B8A7FE300F4271E /* Release */,
+				145084501BAA797200B51F48 /* Debug */,
+				145084511BAA797200B51F48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		149688671B8A7FE300F4271E /* Build configuration list for PBXNativeTarget "MoscropSecondary" */ = {
+		145084521BAA797200B51F48 /* Build configuration list for PBXNativeTarget "MoscropSecondary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				149688681B8A7FE300F4271E /* Debug */,
-				149688691B8A7FE300F4271E /* Release */,
+				145084531BAA797200B51F48 /* Debug */,
+				145084541BAA797200B51F48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1496886A1B8A7FE300F4271E /* Build configuration list for PBXNativeTarget "MoscropSecondaryTests" */ = {
+		145084551BAA797200B51F48 /* Build configuration list for PBXNativeTarget "MoscropSecondaryTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1496886B1B8A7FE300F4271E /* Debug */,
-				1496886C1B8A7FE300F4271E /* Release */,
+				145084561BAA797200B51F48 /* Debug */,
+				145084571BAA797200B51F48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 149688401B8A7FE300F4271E /* Project object */;
+	rootObject = 145084291BAA797100B51F48 /* Project object */;
 }
