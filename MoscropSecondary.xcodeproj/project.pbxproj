@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1440D02A1BAAAB6F0002A0CE /* NewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440D0291BAAAB6F0002A0CE /* NewsCollectionViewController.swift */; };
+		1440D02C1BAAAB850002A0CE /* NewsletterCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440D02B1BAAAB850002A0CE /* NewsletterCollectionViewController.swift */; };
+		1440D02E1BAAAC770002A0CE /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440D02D1BAAAC770002A0CE /* NewsCollectionViewCell.swift */; };
+		1440D0301BAAAE340002A0CE /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440D02F1BAAAE340002A0CE /* ApiConfig.swift */; };
+		1440D0321BAAAE3B0002A0CE /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440D0311BAAAE3B0002A0CE /* RSSItem.swift */; };
 		145084371BAA797200B51F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145084361BAA797200B51F48 /* AppDelegate.swift */; };
-		145084391BAA797200B51F48 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145084381BAA797200B51F48 /* FirstViewController.swift */; };
-		1450843B1BAA797200B51F48 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1450843A1BAA797200B51F48 /* SecondViewController.swift */; };
 		1450843E1BAA797200B51F48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1450843C1BAA797200B51F48 /* Main.storyboard */; };
 		145084401BAA797200B51F48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1450843F1BAA797200B51F48 /* Images.xcassets */; };
 		145084431BAA797200B51F48 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 145084411BAA797200B51F48 /* LaunchScreen.xib */; };
@@ -27,11 +30,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1440D0291BAAAB6F0002A0CE /* NewsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewController.swift; sourceTree = "<group>"; };
+		1440D02B1BAAAB850002A0CE /* NewsletterCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsletterCollectionViewController.swift; sourceTree = "<group>"; };
+		1440D02D1BAAAC770002A0CE /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
+		1440D02F1BAAAE340002A0CE /* ApiConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
+		1440D0311BAAAE3B0002A0CE /* RSSItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSItem.swift; sourceTree = "<group>"; };
 		145084311BAA797200B51F48 /* MoscropSecondary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoscropSecondary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		145084351BAA797200B51F48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		145084361BAA797200B51F48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		145084381BAA797200B51F48 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		1450843A1BAA797200B51F48 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		1450843D1BAA797200B51F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1450843F1BAA797200B51F48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		145084421BAA797200B51F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -79,10 +85,13 @@
 		145084331BAA797200B51F48 /* MoscropSecondary */ = {
 			isa = PBXGroup;
 			children = (
+				1440D0311BAAAE3B0002A0CE /* RSSItem.swift */,
+				1440D02F1BAAAE340002A0CE /* ApiConfig.swift */,
+				1440D0291BAAAB6F0002A0CE /* NewsCollectionViewController.swift */,
+				1440D02B1BAAAB850002A0CE /* NewsletterCollectionViewController.swift */,
 				145084361BAA797200B51F48 /* AppDelegate.swift */,
-				145084381BAA797200B51F48 /* FirstViewController.swift */,
-				1450843A1BAA797200B51F48 /* SecondViewController.swift */,
 				1450843C1BAA797200B51F48 /* Main.storyboard */,
+				1440D02D1BAAAC770002A0CE /* NewsCollectionViewCell.swift */,
 				1450843F1BAA797200B51F48 /* Images.xcassets */,
 				145084411BAA797200B51F48 /* LaunchScreen.xib */,
 				145084341BAA797200B51F48 /* Supporting Files */,
@@ -215,9 +224,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1450843B1BAA797200B51F48 /* SecondViewController.swift in Sources */,
+				1440D0301BAAAE340002A0CE /* ApiConfig.swift in Sources */,
 				145084371BAA797200B51F48 /* AppDelegate.swift in Sources */,
-				145084391BAA797200B51F48 /* FirstViewController.swift in Sources */,
+				1440D02A1BAAAB6F0002A0CE /* NewsCollectionViewController.swift in Sources */,
+				1440D0321BAAAE3B0002A0CE /* RSSItem.swift in Sources */,
+				1440D02C1BAAAB850002A0CE /* NewsletterCollectionViewController.swift in Sources */,
+				1440D02E1BAAAC770002A0CE /* NewsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
