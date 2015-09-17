@@ -116,6 +116,7 @@ class DrawerTableViewController: UITableViewController {
                     let item = items[indexPath.row]
                     println("Selected \(item.text)")
                 }
+                performSegueWithIdentifier("settings", sender: self)
             }
             drawerController.setDrawerState(.Closed, animated: true)
         }
