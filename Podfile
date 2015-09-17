@@ -4,7 +4,6 @@ use_frameworks!
 
 target 'MoscropSecondary' do
 	pod 'Parse'
-	pod 'KYDrawerController'
 end
 
 target 'MoscropSecondaryTests' do
