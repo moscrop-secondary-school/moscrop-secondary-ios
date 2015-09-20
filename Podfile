@@ -4,6 +4,7 @@ use_frameworks!
 
 target 'MoscropSecondary' do
 	pod 'Parse'
+	pod 'Kingfisher'
 end
 
 target 'MoscropSecondaryTests' do

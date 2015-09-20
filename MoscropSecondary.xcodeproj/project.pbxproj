@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1440D02A1BAAAB6F0002A0CE /* NewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440D0291BAAAB6F0002A0CE /* NewsCollectionViewController.swift */; };
-		1440D02C1BAAAB850002A0CE /* NewsletterCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440D02B1BAAAB850002A0CE /* NewsletterCollectionViewController.swift */; };
-		1440D02E1BAAAC770002A0CE /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440D02D1BAAAC770002A0CE /* NewsCollectionViewCell.swift */; };
 		1440D0301BAAAE340002A0CE /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440D02F1BAAAE340002A0CE /* ApiConfig.swift */; };
 		1440D0321BAAAE3B0002A0CE /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440D0311BAAAE3B0002A0CE /* RSSItem.swift */; };
 		145084371BAA797200B51F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145084361BAA797200B51F48 /* AppDelegate.swift */; };
@@ -17,6 +14,10 @@
 		145084401BAA797200B51F48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1450843F1BAA797200B51F48 /* Images.xcassets */; };
 		145084431BAA797200B51F48 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 145084411BAA797200B51F48 /* LaunchScreen.xib */; };
 		1450844F1BAA797200B51F48 /* MoscropSecondaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1450844E1BAA797200B51F48 /* MoscropSecondaryTests.swift */; };
+		145B3A5D1BAE453C00C7C523 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B3A5C1BAE453C00C7C523 /* NewsTableViewCell.swift */; };
+		145B3A5F1BAE48A200C7C523 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B3A5E1BAE48A200C7C523 /* NewsTableViewController.swift */; };
+		145B3A611BAE55C400C7C523 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B3A601BAE55C400C7C523 /* Utils.swift */; };
+		4FE174982E7CCAB368D9FA02 /* Pods_MoscropSecondary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E264BF2F5D25F02307229AA /* Pods_MoscropSecondary.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,9 +31,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1440D0291BAAAB6F0002A0CE /* NewsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewController.swift; sourceTree = "<group>"; };
-		1440D02B1BAAAB850002A0CE /* NewsletterCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsletterCollectionViewController.swift; sourceTree = "<group>"; };
-		1440D02D1BAAAC770002A0CE /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		1440D02F1BAAAE340002A0CE /* ApiConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
 		1440D0311BAAAE3B0002A0CE /* RSSItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSItem.swift; sourceTree = "<group>"; };
 		145084311BAA797200B51F48 /* MoscropSecondary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoscropSecondary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +42,12 @@
 		145084481BAA797200B51F48 /* MoscropSecondaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoscropSecondaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1450844D1BAA797200B51F48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1450844E1BAA797200B51F48 /* MoscropSecondaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoscropSecondaryTests.swift; sourceTree = "<group>"; };
+		145B3A5C1BAE453C00C7C523 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		145B3A5E1BAE48A200C7C523 /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		145B3A601BAE55C400C7C523 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		26A38B921A5C22D41D1D5511 /* Pods-MoscropSecondary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoscropSecondary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary.debug.xcconfig"; sourceTree = "<group>"; };
+		287C2383A0D7105397EEEC18 /* Pods-MoscropSecondary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoscropSecondary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary.release.xcconfig"; sourceTree = "<group>"; };
+		6E264BF2F5D25F02307229AA /* Pods_MoscropSecondary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoscropSecondary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FE174982E7CCAB368D9FA02 /* Pods_MoscropSecondary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +75,8 @@
 				145084331BAA797200B51F48 /* MoscropSecondary */,
 				1450844B1BAA797200B51F48 /* MoscropSecondaryTests */,
 				145084321BAA797200B51F48 /* Products */,
+				BA3F2A4F17BCEC4D41CB09F8 /* Pods */,
+				2B415F4217F8F4E4FD4A848A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,13 +92,13 @@
 		145084331BAA797200B51F48 /* MoscropSecondary */ = {
 			isa = PBXGroup;
 			children = (
-				1440D0311BAAAE3B0002A0CE /* RSSItem.swift */,
 				1440D02F1BAAAE340002A0CE /* ApiConfig.swift */,
-				1440D0291BAAAB6F0002A0CE /* NewsCollectionViewController.swift */,
-				1440D02B1BAAAB850002A0CE /* NewsletterCollectionViewController.swift */,
+				1440D0311BAAAE3B0002A0CE /* RSSItem.swift */,
+				145B3A5C1BAE453C00C7C523 /* NewsTableViewCell.swift */,
+				145B3A5E1BAE48A200C7C523 /* NewsTableViewController.swift */,
 				145084361BAA797200B51F48 /* AppDelegate.swift */,
+				145B3A601BAE55C400C7C523 /* Utils.swift */,
 				1450843C1BAA797200B51F48 /* Main.storyboard */,
-				1440D02D1BAAAC770002A0CE /* NewsCollectionViewCell.swift */,
 				1450843F1BAA797200B51F48 /* Images.xcassets */,
 				145084411BAA797200B51F48 /* LaunchScreen.xib */,
 				145084341BAA797200B51F48 /* Supporting Files */,
@@ -124,6 +131,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2B415F4217F8F4E4FD4A848A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E264BF2F5D25F02307229AA /* Pods_MoscropSecondary.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA3F2A4F17BCEC4D41CB09F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26A38B921A5C22D41D1D5511 /* Pods-MoscropSecondary.debug.xcconfig */,
+				287C2383A0D7105397EEEC18 /* Pods-MoscropSecondary.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 145084521BAA797200B51F48 /* Build configuration list for PBXNativeTarget "MoscropSecondary" */;
 			buildPhases = (
+				BAAC766B3CC64374C3199278 /* Check Pods Manifest.lock */,
 				1450842D1BAA797200B51F48 /* Sources */,
 				1450842E1BAA797200B51F48 /* Frameworks */,
 				1450842F1BAA797200B51F48 /* Resources */,
+				F980842B35CFF2B5612190B4 /* Embed Pods Frameworks */,
+				B5B8271DCE006741595EB177 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,6 +246,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B5B8271DCE006741595EB177 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAAC766B3CC64374C3199278 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F980842B35CFF2B5612190B4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1450842D1BAA797200B51F48 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -226,10 +301,10 @@
 			files = (
 				1440D0301BAAAE340002A0CE /* ApiConfig.swift in Sources */,
 				145084371BAA797200B51F48 /* AppDelegate.swift in Sources */,
-				1440D02A1BAAAB6F0002A0CE /* NewsCollectionViewController.swift in Sources */,
+				145B3A5D1BAE453C00C7C523 /* NewsTableViewCell.swift in Sources */,
 				1440D0321BAAAE3B0002A0CE /* RSSItem.swift in Sources */,
-				1440D02C1BAAAB850002A0CE /* NewsletterCollectionViewController.swift in Sources */,
-				1440D02E1BAAAC770002A0CE /* NewsCollectionViewCell.swift in Sources */,
+				145B3A5F1BAE48A200C7C523 /* NewsTableViewController.swift in Sources */,
+				145B3A611BAE55C400C7C523 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +431,7 @@
 		};
 		145084531BAA797200B51F48 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26A38B921A5C22D41D1D5511 /* Pods-MoscropSecondary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MoscropSecondary/Info.plist;
@@ -366,6 +442,7 @@
 		};
 		145084541BAA797200B51F48 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 287C2383A0D7105397EEEC18 /* Pods-MoscropSecondary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MoscropSecondary/Info.plist;
