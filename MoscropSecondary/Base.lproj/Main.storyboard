@@ -49,6 +49,40 @@
             </objects>
             <point key="canvasLocation" x="36" y="1050"/>
         </scene>
+        <!--NewsDetail-->
+        <scene sceneID="4TM-W0-mPH">
+            <objects>
+                <viewController title="NewsDetail" hidesBottomBarWhenPushed="YES" id="qos-2x-i3e" customClass="NewsDetailViewController" customModule="MoscropSecondary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LeG-hJ-WvP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Spc-6A-h9c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="27W-OA-aNz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEU-xn-a6O">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="YEU-xn-a6O" secondAttribute="trailing" constant="-16" id="8wE-Ab-qSJ"/>
+                            <constraint firstItem="YEU-xn-a6O" firstAttribute="bottom" secondItem="27W-OA-aNz" secondAttribute="bottomMargin" id="Irt-vb-1e7"/>
+                            <constraint firstItem="YEU-xn-a6O" firstAttribute="leading" secondItem="27W-OA-aNz" secondAttribute="leadingMargin" constant="-16" id="JMg-E4-n5I"/>
+                            <constraint firstItem="YEU-xn-a6O" firstAttribute="top" secondItem="27W-OA-aNz" secondAttribute="topMargin" id="XhQ-5D-9Ki"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="NewsDetail" id="cxL-jD-KRv"/>
+                    <connections>
+                        <outlet property="contentWebView" destination="YEU-xn-a6O" id="ET0-IK-mwr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="foR-Fe-atm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2368" y="-327"/>
+        </scene>
         <!--News-->
         <scene sceneID="wak-lO-qlS">
             <objects>
@@ -82,7 +116,7 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="WIm-FT-0mo">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="WIm-FT-0mo">
                                             <rect key="frame" x="8" y="8" width="73" height="73"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="73" id="Hkt-Aq-KdL"/>
@@ -113,6 +147,7 @@
                                     <outlet property="thumbnailImageView" destination="WIm-FT-0mo" id="Nfj-Dz-ehz"/>
                                     <outlet property="timestampLabel" destination="ZaB-aY-VfX" id="VkA-9e-6Fz"/>
                                     <outlet property="titleLabel" destination="ry3-3h-vqq" id="kcp-27-4CX"/>
+                                    <segue destination="qos-2x-i3e" kind="show" identifier="ShowNewsDetail" id="K1Y-PD-scn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -198,7 +233,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Placeholder" width="74" height="74"/>
         <image name="first" width="30" height="30"/>
-        <image name="sample" width="540" height="540"/>
     </resources>
 </document>
