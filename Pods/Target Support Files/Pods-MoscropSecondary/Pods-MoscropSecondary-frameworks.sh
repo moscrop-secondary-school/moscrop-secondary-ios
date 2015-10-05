@@ -55,9 +55,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-MoscropSecondary/Bolts.framework'
   install_framework 'Pods-MoscropSecondary/Kingfisher.framework'
   install_framework 'Pods-MoscropSecondary/Parse.framework'
+  install_framework 'Pods-MoscropSecondary/SwiftyJSON.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-MoscropSecondary/Bolts.framework'
   install_framework 'Pods-MoscropSecondary/Kingfisher.framework'
   install_framework 'Pods-MoscropSecondary/Parse.framework'
+  install_framework 'Pods-MoscropSecondary/SwiftyJSON.framework'
 fi

@@ -18,6 +18,9 @@
 		145B3A5F1BAE48A200C7C523 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B3A5E1BAE48A200C7C523 /* NewsTableViewController.swift */; };
 		145B3A611BAE55C400C7C523 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B3A601BAE55C400C7C523 /* Utils.swift */; };
 		145B3A631BAE937500C7C523 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B3A621BAE937500C7C523 /* NewsDetailViewController.swift */; };
+		145B3A651BAF5AAA00C7C523 /* NewsCategorySelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B3A641BAF5AAA00C7C523 /* NewsCategorySelectorTableViewController.swift */; };
+		145B3A671BAF5CD000C7C523 /* NewsCategorySelectorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B3A661BAF5CD000C7C523 /* NewsCategorySelectorTableViewCell.swift */; };
+		147951AD1BC1085C00640AF7 /* ParseCacheHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147951AC1BC1085C00640AF7 /* ParseCacheHelper.swift */; };
 		4FE174982E7CCAB368D9FA02 /* Pods_MoscropSecondary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E264BF2F5D25F02307229AA /* Pods_MoscropSecondary.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -47,6 +50,9 @@
 		145B3A5E1BAE48A200C7C523 /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		145B3A601BAE55C400C7C523 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		145B3A621BAE937500C7C523 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		145B3A641BAF5AAA00C7C523 /* NewsCategorySelectorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCategorySelectorTableViewController.swift; sourceTree = "<group>"; };
+		145B3A661BAF5CD000C7C523 /* NewsCategorySelectorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCategorySelectorTableViewCell.swift; sourceTree = "<group>"; };
+		147951AC1BC1085C00640AF7 /* ParseCacheHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseCacheHelper.swift; sourceTree = "<group>"; };
 		26A38B921A5C22D41D1D5511 /* Pods-MoscropSecondary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoscropSecondary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary.debug.xcconfig"; sourceTree = "<group>"; };
 		287C2383A0D7105397EEEC18 /* Pods-MoscropSecondary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoscropSecondary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary.release.xcconfig"; sourceTree = "<group>"; };
 		6E264BF2F5D25F02307229AA /* Pods_MoscropSecondary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoscropSecondary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +77,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1425E15C1BB5210A004CD2A4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				145B3A5C1BAE453C00C7C523 /* NewsTableViewCell.swift */,
+				145B3A5E1BAE48A200C7C523 /* NewsTableViewController.swift */,
+				145B3A621BAE937500C7C523 /* NewsDetailViewController.swift */,
+				145B3A661BAF5CD000C7C523 /* NewsCategorySelectorTableViewCell.swift */,
+				145B3A641BAF5AAA00C7C523 /* NewsCategorySelectorTableViewController.swift */,
+				1450843C1BAA797200B51F48 /* Main.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		1425E15D1BB52140004CD2A4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				145B3A601BAE55C400C7C523 /* Utils.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		1425E15E1BB52151004CD2A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1440D0311BAAAE3B0002A0CE /* RSSItem.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		145084281BAA797100B51F48 = {
 			isa = PBXGroup;
 			children = (
@@ -94,14 +129,12 @@
 		145084331BAA797200B51F48 /* MoscropSecondary */ = {
 			isa = PBXGroup;
 			children = (
+				147951AC1BC1085C00640AF7 /* ParseCacheHelper.swift */,
 				1440D02F1BAAAE340002A0CE /* ApiConfig.swift */,
-				1440D0311BAAAE3B0002A0CE /* RSSItem.swift */,
-				145B3A5C1BAE453C00C7C523 /* NewsTableViewCell.swift */,
-				145B3A5E1BAE48A200C7C523 /* NewsTableViewController.swift */,
-				145B3A621BAE937500C7C523 /* NewsDetailViewController.swift */,
 				145084361BAA797200B51F48 /* AppDelegate.swift */,
-				145B3A601BAE55C400C7C523 /* Utils.swift */,
-				1450843C1BAA797200B51F48 /* Main.storyboard */,
+				1425E15E1BB52151004CD2A4 /* Models */,
+				1425E15C1BB5210A004CD2A4 /* UI */,
+				1425E15D1BB52140004CD2A4 /* Utils */,
 				1450843F1BAA797200B51F48 /* Images.xcassets */,
 				145084411BAA797200B51F48 /* LaunchScreen.xib */,
 				145084341BAA797200B51F48 /* Supporting Files */,
@@ -304,7 +337,10 @@
 			files = (
 				1440D0301BAAAE340002A0CE /* ApiConfig.swift in Sources */,
 				145084371BAA797200B51F48 /* AppDelegate.swift in Sources */,
+				147951AD1BC1085C00640AF7 /* ParseCacheHelper.swift in Sources */,
+				145B3A671BAF5CD000C7C523 /* NewsCategorySelectorTableViewCell.swift in Sources */,
 				145B3A5D1BAE453C00C7C523 /* NewsTableViewCell.swift in Sources */,
+				145B3A651BAF5AAA00C7C523 /* NewsCategorySelectorTableViewController.swift in Sources */,
 				145B3A631BAE937500C7C523 /* NewsDetailViewController.swift in Sources */,
 				1440D0321BAAAE3B0002A0CE /* RSSItem.swift in Sources */,
 				145B3A5F1BAE48A200C7C523 /* NewsTableViewController.swift in Sources */,

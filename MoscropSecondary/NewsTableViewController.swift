@@ -15,6 +15,7 @@ class NewsTableViewController: UITableViewController {
 
     let cellIdentifier = "newsTableViewCell"
     var posts = [PFObject]()
+    var tag = "Subscribed"  // default
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +26,17 @@ class NewsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        self.navigationItem.title = tag
         loadFeed()
     }
 
     func loadFeed() {
-        var query = PFQuery(className:"BlogPosts")
-        query.whereKey("category", notEqualTo: "")
+        var query = PFQuery(className:"Posts")
+        if tag != "All" && tag != "Subscribed" {
+            query.whereKey("category", equalTo: tag)
+        } else {
+            query.whereKey("category", notEqualTo: "Student Bulletin")
+        }
         query.orderByDescending("published")
         query.limit = 24
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
@@ -101,7 +107,6 @@ class NewsTableViewController: UITableViewController {
                 cell.thumbnailImageView.kf_setImageWithURL(url!, placeholderImage: UIImage(named: "Placeholder.png"))
             }
         }
-        
         return cell
     }
 
@@ -140,8 +145,24 @@ class NewsTableViewController: UITableViewController {
     }
     */
     
+    
+    @IBAction func refreshButtonClicked(sender: UIBarButtonItem) {
+        loadFeed()
+    }
+    
     // MARK: - Navigation
 
+    @IBAction func unwindToPostList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? NewsCategorySelectorTableViewController, selectedTag = sourceViewController.selectedCategory {
+            if tag != selectedTag {
+                // A new tag was selected
+                tag = selectedTag
+                self.navigationItem.title = tag
+                loadFeed()
+            }
+        }
+    }
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].

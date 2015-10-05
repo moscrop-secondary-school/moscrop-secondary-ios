@@ -3,14 +3,17 @@ PODS:
   - Kingfisher (1.4.5)
   - Parse (1.8.1):
     - Bolts/Tasks (>= 1.2.0)
+  - SwiftyJSON (2.2.1)
 
 DEPENDENCIES:
   - Kingfisher
   - Parse
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
   Kingfisher: 22fa7d41c83b214c19fbb82a77a9db52300b3719
   Parse: 2155953b1565494095d5fa5c83b3c77f2c677c09
+  SwiftyJSON: ae2d0a3d68025d136602a33c4ee215091ced3e33
 
 COCOAPODS: 0.38.2
