@@ -16,7 +16,14 @@ class NewsTableViewController: UITableViewController {
     let cellIdentifier = "newsTableViewCell"
     var posts = [PFObject]()
     var tag = "Subscribed"  // default
+    var refresher: UIRefreshControl!
+    var hasMoreLoad = false
     
+    func refresh() {
+        print("Refresh")
+        loadFeed()
+        self.refresher.endRefreshing()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,16 +34,22 @@ class NewsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.navigationItem.title = tag
-        loadFeed()
+        refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string: "Pull to Refresh")
+        refresher.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        
+        self.tableView.addSubview(refresher)
+        
+        refresh()
     }
 
     func loadFeed() {
         var query = PFQuery(className:"Posts")
-        if tag != "All" && tag != "Subscribed" {
-            query.whereKey("category", equalTo: tag)
-        } else {
-            query.whereKey("category", notEqualTo: "Student Bulletin")
-        }
+//        if tag != "All" && tag != "Subscribed" {
+//            query.whereKey("category", equalTo: tag)
+//        } else {
+//            query.whereKey("category", notEqualTo: "Student Bulletin")
+//        }
         query.orderByDescending("published")
         query.limit = 24
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
@@ -47,7 +60,7 @@ class NewsTableViewController: UITableViewController {
                 if let objects = objects as? [PFObject] {
                     self.posts = Array(objects.generate())
                 }
-                
+                self.hasMoreLoad = true
                 self.tableView.reloadData()
             } else {
                 println("Error: \(error!) \(error!.userInfo!)")
@@ -72,42 +85,92 @@ class NewsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return posts.count
+        if self.hasMoreLoad == false {
+            return posts.count
+        } else {
+            return posts.count + 1
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! NewsTableViewCell
-
-        // Configure the cell...
-        let post = posts[indexPath.row]
         
-        if let title = post["title"] as? String {
-            cell.titleLabel.text = title
-        }
-        if let category = post["category"] as? String {
-            cell.categoryLabel.text = category
-        }
-        if let date = post["published"] as? NSDate {
-            cell.timestampLabel.text = Utils.getRelativeTime(date)
-        }
         
-        if let bgImage = post["bgImage"] as? String {
-            var url: NSURL?
-            if bgImage != "@null" {
-                url = NSURL(string: bgImage)
-                cell.thumbnailImageView.layer.cornerRadius = 10
-            } else {
-                if let icon = post["icon"] as? String {
-                    url = NSURL(string: icon)
-                    cell.thumbnailImageView.layer.cornerRadius = 37
-                }
+        
+        if (indexPath.row == posts.count) {
+            
+            var cell = tableView.dequeueReusableCellWithIdentifier("LoadMore") as! UITableViewCell
+            if (!self.hasMoreLoad) {
+                cell.hidden = true
             }
             
-            if url != nil {
-                cell.thumbnailImageView.kf_setImageWithURL(url!, placeholderImage: UIImage(named: "Placeholder.png"))
+            return cell
+        } else {
+            var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! NewsTableViewCell
+            // Configure the cell...
+            let post = posts[indexPath.row]
+            
+            if let title = post["title"] as? String {
+                cell.titleLabel.text = title
+            }
+            if let category = post["category"] as? String {
+                cell.categoryLabel.text = category
+            }
+            if let date = post["published"] as? NSDate {
+                cell.timestampLabel.text = Utils.getRelativeTime(date)
+            }
+            
+            if let bgImage = post["bgImage"] as? String {
+                var url: NSURL?
+                if bgImage != "@null" {
+                    url = NSURL(string: bgImage)
+                    cell.thumbnailImageView.layer.cornerRadius = 10
+                } else {
+                    if let icon = post["icon"] as? String {
+                        url = NSURL(string: icon)
+                        cell.thumbnailImageView.layer.cornerRadius = 37
+                    }
+                }
+                
+                if url != nil {
+                    cell.thumbnailImageView.kf_setImageWithURL(url!, placeholderImage: UIImage(named: "Placeholder.png"))
+                }
+            }
+            return cell
+
+        }
+        
+    }
+    
+    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        if (indexPath.row == posts.count) {
+            var query = PFQuery(className:"Posts")
+                       query.orderByDescending("published")
+//            if tag != "All" && tag != "Subscribed" {
+//                query.whereKey("category", equalTo: tag)
+//            } else {
+//                query.whereKey("category", notEqualTo: "Student Bulletin")
+//            }
+            query.limit = 24
+            query.skip = posts.count
+            query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+                
+                if error == nil {
+                    if objects?.count < 24 {
+                        self.hasMoreLoad = false
+                    }
+                    if let objects = objects as? [PFObject] {
+                        for object in objects {
+                            if !contains(self.posts, object){
+                                self.posts.append(object)
+                            }
+                        }
+                    }
+                    self.tableView.reloadData()
+                } else {
+                    println("Error: \(error!) \(error!.userInfo!)")
+                }
             }
         }
-        return cell
     }
 
     /*
@@ -147,7 +210,7 @@ class NewsTableViewController: UITableViewController {
     
     
     @IBAction func refreshButtonClicked(sender: UIBarButtonItem) {
-        loadFeed()
+        refresh()
     }
     
     // MARK: - Navigation
