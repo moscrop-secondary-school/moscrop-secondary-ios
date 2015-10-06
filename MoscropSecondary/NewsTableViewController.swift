@@ -22,9 +22,8 @@ class NewsTableViewController: UITableViewController {
     func refresh() {
         print("Refresh")
         loadFeed()
-        print(posts)
-        self.refresher.endRefreshing()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,27 +43,60 @@ class NewsTableViewController: UITableViewController {
         refresh()
     }
 
-    func loadFeed() {
-        var query = PFQuery(className:"Posts")
-//        if tag != "All" && tag != "Subscribed" {
-//            query.whereKey("category", equalTo: tag)
-//        } else {
-//            query.whereKey("category", notEqualTo: "Student Bulletin")
-//        }
-        query.orderByDescending("published")
-        query.limit = 24
-        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+    func loadFeed(fromLoadMoreCell cell: LoadMoreTableViewCell? = nil) {   // TODO rename so it flows in English
+
+        let append = cell != nil
+        
+        ParseCategoryHelper.downloadCategoriesList { () -> Void in
             
-            if error == nil {
-                self.posts.removeAll(keepCapacity: false)
-                
-                if let objects = objects as? [PFObject] {
-                    self.posts = Array(objects.generate())
-                }
-                self.hasMoreLoad = true
-                self.tableView.reloadData()
+            var query = PFQuery(className: "Posts")
+            //query.whereKey("category", containedIn: ParseCategoryHelper.getFilterCategoriesForTag(self.tag))
+            // TODO select keys
+            query.includeKey("category")
+            query.orderByDescending("published")
+            query.limit = 24
+            if append {
+                query.skip = self.posts.count
+            }
+            if Utils.isConnectedToNetwork() {
+                query.cachePolicy = .NetworkOnly
             } else {
-                println("Error: \(error!) \(error!.userInfo!)")
+                query.cachePolicy = .CacheOnly
+            }
+            query.findObjectsInBackgroundWithBlock { (list: [AnyObject]?, error: NSError?) -> Void in
+                
+                self.refresher.endRefreshing()
+                if let cell = cell {
+                    self.view.userInteractionEnabled = true
+                    cell.spinner.stopAnimating()
+                    cell.spinner.hidden = true
+                    cell.loadLabel.hidden = false
+                }
+                
+                if error == nil {
+                    // Remove empty cache that might get "orphaned"
+                    // before we lose a way to delete it.
+                    if list == nil || list!.count == 0 {
+                        query.clearCachedResult()
+                    }
+                    
+                    if let list = list as? [PFObject] {
+                    
+                        self.hasMoreLoad = list.count == 24
+                        
+                        if !append {
+                            self.posts.removeAll(keepCapacity: false)
+                            // TODO ClearOutdatedCachesTask
+                            self.posts = Array(list.generate())
+                        } else {
+                            self.posts += Array(list.generate())
+                        }
+                        
+                        self.tableView.reloadData()
+                    }
+                } else {
+                    println("Error: \(error!) \(error!.userInfo!)")
+                }
             }
         }
     }
@@ -105,7 +137,9 @@ class NewsTableViewController: UITableViewController {
                 cell.hidden = true
             }
             return cell
+            
         } else {
+            
             var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! NewsTableViewCell
             // Configure the cell...
             let post = posts[indexPath.row]
@@ -113,8 +147,10 @@ class NewsTableViewController: UITableViewController {
             if let title = post["title"] as? String {
                 cell.titleLabel.text = title
             }
-            if let category = post["category"] as? String {
-                cell.categoryLabel.text = category
+            if let categoryObj = post["category"] as? PFObject {
+                if let category =  categoryObj["name"] as? String {
+                    cell.categoryLabel.text = category
+                }
             }
             if let date = post["published"] as? NSDate {
                 cell.timestampLabel.text = Utils.getRelativeTime(date)
@@ -126,9 +162,11 @@ class NewsTableViewController: UITableViewController {
                     url = NSURL(string: bgImage)
                     cell.thumbnailImageView.layer.cornerRadius = 10
                 } else {
-                    if let icon = post["icon"] as? String {
-                        url = NSURL(string: icon)
-                        cell.thumbnailImageView.layer.cornerRadius = 37
+                    if let categoryObj = post["category"] as? PFObject {
+                        if let icon = categoryObj["icon_img"] as? String {
+                            url = NSURL(string: icon)
+                            cell.thumbnailImageView.layer.cornerRadius = 37
+                        }
                     }
                 }
                 
@@ -142,8 +180,8 @@ class NewsTableViewController: UITableViewController {
         
     }
     
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
         if (indexPath.row == posts.count) {
             self.view.userInteractionEnabled = false
             var cell = tableView.cellForRowAtIndexPath(indexPath) as! LoadMoreTableViewCell
@@ -151,13 +189,11 @@ class NewsTableViewController: UITableViewController {
             cell.loadLabel.hidden = true
             cell.spinner.hidden = false
             cell.spinner.startAnimating()
-            var query = PFQuery(className:"Posts")
-                       query.orderByDescending("published")
-//            if tag != "All" && tag != "Subscribed" {
-//                query.whereKey("category", equalTo: tag)
-//            } else {
-//                query.whereKey("category", notEqualTo: "Student Bulletin")
-//            }
+            
+            loadFeed(fromLoadMoreCell: cell)
+            
+            /*var query = PFQuery(className:"Posts")
+            query.orderByDescending("published")
             query.limit = 24
             query.skip = posts.count
             query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
@@ -181,7 +217,7 @@ class NewsTableViewController: UITableViewController {
                 } else {
                     println("Error: \(error!) \(error!.userInfo!)")
                 }
-            }
+            }*/
         }
     }
 

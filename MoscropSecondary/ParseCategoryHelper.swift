@@ -13,7 +13,8 @@ import SwiftyJSON
 
 class ParseCategoryHelper {
     
-    static let TAG_LIST_JSON = "categories.json"
+    static let TAG_LIST_JSON_BUNDLE = "categories"
+    static let TAG_LIST_JSON_DOCUMENTS = "categories.json"
     
     struct Category {
         var name = ""
@@ -25,7 +26,7 @@ class ParseCategoryHelper {
         if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
             
             let dir = dirs[0]
-            let path = dir.stringByAppendingPathComponent(TAG_LIST_JSON)
+            let path = dir.stringByAppendingPathComponent(TAG_LIST_JSON_DOCUMENTS)
             
             let checkValidation = NSFileManager.defaultManager()
             if !checkValidation.fileExistsAtPath(path) {
@@ -42,14 +43,14 @@ class ParseCategoryHelper {
     private class func copyFromBundleToDocuments() {
         
         // Read from bundle
-        let bundlePath = NSBundle.mainBundle().pathForResource(TAG_LIST_JSON, ofType: "json")
+        let bundlePath = NSBundle.mainBundle().pathForResource(TAG_LIST_JSON_BUNDLE, ofType: "json")
         let jsonStr = String(contentsOfFile: bundlePath!, encoding: NSUTF8StringEncoding, error: nil) ?? "{}"
         
         // Write to documents
         if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
             
             let dir = dirs[0]
-            let path = dir.stringByAppendingPathComponent(TAG_LIST_JSON)
+            let path = dir.stringByAppendingPathComponent(TAG_LIST_JSON_DOCUMENTS)
             jsonStr.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
         }
     }
@@ -193,7 +194,7 @@ class ParseCategoryHelper {
             PFCloud.callFunctionInBackground("getCategoriesLastUpdatedTime", withParameters: nil) {
                 (response: AnyObject?, error: NSError?) -> Void in
                 if error == nil {
-                    let millis = response as! Int64
+                    let millis = Int64(response as! Double)
                     let lastVersion = Int64(preferences.doubleForKey("categories_version") ?? 0)
                     
                     // Only download tags if there is a newer version.
@@ -215,7 +216,7 @@ class ParseCategoryHelper {
                                 if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
                                     
                                     let dir = dirs[0]
-                                    let path = dir.stringByAppendingPathComponent(self.TAG_LIST_JSON)
+                                    let path = dir.stringByAppendingPathComponent(self.TAG_LIST_JSON_DOCUMENTS)
                                     if let string = root.rawString() {
                                         string.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
                                     }
