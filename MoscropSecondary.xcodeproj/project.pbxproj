@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		141F4B671BC35D1E00D657F6 /* ParseCategoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141F4B661BC35D1E00D657F6 /* ParseCategoryHelper.swift */; };
+		141F4B691BC3640700D657F6 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 141F4B681BC3640700D657F6 /* categories.json */; };
 		1440D0321BAAAE3B0002A0CE /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440D0311BAAAE3B0002A0CE /* RSSItem.swift */; };
 		145084371BAA797200B51F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145084361BAA797200B51F48 /* AppDelegate.swift */; };
 		1450843E1BAA797200B51F48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1450843C1BAA797200B51F48 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		141F4B661BC35D1E00D657F6 /* ParseCategoryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseCategoryHelper.swift; sourceTree = "<group>"; };
+		141F4B681BC3640700D657F6 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		1440D0311BAAAE3B0002A0CE /* RSSItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSItem.swift; sourceTree = "<group>"; };
 		145084311BAA797200B51F48 /* MoscropSecondary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoscropSecondary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		145084351BAA797200B51F48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 			children = (
 				147951AC1BC1085C00640AF7 /* ParseCacheHelper.swift */,
 				145084361BAA797200B51F48 /* AppDelegate.swift */,
+				141F4B661BC35D1E00D657F6 /* ParseCategoryHelper.swift */,
 				1425E15E1BB52151004CD2A4 /* Models */,
 				1425E15C1BB5210A004CD2A4 /* UI */,
 				1425E15D1BB52140004CD2A4 /* Utils */,
@@ -142,6 +147,7 @@
 		145084341BAA797200B51F48 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				141F4B681BC3640700D657F6 /* categories.json */,
 				145084351BAA797200B51F48 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -265,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1450843E1BAA797200B51F48 /* Main.storyboard in Resources */,
+				141F4B691BC3640700D657F6 /* categories.json in Resources */,
 				145084431BAA797200B51F48 /* LaunchScreen.xib in Resources */,
 				145084401BAA797200B51F48 /* Images.xcassets in Resources */,
 			);
@@ -335,6 +342,7 @@
 				145084371BAA797200B51F48 /* AppDelegate.swift in Sources */,
 				147951AD1BC1085C00640AF7 /* ParseCacheHelper.swift in Sources */,
 				145B3A671BAF5CD000C7C523 /* NewsCategorySelectorTableViewCell.swift in Sources */,
+				141F4B671BC35D1E00D657F6 /* ParseCategoryHelper.swift in Sources */,
 				145B3A5D1BAE453C00C7C523 /* NewsTableViewCell.swift in Sources */,
 				145B3A651BAF5AAA00C7C523 /* NewsCategorySelectorTableViewController.swift in Sources */,
 				145B3A631BAE937500C7C523 /* NewsDetailViewController.swift in Sources */,

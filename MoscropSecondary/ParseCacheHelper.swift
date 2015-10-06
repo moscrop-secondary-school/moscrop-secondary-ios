@@ -126,7 +126,7 @@ class ParseCacheHelper {
         }
     }
     
-    class func deleteCache(deletedCache: JSON) {
+    private class func deleteCache(deletedCache: JSON) {
         let id = deletedCache["id"].stringValue
         var query = PFQuery(className:"Posts")
         query.selectKeys(["content"])

@@ -64,26 +64,6 @@ class Utils {
         return timestamp
     }
     
-    class func extractJsonArrayFrom(array: JSON) -> [JSON] {
-        var objects:[JSON] = []
-        for (index, object):(String, JSON) in array {
-            objects.append(object)
-        }
-        return objects
-    }
-    
-    class func convertArrayToJson(array: [JSON]) -> JSON {
-        var str = "["
-        for i in 0..<array.count {
-            str += array[i].rawString()!
-            if i < array.count-1 {
-                str += ","
-            }
-        }
-        str += "]"
-        return JSON(str)
-    }
-    
     class func createJsonFromString(jsonString: String) -> JSON {
         let dataFromString = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
         return JSON(data: dataFromString)
