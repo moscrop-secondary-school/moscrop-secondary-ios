@@ -208,7 +208,7 @@
                                     <segue destination="qos-2x-i3e" kind="show" identifier="ShowNewsDetail" id="K1Y-PD-scn"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="LoadMore" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoadMore" id="6hU-fO-vFF">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="LoadMore" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoadMore" id="6hU-fO-vFF" customClass="LoadMoreTableViewCell" customModule="MoscropSecondary" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6hU-fO-vFF" id="kZH-CU-or6">
@@ -220,12 +220,21 @@
                                             <color key="textColor" red="0.42171717171717171" green="0.42171717171717171" blue="0.42171717171717171" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="F3e-v1-2vD">
+                                            <rect key="frame" x="290" y="35" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="F3e-v1-2vD" secondAttribute="centerY" id="3ob-vy-lZg"/>
+                                        <constraint firstAttribute="centerX" secondItem="F3e-v1-2vD" secondAttribute="centerX" id="8ua-o5-UVt"/>
                                         <constraint firstAttribute="centerX" secondItem="CoB-cN-uHt" secondAttribute="centerX" id="DDa-to-Swr"/>
                                         <constraint firstAttribute="centerY" secondItem="CoB-cN-uHt" secondAttribute="centerY" id="Xrf-QF-ew8"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="loadLabel" destination="CoB-cN-uHt" id="Fb8-oT-UK3"/>
+                                    <outlet property="spinner" destination="F3e-v1-2vD" id="jFP-F9-fds"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

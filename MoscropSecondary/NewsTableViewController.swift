@@ -22,6 +22,7 @@ class NewsTableViewController: UITableViewController {
     func refresh() {
         print("Refresh")
         loadFeed()
+        print(posts)
         self.refresher.endRefreshing()
     }
     override func viewDidLoad() {
@@ -98,11 +99,11 @@ class NewsTableViewController: UITableViewController {
         
         if (indexPath.row == posts.count) {
             
-            var cell = tableView.dequeueReusableCellWithIdentifier("LoadMore") as! UITableViewCell
+            var cell = tableView.dequeueReusableCellWithIdentifier("LoadMore") as! LoadMoreTableViewCell
+            cell.spinner.hidden = true
             if (!self.hasMoreLoad) {
                 cell.hidden = true
             }
-            
             return cell
         } else {
             var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! NewsTableViewCell
@@ -142,7 +143,14 @@ class NewsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        
         if (indexPath.row == posts.count) {
+            self.view.userInteractionEnabled = false
+            var cell = tableView.cellForRowAtIndexPath(indexPath) as! LoadMoreTableViewCell
+            
+            cell.loadLabel.hidden = true
+            cell.spinner.hidden = false
+            cell.spinner.startAnimating()
             var query = PFQuery(className:"Posts")
                        query.orderByDescending("published")
 //            if tag != "All" && tag != "Subscribed" {
@@ -166,6 +174,10 @@ class NewsTableViewController: UITableViewController {
                         }
                     }
                     self.tableView.reloadData()
+                    self.view.userInteractionEnabled = true
+                    cell.spinner.stopAnimating()
+                    cell.spinner.hidden = true
+                    cell.loadLabel.hidden = false
                 } else {
                     println("Error: \(error!) \(error!.userInfo!)")
                 }
@@ -211,6 +223,7 @@ class NewsTableViewController: UITableViewController {
     
     @IBAction func refreshButtonClicked(sender: UIBarButtonItem) {
         refresh()
+        self.tableView.contentOffset = CGPointMake(0, 0 - self.tableView.contentInset.top)
     }
     
     // MARK: - Navigation
