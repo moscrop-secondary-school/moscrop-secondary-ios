@@ -69,9 +69,9 @@ class ParseCategoryHelper {
             }
         }
         
-        if categories != nil {
+        if let categories = categories {
             var filterObjects = [PFObject]()
-            for category in categories! {
+            for category in categories {
                 var filterObject = PFObject(className: "Categories")
                 filterObject.objectId = category.id
                 filterObjects.append(filterObject)
@@ -121,7 +121,7 @@ class ParseCategoryHelper {
             } else if s2 == "Official" {
                 return false
             } else {
-                return s1 > s2
+                return s1 < s2
             }
         }
         
@@ -173,7 +173,7 @@ class ParseCategoryHelper {
             } else if s2 == "Official" {
                 return false
             } else {
-                return s1 > s2
+                return s1 < s2
             }
         }
         
@@ -207,10 +207,11 @@ class ParseCategoryHelper {
                                 var tags = [JSON]()
                                 for object in objects {
                                     let name = object["name"] as! String
-                                    let id = object.objectId
-                                    let tag = Utils.createJsonFromString("\"name\":\"\(name)\",\"id\":\"\(id)\"")
+                                    let id = object.objectId!
+                                    let tag = Utils.createJsonFromString("{\"name\":\"\(name)\",\"id\":\"\(id)\"}")
                                     tags.append(tag)
                                 }
+                                
                                 root["tags"] = JSON(tags)
                                 
                                 if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {

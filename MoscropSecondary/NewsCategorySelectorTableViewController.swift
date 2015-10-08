@@ -26,7 +26,9 @@ class NewsCategorySelectorTableViewController: UITableViewController {
     }
     
     func loadSubscribedCategories() {
-        categories += ["All", "Subscribed", "Official"]
+        categories.removeAll(keepCapacity: false)
+        categories = ["Subscribed", "All"]
+        categories += ParseCategoryHelper.getSubscribedTagNames()
     }
 
     override func didReceiveMemoryWarning() {

@@ -20,7 +20,7 @@ class NewsTableViewController: UITableViewController {
     var hasMoreLoad = false
     
     func refresh() {
-        print("Refresh")
+        println("Refresh")
         loadFeed()
     }
     
@@ -50,7 +50,7 @@ class NewsTableViewController: UITableViewController {
         ParseCategoryHelper.downloadCategoriesList { () -> Void in
             
             var query = PFQuery(className: "Posts")
-            //query.whereKey("category", containedIn: ParseCategoryHelper.getFilterCategoriesForTag(self.tag))
+            query.whereKey("category", containedIn: ParseCategoryHelper.getFilterCategoriesForTag(self.tag))
             // TODO select keys
             query.includeKey("category")
             query.orderByDescending("published")
@@ -81,7 +81,9 @@ class NewsTableViewController: UITableViewController {
                     }
                     
                     if let list = list as? [PFObject] {
-                    
+                        
+                        println("List has \(list.count) items")
+                        
                         self.hasMoreLoad = list.count == 24
                         
                         if !append {

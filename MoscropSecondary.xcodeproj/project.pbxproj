@@ -89,8 +89,8 @@
 				145B3A621BAE937500C7C523 /* NewsDetailViewController.swift */,
 				145B3A661BAF5CD000C7C523 /* NewsCategorySelectorTableViewCell.swift */,
 				145B3A641BAF5AAA00C7C523 /* NewsCategorySelectorTableViewController.swift */,
-				1450843C1BAA797200B51F48 /* Main.storyboard */,
 				96FC98311BC34B4A00B35E24 /* LoadMoreTableViewCell.swift */,
+				1450843C1BAA797200B51F48 /* Main.storyboard */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -135,8 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				147951AC1BC1085C00640AF7 /* ParseCacheHelper.swift */,
-				145084361BAA797200B51F48 /* AppDelegate.swift */,
 				141F4B661BC35D1E00D657F6 /* ParseCategoryHelper.swift */,
+				145084361BAA797200B51F48 /* AppDelegate.swift */,
 				1425E15E1BB52151004CD2A4 /* Models */,
 				1425E15C1BB5210A004CD2A4 /* UI */,
 				1425E15D1BB52140004CD2A4 /* Utils */,
