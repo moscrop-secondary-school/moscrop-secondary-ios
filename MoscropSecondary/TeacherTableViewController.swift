@@ -23,7 +23,9 @@ class TeacherTableViewController: UITableViewController {
         loadTeachers()
     }
     func loadTeachers() {
+        
         var query = PFQuery(className:"teachers")
+        query.includeKey("Dept")
         query.orderByAscending("LastName")
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             
@@ -33,7 +35,6 @@ class TeacherTableViewController: UITableViewController {
                 if let objects = objects as? [PFObject] {
                     self.teachers = Array(objects.generate())
                 }
-
                 self.tableView.reloadData()
             } else {
                 println("Error: \(error!) \(error!.userInfo!)")
@@ -79,12 +80,33 @@ class TeacherTableViewController: UITableViewController {
         
         if let dept = teacher["Department"] as? String{
             cell.fieldWorkLabel.text = dept
+            var url : NSURL?
+                if let deptObj = teacher["Dept"] as? PFObject{
+                        if let icon = deptObj["image"] as? String{
+                            url = NSURL(string: icon)
+
+                        }
+            }
+                    
+        if url != nil {
+            
+            cell.fieldImage.layer.cornerRadius = 23.5
+            
+            cell.fieldImage.kf_setImageWithURL(url!, placeholderImage: UIImage (named: "default_teacher"))
+
+        }
+        
+            
+            
         }
         
         
         // Configure the cell...
 
         return cell
+    }
+    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        return 58.0
     }
     
 
