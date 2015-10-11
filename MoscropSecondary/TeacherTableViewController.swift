@@ -105,13 +105,18 @@ class TeacherTableViewController: UITableViewController {
         }
         if let rooms = teacher["Rooms"] as? Array<String>{
             cell.rooms = rooms
-            print(cell.rooms)
+        } else {
+            cell.rooms = []
         }
         if let email = teacher["Email"] as? String {
             cell.email = email
+        } else {
+            cell.email = ""
         }
         if let website = teacher["Sites"] as? String{
             cell.website = website
+        } else {
+            cell.website = ""
         }
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         // Configure the cell...
