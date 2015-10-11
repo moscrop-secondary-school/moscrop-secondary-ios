@@ -1,34 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--My Item 3-->
-        <scene sceneID="UGZ-mT-oXS">
-            <objects>
-                <viewController id="o93-0C-4pS" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1Er-aK-JTo"/>
-                        <viewControllerLayoutGuide type="bottom" id="biS-Ei-9Ae"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZYP-Qq-cHq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cmq-q8-TsY">
-                                <rect key="frame" x="115" y="254" width="118" height="31"/>
-                            </slider>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="My Item 3" image="first" id="xfZ-y2-W4f"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cxg-Hr-uk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="750" y="1050"/>
-        </scene>
         <!--Teachers-->
         <scene sceneID="pyQ-SO-grZ">
             <objects>
@@ -46,30 +22,30 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TeacherName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfY-PW-IgM">
                                             <rect key="frame" x="72" y="8" width="159" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" alpha="0.74999999999999978" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_teacher" translatesAutoresizingMaskIntoConstraints="NO" id="rQe-Lg-wVS">
-                                            <rect key="frame" x="8" y="7" width="47" height="41.5"/>
-                                            <color key="backgroundColor" red="0.50588235294117645" green="0.83137254901960778" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="41.5" id="bRY-x7-jdJ"/>
-                                                <constraint firstAttribute="width" constant="47" id="tCL-rp-KDU"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Field of Work" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLv-Cl-uz2">
                                             <rect key="frame" x="72" y="28" width="101" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" alpha="0.74999999999999978" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_teacher" translatesAutoresizingMaskIntoConstraints="NO" id="rQe-Lg-wVS">
+                                            <rect key="frame" x="8" y="8" width="42" height="42"/>
+                                            <color key="backgroundColor" red="0.50588235294117645" green="0.83137254901960778" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="42" id="bRY-x7-jdJ"/>
+                                                <constraint firstAttribute="width" constant="42" id="tCL-rp-KDU"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="rQe-Lg-wVS" secondAttribute="centerY" id="29O-Qh-qKK"/>
                                         <constraint firstItem="rQe-Lg-wVS" firstAttribute="leading" secondItem="CMx-NN-9GD" secondAttribute="leadingMargin" id="FAc-dO-3nD"/>
                                         <constraint firstItem="JfY-PW-IgM" firstAttribute="top" secondItem="CMx-NN-9GD" secondAttribute="topMargin" id="Fof-Hy-knn"/>
                                         <constraint firstItem="SLv-Cl-uz2" firstAttribute="leading" secondItem="rQe-Lg-wVS" secondAttribute="trailing" constant="17" id="RKw-w4-mca"/>
                                         <constraint firstItem="JfY-PW-IgM" firstAttribute="leading" secondItem="rQe-Lg-wVS" secondAttribute="trailing" constant="17" id="Sey-wt-5QF"/>
-                                        <constraint firstItem="rQe-Lg-wVS" firstAttribute="top" secondItem="CMx-NN-9GD" secondAttribute="topMargin" constant="-1" id="iJm-1z-mv9"/>
                                         <constraint firstItem="SLv-Cl-uz2" firstAttribute="top" secondItem="CMx-NN-9GD" secondAttribute="topMargin" constant="20" id="jpL-8a-cEj"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -90,7 +66,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKd-p7-oU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1185" y="1772"/>
+            <point key="canvasLocation" x="1562" y="1050"/>
         </scene>
         <!--Teachers-->
         <scene sceneID="kPR-Rp-sEc">
@@ -107,7 +83,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvF-Iq-iHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="494" y="1895"/>
+            <point key="canvasLocation" x="750" y="1050"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -122,7 +98,6 @@
                     <connections>
                         <segue destination="GG6-8c-Ebn" kind="relationship" relationship="viewControllers" id="anW-En-8gU"/>
                         <segue destination="Cn0-gA-PUh" kind="relationship" relationship="viewControllers" id="ejw-bg-3qD"/>
-                        <segue destination="o93-0C-4pS" kind="relationship" relationship="viewControllers" id="FUn-aC-NFk"/>
                         <segue destination="JWH-lR-Snv" kind="relationship" relationship="viewControllers" id="IcX-lO-BXh"/>
                     </connections>
                 </tabBarController>
@@ -147,7 +122,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GFJ-xT-VEw">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -244,7 +219,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lorem ipsum" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ry3-3h-vqq">
                                                     <rect key="frame" x="8" y="0.0" width="495" height="25"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -376,7 +351,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="utp-Ow-0H2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="428"/>
+            <point key="canvasLocation" x="1562" y="365"/>
         </scene>
         <!--Newsletters-->
         <scene sceneID="CIu-rL-zBy">

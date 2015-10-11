@@ -93,7 +93,7 @@ class TeacherTableViewController: UITableViewController {
                     
         if url != nil {
             
-            cell.fieldImage.layer.cornerRadius = 23.5
+            cell.fieldImage.layer.cornerRadius = 21
             
             cell.fieldImage.kf_setImageWithURL(url!, placeholderImage: UIImage (named: "default_teacher"))
 
@@ -118,7 +118,7 @@ class TeacherTableViewController: UITableViewController {
 
         return cell
     }
-    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 58.0
     }
     
