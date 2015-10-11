@@ -72,6 +72,8 @@ class TeacherTableViewController: UITableViewController {
                 if let lastName = teacher["LastName"] as? String{
                     var teacherName = prefix + ". " + String(firstName[advance(firstName.startIndex, 0)]) + ". " + lastName
                     cell.teacherNameLabel.text = teacherName
+                    
+                    cell.teacherName = teacherName
                 }
             }
             
@@ -80,11 +82,12 @@ class TeacherTableViewController: UITableViewController {
         
         if let dept = teacher["Department"] as? String{
             cell.fieldWorkLabel.text = dept
+            cell.department = dept
             var url : NSURL?
                 if let deptObj = teacher["Dept"] as? PFObject{
                         if let icon = deptObj["image"] as? String{
                             url = NSURL(string: icon)
-
+//                                print(url)
                         }
             }
                     
@@ -94,13 +97,23 @@ class TeacherTableViewController: UITableViewController {
             
             cell.fieldImage.kf_setImageWithURL(url!, placeholderImage: UIImage (named: "default_teacher"))
 
-        }
+            }
+            
         
             
             
         }
-        
-        
+        if let rooms = teacher["Rooms"] as? Array<String>{
+            cell.rooms = rooms
+            print(cell.rooms)
+        }
+        if let email = teacher["Email"] as? String {
+            cell.email = email
+        }
+        if let website = teacher["Sites"] as? String{
+            cell.website = website
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         // Configure the cell...
 
         return cell
@@ -109,7 +122,54 @@ class TeacherTableViewController: UITableViewController {
         return 58.0
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    var cell = tableView.cellForRowAtIndexPath(indexPath) as! TeacherTableViewCell
+        
+        
+        var message = ""
+        if cell.department != "" {
+            message += "\n Department \n" + cell.department
+        }
+        if !cell.rooms.isEmpty {
+            message += "\n\n Room \n" + cell.combineRooms()
+        }
+        if cell.email != "" {
+            
+            message += "\n\n Email \n" + cell.email
+        }
+        
+        if cell.website != "" {
+            message += "\n\n Site \n" + cell.website
+        }
+        let alert = UIAlertController(title: cell.teacherName, message: message, preferredStyle: .Alert)
+        
+        if cell.email != "" {
+            let emailAction = UIAlertAction(title: "Email Now", style: .Default) { (action) -> Void in
+                //direct them to sending email
+                // does not work in simulator; only on device
+                let url = NSURL(string: "mailto:" + cell.email)
+                UIApplication.sharedApplication().openURL(url!)
+            }
+            alert.addAction(emailAction)
+        }
 
+        if cell.website != "" {
+            let siteAction = UIAlertAction(title: "Enter Site", style: .Default) { (action) -> Void in
+                //direct them to site
+                UIApplication.sharedApplication().openURL(NSURL(string: cell.website)!)
+            }
+            alert.addAction(siteAction)
+        }
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+
+        
+        alert.addAction(defaultAction)
+        
+        presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -145,14 +205,14 @@ class TeacherTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+        
+            
+            
+    
 }
+    
+
+
