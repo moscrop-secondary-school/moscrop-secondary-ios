@@ -23,6 +23,8 @@
 		145B3A671BAF5CD000C7C523 /* NewsCategorySelectorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B3A661BAF5CD000C7C523 /* NewsCategorySelectorTableViewCell.swift */; };
 		147951AD1BC1085C00640AF7 /* ParseCacheHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147951AC1BC1085C00640AF7 /* ParseCacheHelper.swift */; };
 		4FE174982E7CCAB368D9FA02 /* Pods_MoscropSecondary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E264BF2F5D25F02307229AA /* Pods_MoscropSecondary.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		96B3F7511BC491F200687294 /* TeacherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3F7501BC491F200687294 /* TeacherTableViewController.swift */; };
+		96B3F7531BC5A74600687294 /* TeacherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3F7521BC5A74600687294 /* TeacherTableViewCell.swift */; };
 		96FC98321BC34B4A00B35E24 /* LoadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FC98311BC34B4A00B35E24 /* LoadMoreTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		26A38B921A5C22D41D1D5511 /* Pods-MoscropSecondary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoscropSecondary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary.debug.xcconfig"; sourceTree = "<group>"; };
 		287C2383A0D7105397EEEC18 /* Pods-MoscropSecondary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoscropSecondary.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoscropSecondary/Pods-MoscropSecondary.release.xcconfig"; sourceTree = "<group>"; };
 		6E264BF2F5D25F02307229AA /* Pods_MoscropSecondary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoscropSecondary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96B3F7501BC491F200687294 /* TeacherTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTableViewController.swift; sourceTree = "<group>"; };
+		96B3F7521BC5A74600687294 /* TeacherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTableViewCell.swift; sourceTree = "<group>"; };
 		96FC98311BC34B4A00B35E24 /* LoadMoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMoreTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +95,8 @@
 				145B3A641BAF5AAA00C7C523 /* NewsCategorySelectorTableViewController.swift */,
 				96FC98311BC34B4A00B35E24 /* LoadMoreTableViewCell.swift */,
 				1450843C1BAA797200B51F48 /* Main.storyboard */,
+				96B3F7501BC491F200687294 /* TeacherTableViewController.swift */,
+				96B3F7521BC5A74600687294 /* TeacherTableViewCell.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -342,6 +348,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96B3F7511BC491F200687294 /* TeacherTableViewController.swift in Sources */,
+				96B3F7531BC5A74600687294 /* TeacherTableViewCell.swift in Sources */,
 				145084371BAA797200B51F48 /* AppDelegate.swift in Sources */,
 				147951AD1BC1085C00640AF7 /* ParseCacheHelper.swift in Sources */,
 				96FC98321BC34B4A00B35E24 /* LoadMoreTableViewCell.swift in Sources */,
