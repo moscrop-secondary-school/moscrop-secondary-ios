@@ -13,6 +13,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search" showsCancelButton="YES" id="UKG-ba-tHK">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="teacher" rowHeight="58" id="TRX-Ms-SyS" customClass="TeacherTableViewCell" customModule="MoscropSecondary" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -63,6 +68,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Teachers" id="YsO-xC-wCL"/>
+                    <connections>
+                        <outlet property="searchBar" destination="UKG-ba-tHK" id="ker-Bz-Ro0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKd-p7-oU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FRx-Vx-75J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1452" y="1814"/>
+            <point key="canvasLocation" x="1476" y="1814"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ace-2v-sme">

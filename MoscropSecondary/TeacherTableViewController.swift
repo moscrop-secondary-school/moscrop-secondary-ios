@@ -8,10 +8,11 @@
 
 import UIKit
 import Parse
+import Foundation
 
-
-class TeacherTableViewController: UITableViewController {
+class TeacherTableViewController: UITableViewController, UISearchBarDelegate {
     var teachers = [PFObject]()
+    @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,25 +23,74 @@ class TeacherTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         loadTeachers()
     }
+    override func viewDidAppear(animated: Bool) {
+        
+        // Delegate the search bar to this table view class
+        searchBar.delegate = self
+    }
     func loadTeachers() {
         
         var query = PFQuery(className:"teachers")
         query.includeKey("Dept")
         query.orderByAscending("LastName")
+        if Utils.isConnectedToNetwork() {
+            query.cachePolicy = .NetworkOnly
+        } else {
+            query.cachePolicy = .CacheOnly
+        }
+        if self.searchBar.text != "" {
+            query.whereKey("searchText", containsString: self.searchBar.text.lowercaseString)
+        }
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
-            
+        
             if error == nil {
+                if objects == nil || objects!.count == 0 {
+                    query.clearCachedResult()
+                }
                 self.teachers.removeAll(keepCapacity: false)
                 
                 if let objects = objects as? [PFObject] {
                     self.teachers = Array(objects.generate())
                 }
+
+                
                 self.tableView.reloadData()
+
             } else {
                 println("Error: \(error!) \(error!.userInfo!)")
             }
         }
+
         
+    }
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        
+        // Dismiss the keyboard
+        searchBar.resignFirstResponder()
+        
+        // Force reload of table data
+        loadTeachers()
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        
+        // Dismiss the keyboard
+        searchBar.resignFirstResponder()
+        
+        // Force reload of table data
+        loadTeachers()
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        
+        // Clear any search criteria
+        searchBar.text = ""
+        
+        // Dismiss the keyboard
+        searchBar.resignFirstResponder()
+        
+        // Force reload of table data
+        loadTeachers()
     }
 
     override func didReceiveMemoryWarning() {
@@ -118,7 +168,9 @@ class TeacherTableViewController: UITableViewController {
         } else {
             cell.website = ""
         }
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
+
+        
+        // cell.selectionStyle = UITableViewCellSelectionStyle.None
         // Configure the cell...
 
         return cell
@@ -151,7 +203,9 @@ class TeacherTableViewController: UITableViewController {
         if cell.email != "" {
             let emailAction = UIAlertAction(title: "Email Now", style: .Default) { (action) -> Void in
                 //direct them to sending email
+                self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
                 // does not work in simulator; only on device
+                
                 let url = NSURL(string: "mailto:" + cell.email)
                 UIApplication.sharedApplication().openURL(url!)
             }
@@ -161,12 +215,19 @@ class TeacherTableViewController: UITableViewController {
         if cell.website != "" {
             let siteAction = UIAlertAction(title: "Enter Site", style: .Default) { (action) -> Void in
                 //direct them to site
+                self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
                 UIApplication.sharedApplication().openURL(NSURL(string: cell.website)!)
+
             }
             alert.addAction(siteAction)
         }
         
-        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        let defaultAction = UIAlertAction(title: "OK", style: .Default) {(action) -> Void in
+            
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
+            
+        }
 
         
         alert.addAction(defaultAction)
