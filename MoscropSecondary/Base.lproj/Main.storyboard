@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -46,11 +46,11 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="centerY" secondItem="rQe-Lg-wVS" secondAttribute="centerY" id="29O-Qh-qKK"/>
                                         <constraint firstItem="rQe-Lg-wVS" firstAttribute="leading" secondItem="CMx-NN-9GD" secondAttribute="leadingMargin" id="FAc-dO-3nD"/>
                                         <constraint firstItem="JfY-PW-IgM" firstAttribute="top" secondItem="CMx-NN-9GD" secondAttribute="topMargin" id="Fof-Hy-knn"/>
                                         <constraint firstItem="SLv-Cl-uz2" firstAttribute="leading" secondItem="rQe-Lg-wVS" secondAttribute="trailing" constant="17" id="RKw-w4-mca"/>
                                         <constraint firstItem="JfY-PW-IgM" firstAttribute="leading" secondItem="rQe-Lg-wVS" secondAttribute="trailing" constant="17" id="Sey-wt-5QF"/>
+                                        <constraint firstItem="rQe-Lg-wVS" firstAttribute="top" secondItem="CMx-NN-9GD" secondAttribute="topMargin" id="iJm-1z-mv9"/>
                                         <constraint firstItem="SLv-Cl-uz2" firstAttribute="top" secondItem="CMx-NN-9GD" secondAttribute="topMargin" constant="20" id="jpL-8a-cEj"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -260,7 +260,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="GFJ-xT-VEw" id="365-B0-z1A"/>
-                                    <segue destination="IdZ-LE-SZP" kind="unwind" unwindAction="unwindToPostList:" id="axq-uh-awS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -275,8 +274,15 @@
                                 <action selector="cancel:" destination="GTb-cm-umx" id="jxO-hh-FRE"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="mKR-AD-FNC"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="mKR-AD-FNC">
+                            <connections>
+                                <action selector="edit:" destination="GTb-cm-umx" id="k6t-Uv-NEw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="IdZ-LE-SZP" kind="unwind" identifier="unwindToPostList" unwindAction="unwindToPostList:" id="ega-uT-BpB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKH-3f-GmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="IdZ-LE-SZP" userLabel="Exit" sceneMemberID="exit"/>
