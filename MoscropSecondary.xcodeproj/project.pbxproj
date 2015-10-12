@@ -90,16 +90,10 @@
 		1425E15C1BB5210A004CD2A4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				145B3A5C1BAE453C00C7C523 /* NewsTableViewCell.swift */,
-				145B3A5E1BAE48A200C7C523 /* NewsTableViewController.swift */,
-				145B3A621BAE937500C7C523 /* NewsDetailViewController.swift */,
-				145B3A661BAF5CD000C7C523 /* NewsCategorySelectorTableViewCell.swift */,
-				145B3A641BAF5AAA00C7C523 /* NewsCategorySelectorTableViewController.swift */,
-				96FC98311BC34B4A00B35E24 /* LoadMoreTableViewCell.swift */,
-				1450843C1BAA797200B51F48 /* Main.storyboard */,
-				96B3F7501BC491F200687294 /* TeacherTableViewController.swift */,
-				96B3F7521BC5A74600687294 /* TeacherTableViewCell.swift */,
+				1448F20F1BCB911300B5FDD2 /* News */,
+				1448F2111BCB914200B5FDD2 /* Teachers */,
 				96BEECDC1BCB08F10039F935 /* MoreTableViewController.swift */,
+				1450843C1BAA797200B51F48 /* Main.storyboard */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -118,6 +112,28 @@
 				1440D0311BAAAE3B0002A0CE /* RSSItem.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		1448F20F1BCB911300B5FDD2 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				145B3A5C1BAE453C00C7C523 /* NewsTableViewCell.swift */,
+				145B3A5E1BAE48A200C7C523 /* NewsTableViewController.swift */,
+				145B3A621BAE937500C7C523 /* NewsDetailViewController.swift */,
+				145B3A661BAF5CD000C7C523 /* NewsCategorySelectorTableViewCell.swift */,
+				145B3A641BAF5AAA00C7C523 /* NewsCategorySelectorTableViewController.swift */,
+				96FC98311BC34B4A00B35E24 /* LoadMoreTableViewCell.swift */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
+		1448F2111BCB914200B5FDD2 /* Teachers */ = {
+			isa = PBXGroup;
+			children = (
+				96B3F7501BC491F200687294 /* TeacherTableViewController.swift */,
+				96B3F7521BC5A74600687294 /* TeacherTableViewCell.swift */,
+			);
+			name = Teachers;
 			sourceTree = "<group>";
 		};
 		145084281BAA797100B51F48 = {

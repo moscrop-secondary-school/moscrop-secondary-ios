@@ -180,8 +180,7 @@ class TeacherTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    var cell = tableView.cellForRowAtIndexPath(indexPath) as! TeacherTableViewCell
-        
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as! TeacherTableViewCell
         
         var message = ""
         if cell.department != "" {
