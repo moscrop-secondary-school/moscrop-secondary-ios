@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import Bolts
 
-class NewsDetailViewController: UIViewController {
+class PostDetailViewController: UIViewController {
 
     @IBOutlet weak var contentWebView: UIWebView!
     var post: PFObject?
