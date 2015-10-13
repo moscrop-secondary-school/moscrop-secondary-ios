@@ -10,23 +10,38 @@ import UIKit
 
 class MoreTableViewController: UITableViewController {
     
+    var more = ["Settings", "About", "Contact Us"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
+        rightSwipe.direction = .Right
+        view.addGestureRecognizer(rightSwipe)
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.tableView.tableFooterView = UIView.new()
     }
-    
+
+    func handleSwipe(sender:UISwipeGestureRecognizer){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+        vc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        vc.modalPresentationStyle = UIModalPresentationStyle.FullScreen
+        if (sender.direction == .Right) {
+            vc.selectedIndex = 2
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("moreCell", forIndexPath: indexPath) as! MoreTableViewCell
+        cell.moreHeader.text = more[indexPath.row]
+        
+        return cell
+    }
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -38,7 +53,7 @@ class MoreTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 3
+        return more.count
     }
     
     

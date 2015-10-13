@@ -16,8 +16,23 @@ class NewsTableViewController: PostTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = tag
+        var leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
+        leftSwipe.direction = .Left
+
+        view.addGestureRecognizer(leftSwipe)
+
     }
-    
+    func handleSwipe(sender:UISwipeGestureRecognizer){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+        vc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        vc.modalPresentationStyle = UIModalPresentationStyle.FullScreen
+        if (sender.direction == .Left) {
+            vc.selectedIndex = 1
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+
+    }
     // MARK: - Navigation
 
     @IBAction func unwindToPostList(sender: UIStoryboardSegue) {
