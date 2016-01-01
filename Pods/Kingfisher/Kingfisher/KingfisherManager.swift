@@ -236,7 +236,7 @@ public class KingfisherManager {
 
 // MARK: - Deprecated
 public extension KingfisherManager {
-    @availability(*, deprecated=1.2, message="Use -retrieveImageWithURL:optionsInfo:progressBlock:completionHandler: instead.")
+    @available(*, deprecated=1.2, message="Use -retrieveImageWithURL:optionsInfo:progressBlock:completionHandler: instead.")
     public func retrieveImageWithURL(URL: NSURL,
                                  options: KingfisherOptions,
                            progressBlock: DownloadProgressBlock?,
