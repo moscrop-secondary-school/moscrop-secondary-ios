@@ -524,7 +524,7 @@ public extension UIButton {
 
 // MARK: - Deprecated
 public extension UIButton {
-    @available(*, deprecated=1.2, message="Use -kf_setImageWithURL:forState:placeholderImage:optionsInfo: instead.")
+    @availability(*, deprecated=1.2, message="Use -kf_setImageWithURL:forState:placeholderImage:optionsInfo: instead.")
     public func kf_setImageWithURL(URL: NSURL,
                         forState state: UIControlState,
                       placeholderImage: UIImage?,
