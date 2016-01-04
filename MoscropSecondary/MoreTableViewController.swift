@@ -55,7 +55,23 @@ class MoreTableViewController: UITableViewController {
         // Return the number of rows in the section.
         return more.count
     }
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 0
+        {
+            self.performSegueWithIdentifier("setting", sender: self)
+        }
+        else if indexPath.row == 1
+        {
+            self.performSegueWithIdentifier("about", sender: self)
+        }
+        else if indexPath.row == 2
+        {
+            let email = "me@ivonliu.com" //Contact Us Email
+            let url = NSURL(string: "mailto:" + email)
+            UIApplication.sharedApplication().openURL(url!)
+        }
+        
+    }
     
     
     
