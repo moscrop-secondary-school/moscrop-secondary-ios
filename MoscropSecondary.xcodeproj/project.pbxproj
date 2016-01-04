@@ -27,6 +27,7 @@
 		4FE174982E7CCAB368D9FA02 /* Pods_MoscropSecondary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E264BF2F5D25F02307229AA /* Pods_MoscropSecondary.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		96B3F7511BC491F200687294 /* TeacherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3F7501BC491F200687294 /* TeacherTableViewController.swift */; };
 		96B3F7531BC5A74600687294 /* TeacherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3F7521BC5A74600687294 /* TeacherTableViewCell.swift */; };
+		96BA74FE1C3B214800AE0EB7 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA74FD1C3B214800AE0EB7 /* SettingTableViewController.swift */; };
 		96BEECDD1BCB08F10039F935 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BEECDC1BCB08F10039F935 /* MoreTableViewController.swift */; };
 		96BEECE51BCC8BB30039F935 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BEECE41BCC8BB30039F935 /* MoreTableViewCell.swift */; };
 		96FC98321BC34B4A00B35E24 /* LoadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FC98311BC34B4A00B35E24 /* LoadMoreTableViewCell.swift */; };
@@ -69,6 +70,7 @@
 		6E264BF2F5D25F02307229AA /* Pods_MoscropSecondary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoscropSecondary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B3F7501BC491F200687294 /* TeacherTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTableViewController.swift; sourceTree = "<group>"; };
 		96B3F7521BC5A74600687294 /* TeacherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTableViewCell.swift; sourceTree = "<group>"; };
+		96BA74FD1C3B214800AE0EB7 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		96BEECDC1BCB08F10039F935 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		96BEECE41BCC8BB30039F935 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 		96FC98311BC34B4A00B35E24 /* LoadMoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMoreTableViewCell.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				1448F2111BCB914200B5FDD2 /* Teachers */,
 				96BEECDC1BCB08F10039F935 /* MoreTableViewController.swift */,
 				96BEECE41BCC8BB30039F935 /* MoreTableViewCell.swift */,
+				96BA74FD1C3B214800AE0EB7 /* SettingTableViewController.swift */,
 				1450843C1BAA797200B51F48 /* Main.storyboard */,
 			);
 			name = UI;
@@ -398,6 +401,7 @@
 				96BEECE51BCC8BB30039F935 /* MoreTableViewCell.swift in Sources */,
 				147951AD1BC1085C00640AF7 /* ParseCacheHelper.swift in Sources */,
 				96FC98321BC34B4A00B35E24 /* LoadMoreTableViewCell.swift in Sources */,
+				96BA74FE1C3B214800AE0EB7 /* SettingTableViewController.swift in Sources */,
 				1448F2171BCB933E00B5FDD2 /* PostTableViewController.swift in Sources */,
 				145B3A671BAF5CD000C7C523 /* NewsCategorySelectorTableViewCell.swift in Sources */,
 				141F4B671BC35D1E00D657F6 /* ParseCategoryHelper.swift in Sources */,

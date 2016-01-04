@@ -58,7 +58,7 @@ class MoreTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0
         {
-            self.performSegueWithIdentifier("setting", sender: self)
+            self.performSegueWithIdentifier("settings", sender: self)
         }
         else if indexPath.row == 1
         {
@@ -66,8 +66,8 @@ class MoreTableViewController: UITableViewController {
         }
         else if indexPath.row == 2
         {
-            let email = "me@ivonliu.com" //Contact Us Email
-            let url = NSURL(string: "mailto:" + email)
+            let email = "moscropsecondarydev@gmail.com" //Contact Us Email
+            let url = NSURL(string: "mailto:\(email)")
             UIApplication.sharedApplication().openURL(url!)
         }
         
