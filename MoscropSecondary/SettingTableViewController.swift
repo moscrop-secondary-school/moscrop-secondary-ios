@@ -20,6 +20,7 @@ class SettingTableViewController: UITableViewController {
     var loadOnlyWifi = tableItem(header: "Load on Wifi Only", subheader: "Will only refresh when connected to WiFi");
     var themes = tableItem(header: "Theme", subheader: "Choose one of 4 themes")
     var settings: [tableItem] = []
+    var wifiChecked = true;
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +42,36 @@ class SettingTableViewController: UITableViewController {
         
         cell.headerLabel.text = settings[indexPath.row].header
         cell.subheaderLabel.text = settings[indexPath.row].subheader
+        
+        if(indexPath.row == 0){
+            if wifiChecked == false {
+                
+                cell.accessoryType = .None
+            }
+            else if wifiChecked == true {
+                
+                cell.accessoryType = .Checkmark
+            }
+        }
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row == 0){
+            if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+                if cell.accessoryType == .Checkmark
+                {
+                    cell.accessoryType = .None
+                    wifiChecked = false
+                }
+                else
+                {
+                    cell.accessoryType = .Checkmark
+                    wifiChecked = true
+                }
+            }
+        }
+    }
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
