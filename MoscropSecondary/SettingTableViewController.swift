@@ -14,15 +14,16 @@ class SettingTableViewController: UITableViewController {
         var subheader: String
         init(header: String, subheader: String){
             self.header = header;
-            self.subheader = header;
+            self.subheader = subheader;
         }
     }
     var loadOnlyWifi = tableItem(header: "Load on Wifi Only", subheader: "Will only refresh when connected to WiFi");
     var themes = tableItem(header: "Theme", subheader: "Choose one of 4 themes")
+    var settings: [tableItem] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var settings: [tableItem] = [loadOnlyWifi, themes]
+        settings = [loadOnlyWifi, themes]
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -34,19 +35,27 @@ class SettingTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("settingCell", forIndexPath: indexPath) as! SettingTableViewCell
+        
+        cell.headerLabel.text = settings[indexPath.row].header
+        cell.subheaderLabel.text = settings[indexPath.row].subheader
+        return cell
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return 2
     }
 
     /*

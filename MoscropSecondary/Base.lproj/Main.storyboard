@@ -181,29 +181,45 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="58" id="QL5-2u-VfR">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingCell" rowHeight="58" id="QL5-2u-VfR" customClass="SettingTableViewCell" customModule="MoscropSecondary" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QL5-2u-VfR" id="FCi-BF-wxT">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="header" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsA-4v-OQg">
-                                            <rect key="frame" x="16" y="8" width="524" height="21"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="subheader" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUB-Bs-IJv">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="subheader" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUB-Bs-IJv">
                                             <rect key="frame" x="16" y="28" width="476" height="21"/>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="476" id="jJu-va-KIo"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="header" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsA-4v-OQg">
+                                            <rect key="frame" x="16" y="8" width="524" height="21"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="524" id="1My-X6-qxL"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="JUB-Bs-IJv" firstAttribute="top" secondItem="FCi-BF-wxT" secondAttribute="topMargin" constant="20" id="7lo-bT-Cwh"/>
+                                        <constraint firstItem="JUB-Bs-IJv" firstAttribute="leading" secondItem="FCi-BF-wxT" secondAttribute="leadingMargin" constant="8" id="WXr-4R-V2o"/>
+                                        <constraint firstItem="CsA-4v-OQg" firstAttribute="leading" secondItem="FCi-BF-wxT" secondAttribute="leadingMargin" constant="8" id="heF-1n-I4S"/>
+                                        <constraint firstItem="CsA-4v-OQg" firstAttribute="top" secondItem="FCi-BF-wxT" secondAttribute="topMargin" id="tz4-Q6-PmZ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="headerLabel" destination="CsA-4v-OQg" id="Qqo-eH-0tf"/>
+                                    <outlet property="subheaderLabel" destination="JUB-Bs-IJv" id="aRP-qg-IJ1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
