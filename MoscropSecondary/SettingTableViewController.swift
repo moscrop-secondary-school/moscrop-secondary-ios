@@ -14,12 +14,12 @@ class SettingTableViewController: UITableViewController, UIPopoverPresentationCo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        settings = [loadOnlyWifi, themes]
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
+        if (defaults.objectForKey("WifiOnly") != nil) {
+            wifiChecked = defaults.boolForKey("WifiOnly")
+            print(wifiChecked)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,7 +29,7 @@ class SettingTableViewController: UITableViewController, UIPopoverPresentationCo
     
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-    
+        
         if(indexPath.row == 0){
     
             if wifiChecked == false {
@@ -41,11 +41,13 @@ class SettingTableViewController: UITableViewController, UIPopoverPresentationCo
                 cell.accessoryType = .Checkmark
     
             }
+            
         }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.row == 0){
+            var defaults = NSUserDefaults.standardUserDefaults()
             if let cell = tableView.cellForRowAtIndexPath(indexPath) {
                 if cell.accessoryType == .Checkmark
                 {
@@ -58,6 +60,7 @@ class SettingTableViewController: UITableViewController, UIPopoverPresentationCo
                     wifiChecked = true
                 }
             }
+            defaults.setBool(wifiChecked, forKey: "WifiOnly")
         } else if (indexPath.row == 1){
             self.performSegueWithIdentifier("popoverSegue", sender: self)
         }
