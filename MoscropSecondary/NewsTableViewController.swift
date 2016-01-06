@@ -29,7 +29,7 @@ class NewsTableViewController: PostTableViewController {
         } else {
             wifiOnly = defaults.boolForKey("WifiOnly")
         }
-        print(wifiOnly)
+        print(Utils.isConnectedToWifi());
 
     }
     func handleSwipe(sender:UISwipeGestureRecognizer){

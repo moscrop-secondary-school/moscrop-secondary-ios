@@ -37,6 +37,19 @@ class Utils {
         return status
     }
     
+    // return true if connected to WiFi, else returns false
+    class func isConnectedToWifi() -> Bool {
+        let reachability: Reachability = Reachability.reachabilityForInternetConnection()
+        let networkStatus = reachability.currentReachabilityStatus().value
+        print(networkStatus)
+        if (networkStatus == ReachableViaWiFi.value){
+            return true
+        } else {
+            return false
+        }
+        
+    }
+    
     class func getRelativeTime(date: NSDate) -> String {
 
         var timestamp = ""
