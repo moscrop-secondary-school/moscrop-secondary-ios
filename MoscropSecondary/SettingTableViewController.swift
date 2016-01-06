@@ -8,23 +8,13 @@
 
 import UIKit
 
-class SettingTableViewController: UITableViewController {
-    class tableItem {
-        var header: String
-        var subheader: String
-        init(header: String, subheader: String){
-            self.header = header;
-            self.subheader = subheader;
-        }
-    }
-    var loadOnlyWifi = tableItem(header: "Load on Wifi Only", subheader: "Will only refresh when connected to WiFi");
-    var themes = tableItem(header: "Theme", subheader: "Choose one of 4 themes")
-    var settings: [tableItem] = []
+class SettingTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
+
     var wifiChecked = true;
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        settings = [loadOnlyWifi, themes]
+//        settings = [loadOnlyWifi, themes]
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -37,23 +27,21 @@ class SettingTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("settingCell", forIndexPath: indexPath) as! SettingTableViewCell
-        
-        cell.headerLabel.text = settings[indexPath.row].header
-        cell.subheaderLabel.text = settings[indexPath.row].subheader
-        
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    
         if(indexPath.row == 0){
+    
             if wifiChecked == false {
-                
+    
                 cell.accessoryType = .None
-            }
-            else if wifiChecked == true {
-                
+    
+            } else if wifiChecked == true {
+    
                 cell.accessoryType = .Checkmark
+    
             }
         }
-        return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -70,6 +58,8 @@ class SettingTableViewController: UITableViewController {
                     wifiChecked = true
                 }
             }
+        } else if (indexPath.row == 1){
+            self.performSegueWithIdentifier("popoverSegue", sender: self)
         }
     }
     // MARK: - Table view data source
@@ -85,60 +75,15 @@ class SettingTableViewController: UITableViewController {
         // Return the number of rows in the section.
         return 2
     }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "popoverSegue" {
+            let popoverViewController = segue.destinationViewController as! UIViewController
+            popoverViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
+            popoverViewController.popoverPresentationController!.delegate = self
+        }
     }
-    */
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
+    }
 
 }
