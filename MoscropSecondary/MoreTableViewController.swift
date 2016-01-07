@@ -19,7 +19,7 @@ class MoreTableViewController: UITableViewController {
         rightSwipe.direction = .Right
         view.addGestureRecognizer(rightSwipe)
         
-//        self.tableView.tableFooterView = UIView.new()
+        self.tableView.tableFooterView = UIView.new()
     }
 
     func handleSwipe(sender:UISwipeGestureRecognizer){

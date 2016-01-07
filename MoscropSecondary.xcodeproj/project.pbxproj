@@ -33,6 +33,7 @@
 		96BEECE51BCC8BB30039F935 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BEECE41BCC8BB30039F935 /* MoreTableViewCell.swift */; };
 		96C4106C1C3DC57A00730014 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C4106B1C3DC57A00730014 /* Reachability.m */; };
 		96C410701C3EBFD400730014 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C4106F1C3EBFD400730014 /* DLRadioButton.m */; };
+		96EC79951C3ED36B0039A100 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EC79941C3ED36B0039A100 /* PopoverViewController.swift */; };
 		96FC98321BC34B4A00B35E24 /* LoadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FC98311BC34B4A00B35E24 /* LoadMoreTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		96C4106B1C3DC57A00730014 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		96C4106E1C3EBFD400730014 /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
 		96C4106F1C3EBFD400730014 /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
+		96EC79941C3ED36B0039A100 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		96FC98311BC34B4A00B35E24 /* LoadMoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMoreTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,6 +253,7 @@
 				96BEECE41BCC8BB30039F935 /* MoreTableViewCell.swift */,
 				96BA74FD1C3B214800AE0EB7 /* SettingTableViewController.swift */,
 				96BA75011C3B65B300AE0EB7 /* SettingTableViewCell.swift */,
+				96EC79941C3ED36B0039A100 /* PopoverViewController.swift */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				96BEECDD1BCB08F10039F935 /* MoreTableViewController.swift in Sources */,
 				96C410701C3EBFD400730014 /* DLRadioButton.m in Sources */,
 				1440D0321BAAAE3B0002A0CE /* RSSItem.swift in Sources */,
+				96EC79951C3ED36B0039A100 /* PopoverViewController.swift in Sources */,
 				145B3A5F1BAE48A200C7C523 /* NewsTableViewController.swift in Sources */,
 				145B3A611BAE55C400C7C523 /* Utils.swift in Sources */,
 				1448F2131BCB924700B5FDD2 /* NewsletterTableViewController.swift in Sources */,

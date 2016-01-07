@@ -19,6 +19,7 @@ class SettingTableViewController: UITableViewController, UIPopoverPresentationCo
         if (defaults.objectForKey("WifiOnly") != nil) {
             wifiChecked = defaults.boolForKey("WifiOnly")
         }
+        self.tableView.tableFooterView = UIView.new()
     }
 
     override func didReceiveMemoryWarning() {
