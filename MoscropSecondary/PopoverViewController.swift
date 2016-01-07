@@ -18,18 +18,54 @@ class PopoverViewController: UIViewController {
     
     @IBOutlet var transRadioButton: DLRadioButton!
     
-    enum ThemeType {
-        case Light
-        case Dark
-        case Black
-        case TransparentBlack
+    var defaults = NSUserDefaults.standardUserDefaults()
+    
+    var theme = ThemeType.Light.rawValue
+    
+    @IBAction func lightAction(sender: AnyObject) {
+        theme = ThemeType.Light.rawValue
+        defaults.setObject(theme, forKey: "Theme")
     }
-    var selected = ThemeType.Light
+    
+    @IBAction func darkAction(sender: AnyObject) {
+        theme = ThemeType.Dark.rawValue
+        defaults.setObject(theme, forKey: "Theme")
+    }
+    
+    
+    @IBAction func blackAction(sender: AnyObject) {
+        theme = ThemeType.Black.rawValue
+        defaults.setObject(theme, forKey: "Theme")
+    }
+    
+    @IBAction func transAction(sender: AnyObject) {
+        theme = ThemeType.TransparentBlack.rawValue
+        defaults.setObject(theme, forKey: "Theme")
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view
-        lightRadioButton.selected = true
+        
+        if (defaults.objectForKey("Theme") != nil) {
+            theme = defaults.stringForKey("Theme")!
+        }
+        switch theme {
+        case "Light":
+            lightRadioButton.selected = true
+        case "Dark":
+            darkRadioButton.selected = true
+        case "Black":
+            blackRadioButton.selected = true
+        case "Trans":
+            transRadioButton.selected = true
+        default:
+            theme = ThemeType.Light.rawValue
+            lightRadioButton.selected = true
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -145,6 +145,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="darkAction:" destination="k6f-nW-Kag" eventType="touchUpInside" id="ZXo-Ig-2Fj"/>
                                     <outletCollection property="otherButtons" destination="lWG-zE-l2t" id="C6q-Ao-boB"/>
                                     <outletCollection property="otherButtons" destination="Q4n-a2-Iz5" id="Obt-9j-zxO"/>
                                     <outletCollection property="otherButtons" destination="1qU-Xa-xTH" id="amp-TF-sdc"/>
@@ -169,6 +170,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="transAction:" destination="k6f-nW-Kag" eventType="touchUpInside" id="Kyf-ES-nHE"/>
                                     <outletCollection property="otherButtons" destination="lWG-zE-l2t" id="v7d-9a-eik"/>
                                     <outletCollection property="otherButtons" destination="yaQ-pW-h58" id="LFo-ne-RCS"/>
                                     <outletCollection property="otherButtons" destination="Q4n-a2-Iz5" id="iOH-41-xho"/>
@@ -193,6 +195,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="blackAction:" destination="k6f-nW-Kag" eventType="touchUpInside" id="Ufx-LL-mAA"/>
                                     <outletCollection property="otherButtons" destination="lWG-zE-l2t" id="LG0-jk-jfF"/>
                                     <outletCollection property="otherButtons" destination="yaQ-pW-h58" id="EzA-li-seO"/>
                                     <outletCollection property="otherButtons" destination="1qU-Xa-xTH" id="fWi-9N-nVa"/>
@@ -217,6 +220,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="lightAction:" destination="k6f-nW-Kag" eventType="touchUpInside" id="vii-nI-coJ"/>
                                     <outletCollection property="otherButtons" destination="yaQ-pW-h58" id="R5K-3p-yL8"/>
                                     <outletCollection property="otherButtons" destination="Q4n-a2-Iz5" id="cyg-zQ-0Dc"/>
                                     <outletCollection property="otherButtons" destination="1qU-Xa-xTH" id="hgn-HC-B5x"/>
