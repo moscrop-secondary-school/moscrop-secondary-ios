@@ -78,11 +78,7 @@ class PostTableViewController: UITableViewController {
             } else {
                 query.cachePolicy = .CacheOnly
             }
-            if Utils.isConnectedToNetwork() {
-                query.cachePolicy = .NetworkOnly
-            } else {
-                query.cachePolicy = .CacheOnly
-            }
+            
             query.findObjectsInBackgroundWithBlock { (list: [AnyObject]?, error: NSError?) -> Void in
                 
                 self.refresher.endRefreshing()
