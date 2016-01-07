@@ -15,37 +15,39 @@ class Utils {
         return Int64(NSDate().timeIntervalSince1970 * 1000)
     }
     
-    class func isConnectedToNetwork() -> Bool {
-        
-        var status: Bool = false
-        let url = NSURL(string:"http://google.com/")
-        let request = NSMutableURLRequest(URL: url!)
-        request.HTTPMethod = "HEAD"
-        request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData
-        request.timeoutInterval = 10.0
-        
-        var response: NSURLResponse?
-        
-        var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: nil) as NSData?
-        
-        if let httpResponse = response as? NSHTTPURLResponse {
-            if httpResponse.statusCode == 200 {
-                status = true
-            }
-        }
-        
-        return status
-    }
+//    class func isConnectedToNetwork() -> Bool {
+//        
+//        var status: Bool = false
+//        let url = NSURL(string:"http://google.com/")
+//        let request = NSMutableURLRequest(URL: url!)
+//        request.HTTPMethod = "HEAD"
+//        request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData
+//        request.timeoutInterval = 10.0
+//        
+//        var response: NSURLResponse?
+//        
+//        var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: nil) as NSData?
+//        
+//        if let httpResponse = response as? NSHTTPURLResponse {
+//            if httpResponse.statusCode == 200 {
+//                status = true
+//            }
+//        }
+//        
+//        return status
+//    }
     
-    // return true if connected to WiFi, else returns false
-    class func isConnectedToWifi() -> Bool {
+    // return 0 if no connection; return 1 if connected to WiFi; return 2 if connected to WWAN
+    class func checkConnection() -> Int {
         let reachability: Reachability = Reachability.reachabilityForInternetConnection()
         let networkStatus = reachability.currentReachabilityStatus().value
-        print(networkStatus)
+
         if (networkStatus == ReachableViaWiFi.value){
-            return true
+            return 1
+        } else if (networkStatus == ReachableViaWWAN.value){
+            return 2
         } else {
-            return false
+            return 0
         }
         
     }

@@ -26,11 +26,7 @@ class NewsTableViewController: PostTableViewController {
         var wifiOnly = true
         if (defaults.objectForKey("WifiOnly") == nil){
             defaults.setBool(wifiOnly, forKey: "WifiOnly")
-        } else {
-            wifiOnly = defaults.boolForKey("WifiOnly")
         }
-        print(Utils.isConnectedToWifi());
-
     }
     func handleSwipe(sender:UISwipeGestureRecognizer){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

@@ -18,7 +18,6 @@ class SettingTableViewController: UITableViewController, UIPopoverPresentationCo
         
         if (defaults.objectForKey("WifiOnly") != nil) {
             wifiChecked = defaults.boolForKey("WifiOnly")
-            print(wifiChecked)
         }
     }
 

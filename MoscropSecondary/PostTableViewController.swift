@@ -18,11 +18,13 @@ class PostTableViewController: UITableViewController {
     var tag = "Subscribed"  // default
     var refresher: UIRefreshControl!
     var hasMoreLoad = false
+    var wifiChecked = true
     
     func refresh() {
         println("Refresh")
         loadFeed()
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +41,15 @@ class PostTableViewController: UITableViewController {
         
         self.tableView.addSubview(refresher)
         
+        // Retrieve NSUserDefaults
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
+        if (defaults.objectForKey("WifiOnly") != nil) {
+            wifiChecked = defaults.boolForKey("WifiOnly")
+        }
+        
         refresh()
+        
     }
     
     func loadFeed(fromLoadMoreCell cell: LoadMoreTableViewCell? = nil) {   // TODO rename so it flows in English
@@ -56,6 +66,17 @@ class PostTableViewController: UITableViewController {
             query.limit = 24
             if append {
                 query.skip = self.posts.count
+            }
+            if Utils.checkConnection() == 1 {
+                query.cachePolicy = .NetworkOnly
+            } else if Utils.checkConnection() == 2 {
+                if self.wifiChecked {
+                    query.cachePolicy = .CacheOnly
+                } else {
+                    query.cachePolicy = .NetworkOnly
+                }
+            } else {
+                query.cachePolicy = .CacheOnly
             }
             if Utils.isConnectedToNetwork() {
                 query.cachePolicy = .NetworkOnly

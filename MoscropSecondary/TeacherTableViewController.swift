@@ -12,6 +12,7 @@ import Foundation
 
 class TeacherTableViewController: UITableViewController, UISearchBarDelegate {
     var teachers = [PFObject]()
+    var wifiChecked = true
     @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,14 @@ class TeacherTableViewController: UITableViewController, UISearchBarDelegate {
         rightSwipe.direction = .Right
         view.addGestureRecognizer(leftSwipe)
         view.addGestureRecognizer(rightSwipe)
+        // Retrieve NSUserDefaults
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
+        if (defaults.objectForKey("WifiOnly") != nil) {
+            wifiChecked = defaults.boolForKey("WifiOnly")
+        }
         loadTeachers()
+        
     }
     func handleSwipe(sender:UISwipeGestureRecognizer){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -56,8 +64,14 @@ class TeacherTableViewController: UITableViewController, UISearchBarDelegate {
         var query = PFQuery(className:"teachers")
         query.includeKey("Dept")
         query.orderByAscending("LastName")
-        if Utils.isConnectedToNetwork() {
+        if Utils.checkConnection() == 1 {
             query.cachePolicy = .NetworkOnly
+        } else if Utils.checkConnection() == 2 {
+            if self.wifiChecked {
+                query.cachePolicy = .CacheOnly
+            } else {
+                query.cachePolicy = .NetworkOnly
+            }
         } else {
             query.cachePolicy = .CacheOnly
         }

@@ -104,12 +104,9 @@
 		1425E15C1BB5210A004CD2A4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				96C4106D1C3E131000730014 /* More */,
 				1448F20F1BCB911300B5FDD2 /* Posts */,
 				1448F2111BCB914200B5FDD2 /* Teachers */,
-				96BEECDC1BCB08F10039F935 /* MoreTableViewController.swift */,
-				96BEECE41BCC8BB30039F935 /* MoreTableViewCell.swift */,
-				96BA74FD1C3B214800AE0EB7 /* SettingTableViewController.swift */,
-				96BA75011C3B65B300AE0EB7 /* SettingTableViewCell.swift */,
 				1450843C1BAA797200B51F48 /* Main.storyboard */,
 			);
 			name = UI;
@@ -242,6 +239,17 @@
 				6E264BF2F5D25F02307229AA /* Pods_MoscropSecondary.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96C4106D1C3E131000730014 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				96BEECDC1BCB08F10039F935 /* MoreTableViewController.swift */,
+				96BEECE41BCC8BB30039F935 /* MoreTableViewCell.swift */,
+				96BA74FD1C3B214800AE0EB7 /* SettingTableViewController.swift */,
+				96BA75011C3B65B300AE0EB7 /* SettingTableViewCell.swift */,
+			);
+			name = More;
 			sourceTree = "<group>";
 		};
 		BA3F2A4F17BCEC4D41CB09F8 /* Pods */ = {
