@@ -20,8 +20,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         Parse.setApplicationId("TtFxol5uKm6piqaomYYvaTtezhRJQFZFRadc9qit", clientKey: "ZEam7fclttpmSY1LBTa5DFwXRTlB0hfrfyzgXeD5")
+        //Configure NSUserDefaults
+        configureUserDefaults()
         
+        //Configure Theme
+        let theme = ThemeManager.currentTheme()
+        ThemeManager.applyTheme(theme)
         return true
+    }
+    
+    func configureUserDefaults() {
+        //Configure NSUserDefaults
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var wifiOnly = true
+        var theme = ThemeType.Light.rawValue
+        if (defaults.objectForKey("WifiOnly") == nil){
+            defaults.setBool(wifiOnly, forKey: "WifiOnly")
+        }
+        if (defaults.objectForKey("Theme") == nil){
+            defaults.setObject(theme, forKey: "Theme")
+        }
+        defaults.synchronize()
     }
 
     func applicationWillResignActive(application: UIApplication) {

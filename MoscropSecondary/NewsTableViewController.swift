@@ -20,18 +20,6 @@ class NewsTableViewController: PostTableViewController {
         leftSwipe.direction = .Left
 
         view.addGestureRecognizer(leftSwipe)
-        
-        //Configure NSUserDefaults
-        var defaults = NSUserDefaults.standardUserDefaults()
-        var wifiOnly = true
-        var theme = ThemeType.Light.rawValue
-        if (defaults.objectForKey("WifiOnly") == nil){
-            defaults.setBool(wifiOnly, forKey: "WifiOnly")
-        }
-        if (defaults.objectForKey("Theme") == nil){
-            defaults.setObject(theme, forKey: "Theme")
-        }
-        defaults.synchronize()
     }
     func handleSwipe(sender:UISwipeGestureRecognizer){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
