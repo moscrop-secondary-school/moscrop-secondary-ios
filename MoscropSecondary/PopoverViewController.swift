@@ -26,12 +26,14 @@ class PopoverViewController: UIViewController {
         theme = ThemeType.Light.rawValue
         defaults.setObject(theme, forKey: "Theme")
         defaults.synchronize()
+        ThemeManager.applyTheme(ThemeType(rawValue: theme)!)
     }
     
     @IBAction func darkAction(sender: AnyObject) {
         theme = ThemeType.Dark.rawValue
         defaults.setObject(theme, forKey: "Theme")
         defaults.synchronize()
+        ThemeManager.applyTheme(ThemeType(rawValue: theme)!)
     }
     
     
@@ -39,12 +41,14 @@ class PopoverViewController: UIViewController {
         theme = ThemeType.Black.rawValue
         defaults.setObject(theme, forKey: "Theme")
         defaults.synchronize()
+        ThemeManager.applyTheme(ThemeType(rawValue: theme)!)
     }
     
     @IBAction func transAction(sender: AnyObject) {
         theme = ThemeType.TransparentBlack.rawValue
         defaults.setObject(theme, forKey: "Theme")
         defaults.synchronize()
+        ThemeManager.applyTheme(ThemeType(rawValue: theme)!)
     }
     
     
