@@ -27,4 +27,30 @@ enum ThemeType : String {
         
         }
     }
+    var barStyle: UIBarStyle {
+        switch self {
+        case .Light:
+            return .Default
+        case .Dark, .TransparentBlack, .Black:
+            return .Black
+        }
+    }
+    
+    var backgroundColor: UIColor {
+        switch self {
+        case .Light:
+            return UIColor(white: 0.9, alpha: 1.0)
+        case .Dark, .Black, .TransparentBlack:
+            return UIColor(white: 0.8, alpha: 1.0)
+        }
+    }
+    
+    var secondaryColor: UIColor {
+        switch self {
+        case .Light:
+            return UIColor(red: 242.0/255.0, green: 101.0/255.0, blue: 34.0/255.0, alpha: 1.0)
+        case .Dark, .Black, .TransparentBlack:
+            return UIColor(red: 34.0/255.0, green: 128.0/255.0, blue: 66.0/255.0, alpha: 1.0)
+        }
+    }
 }
