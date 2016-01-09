@@ -92,7 +92,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Uvu-Rh-vZc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MTj-Ys-RA0">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Light" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoW-JU-E0J">
@@ -226,6 +226,16 @@
                                     <outletCollection property="otherButtons" destination="1qU-Xa-xTH" id="hgn-HC-B5x"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEo-d0-uGy">
+                                <rect key="frame" x="123" y="250" width="55" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButton:" destination="k6f-nW-Kag" eventType="touchUpInside" id="gZO-Ks-NfC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -238,10 +248,12 @@
                             <constraint firstItem="uRe-Ar-mdy" firstAttribute="leading" secondItem="MTj-Ys-RA0" secondAttribute="leadingMargin" id="XXi-6b-HVo"/>
                             <constraint firstItem="Coo-hT-5Vd" firstAttribute="top" secondItem="ekF-ff-CN4" secondAttribute="bottom" constant="21.5" id="ZId-mt-RFF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lWG-zE-l2t" secondAttribute="trailing" constant="18" id="a6u-Xk-0th"/>
+                            <constraint firstItem="Uvu-Rh-vZc" firstAttribute="top" secondItem="aEo-d0-uGy" secondAttribute="bottom" constant="10" id="beg-Ax-PIu"/>
                             <constraint firstItem="zoW-JU-E0J" firstAttribute="top" secondItem="K0i-j9-K7V" secondAttribute="bottom" constant="20" id="cs1-Zf-5eB"/>
                             <constraint firstItem="Coo-hT-5Vd" firstAttribute="leading" secondItem="MTj-Ys-RA0" secondAttribute="leadingMargin" id="emG-rd-rha"/>
                             <constraint firstItem="uRe-Ar-mdy" firstAttribute="top" secondItem="Coo-hT-5Vd" secondAttribute="bottom" constant="13.5" id="g5k-Zk-irL"/>
                             <constraint firstItem="lWG-zE-l2t" firstAttribute="top" secondItem="K0i-j9-K7V" secondAttribute="bottom" constant="16" id="gqU-Pd-Tnb"/>
+                            <constraint firstAttribute="centerX" secondItem="aEo-d0-uGy" secondAttribute="centerX" id="hYV-ON-wZN"/>
                             <constraint firstItem="Q4n-a2-Iz5" firstAttribute="top" secondItem="yaQ-pW-h58" secondAttribute="bottom" constant="17" id="i37-4P-IkF"/>
                             <constraint firstItem="zoW-JU-E0J" firstAttribute="leading" secondItem="MTj-Ys-RA0" secondAttribute="leadingMargin" id="re3-BE-Eyb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yaQ-pW-h58" secondAttribute="trailing" constant="18" id="woB-61-LPl"/>
@@ -251,7 +263,7 @@
                     <value key="contentSizeForViewInPopover" type="size" width="200" height="200"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="300" height="200"/>
+                    <size key="freeformSize" width="300" height="300"/>
                     <connections>
                         <outlet property="blackRadioButton" destination="Q4n-a2-Iz5" id="S6f-9p-6ai"/>
                         <outlet property="darkRadioButton" destination="yaQ-pW-h58" id="pEv-KE-2b0"/>

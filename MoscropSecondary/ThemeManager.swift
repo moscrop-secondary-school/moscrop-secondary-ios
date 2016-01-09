@@ -19,13 +19,9 @@ struct ThemeManager {
         
         let sharedApplication = UIApplication.sharedApplication()
         sharedApplication.delegate?.window??.tintColor = theme.mainColor
+        
         UINavigationBar.appearance().barStyle = theme.barStyle
         
         UITabBar.appearance().barStyle = theme.barStyle
-        
-        let tabIndicator = UIImage(named: "tabBarSelectionIndicator")?.imageWithRenderingMode(.AlwaysTemplate)
-        let tabResizableIndicator = tabIndicator?.resizableImageWithCapInsets(
-            UIEdgeInsets(top: 0, left: 2.0, bottom: 0, right: 2.0))
-        UITabBar.appearance().selectionIndicatorImage = tabResizableIndicator
     }
 }

@@ -23,43 +23,56 @@ class PopoverViewController: UIViewController {
     var theme = ThemeType.Light.rawValue
     
     @IBAction func lightAction(sender: AnyObject) {
-        theme = ThemeType.Light.rawValue
-        defaults.setObject(theme, forKey: "Theme")
-        defaults.synchronize()
-        ThemeManager.applyTheme(ThemeType(rawValue: theme)!)
+        updateTheme(ThemeType.Light)
+        promptRestart()
     }
     
     @IBAction func darkAction(sender: AnyObject) {
-        theme = ThemeType.Dark.rawValue
-        defaults.setObject(theme, forKey: "Theme")
-        defaults.synchronize()
-        ThemeManager.applyTheme(ThemeType(rawValue: theme)!)
+        updateTheme(ThemeType.Dark)
+        promptRestart()
     }
     
     
     @IBAction func blackAction(sender: AnyObject) {
-        theme = ThemeType.Black.rawValue
-        defaults.setObject(theme, forKey: "Theme")
-        defaults.synchronize()
-        ThemeManager.applyTheme(ThemeType(rawValue: theme)!)
+        updateTheme(ThemeType.Black)
+        promptRestart()
     }
     
     @IBAction func transAction(sender: AnyObject) {
-        theme = ThemeType.TransparentBlack.rawValue
-        defaults.setObject(theme, forKey: "Theme")
-        defaults.synchronize()
-        ThemeManager.applyTheme(ThemeType(rawValue: theme)!)
+        updateTheme(ThemeType.TransparentBlack)
+        promptRestart()
+    }
+    @IBAction func cancelButton(sender: AnyObject) {
+        self.dismissViewControllerAnimated(false, completion: nil)
     }
     
+    func updateTheme(themeType: ThemeType) {
+        theme = themeType.rawValue
+        defaults.setObject(theme, forKey: "Theme")
+        defaults.synchronize()
+    }
     
+    func promptRestart() {
+        let title = "Restart Required"
+        let message = "Please restart the application to fully update to the new selected theme!"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        
+        
+        alert.addAction(defaultAction)
+        
+        presentViewController(alert, animated: true, completion: nil)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view
         
-        if (defaults.objectForKey("Theme") != nil) {
-            theme = defaults.stringForKey("Theme")!
+        if (defaults.objectForKey("Theme") != nil){
+            theme = defaults.objectForKey("Theme") as! String
         }
+        
         switch theme {
         case "Light":
             lightRadioButton.selected = true
