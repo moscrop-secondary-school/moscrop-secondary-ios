@@ -64,9 +64,9 @@ class TeacherTableViewController: UITableViewController, UISearchBarDelegate {
         var query = PFQuery(className:"teachers")
         query.includeKey("Dept")
         query.orderByAscending("LastName")
-        if Utils.checkConnection() == 1 {
+        if Utils.checkConnection() == NetworkStatus.WiFiConnection {
             query.cachePolicy = .NetworkOnly
-        } else if Utils.checkConnection() == 2 {
+        } else if Utils.checkConnection() == NetworkStatus.WWANConnection {
             if self.wifiChecked {
                 query.cachePolicy = .CacheOnly
             } else {

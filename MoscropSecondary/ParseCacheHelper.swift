@@ -26,7 +26,7 @@ class ParseCacheHelper {
     
     class func getCachePolicyForId(id: String) -> PFCachePolicy {
         
-        if (Utils.checkConnection() == 0) {
+        if (Utils.checkConnection() == NetworkStatus.NoConnection) {
             return .CacheOnly
         }
         

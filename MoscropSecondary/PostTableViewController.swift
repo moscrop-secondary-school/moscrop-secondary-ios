@@ -67,9 +67,9 @@ class PostTableViewController: UITableViewController {
             if append {
                 query.skip = self.posts.count
             }
-            if Utils.checkConnection() == 1 {
+            if Utils.checkConnection() == NetworkStatus.WiFiConnection {
                 query.cachePolicy = .NetworkOnly
-            } else if Utils.checkConnection() == 2 {
+            } else if Utils.checkConnection() == NetworkStatus.WWANConnection {
                 if self.wifiChecked {
                     query.cachePolicy = .CacheOnly
                 } else {

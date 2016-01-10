@@ -38,16 +38,16 @@ class Utils {
 //    }
     
     // return 0 if no connection; return 1 if connected to WiFi; return 2 if connected to WWAN
-    class func checkConnection() -> Int {
+    class func checkConnection() -> NetworkStatus {
         let reachability: Reachability = Reachability.reachabilityForInternetConnection()
         let networkStatus = reachability.currentReachabilityStatus().value
 
         if (networkStatus == ReachableViaWiFi.value){
-            return 1
+            return NetworkStatus.WiFiConnection
         } else if (networkStatus == ReachableViaWWAN.value){
-            return 2
+            return NetworkStatus.WWANConnection
         } else {
-            return 0
+            return NetworkStatus.NoConnection
         }
         
     }
