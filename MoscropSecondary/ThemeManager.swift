@@ -19,9 +19,14 @@ struct ThemeManager {
         
         let sharedApplication = UIApplication.sharedApplication()
         sharedApplication.delegate?.window??.tintColor = theme.mainColor
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: theme.mainColor]
+        UINavigationBar.appearance().titleTextAttributes = titleDict as [NSObject : AnyObject]
         
-        UINavigationBar.appearance().barStyle = theme.barStyle
+        UIButton.appearance().tintColor = theme.buttonColor
         
-        UITabBar.appearance().barStyle = theme.barStyle
+        UINavigationBar.appearance().barTintColor = theme.barColor
+        UITabBar.appearance().barTintColor = theme.barColor
+        
+        
     }
 }

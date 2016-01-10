@@ -23,24 +23,25 @@ class PopoverViewController: UIViewController {
     var theme = ThemeType.Light.rawValue
     
     @IBAction func lightAction(sender: AnyObject) {
-        updateTheme(ThemeType.Light)
         promptRestart()
+        updateTheme(ThemeType.Light)
     }
     
     @IBAction func darkAction(sender: AnyObject) {
-        updateTheme(ThemeType.Dark)
         promptRestart()
+        updateTheme(ThemeType.Dark)
     }
     
     
     @IBAction func blackAction(sender: AnyObject) {
-        updateTheme(ThemeType.Black)
         promptRestart()
+        updateTheme(ThemeType.Black)
+        
     }
     
     @IBAction func transAction(sender: AnyObject) {
-        updateTheme(ThemeType.TransparentBlack)
         promptRestart()
+        updateTheme(ThemeType.TransparentBlack)
     }
     @IBAction func cancelButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(false, completion: nil)
@@ -60,6 +61,10 @@ class PopoverViewController: UIViewController {
         
         
         alert.addAction(defaultAction)
+        
+        if ThemeManager.currentTheme() == ThemeType.Black {
+            alert.view.tintColor = UIColor.blackColor();
+        }
         
         presentViewController(alert, animated: true, completion: nil)
         
