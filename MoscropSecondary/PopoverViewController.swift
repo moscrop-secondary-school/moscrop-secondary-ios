@@ -18,6 +18,7 @@ class PopoverViewController: UIViewController {
     
     @IBOutlet var transRadioButton: DLRadioButton!
     
+    @IBOutlet var cancelButton: UIButton!
     
     var theme = ThemeType.Light.rawValue
     
@@ -45,6 +46,9 @@ class PopoverViewController: UIViewController {
             theme = ThemeType.Light.rawValue
             lightRadioButton.selected = true
         }
+        
+        cancelButton.tintColor = ThemeType(rawValue: theme)!.buttonColor
+
         
     }
 

@@ -115,6 +115,7 @@
 		1425E15C1BB5210A004CD2A4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				96E582341C46CD7800C2645B /* Calendar */,
 				1448F20F1BCB911300B5FDD2 /* Posts */,
 				1448F2111BCB914200B5FDD2 /* Teachers */,
 				96C4106D1C3E131000730014 /* More */,
@@ -283,6 +284,13 @@
 				96C4106B1C3DC57A00730014 /* Reachability.m */,
 			);
 			name = Reachability;
+			sourceTree = "<group>";
+		};
+		96E582341C46CD7800C2645B /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Calendar;
 			sourceTree = "<group>";
 		};
 		BA3F2A4F17BCEC4D41CB09F8 /* Pods */ = {

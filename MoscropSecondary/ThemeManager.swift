@@ -22,7 +22,6 @@ struct ThemeManager {
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: theme.mainColor]
         UINavigationBar.appearance().titleTextAttributes = titleDict as [NSObject : AnyObject]
         
-        UIButton.appearance().tintColor = theme.buttonColor
         UINavigationBar.appearance().barTintColor = theme.barColor
         UITabBar.appearance().barTintColor = theme.barColor
 

@@ -10,6 +10,8 @@ import UIKit
 
 class NewsCategorySelectorTableViewController: UITableViewController {
 
+    @IBOutlet var cancelButton: UIBarButtonItem!
+    
     var subscribedCategories = [String]()
     var allCategories = [String]()
     var selectedCategory: String?
@@ -170,6 +172,7 @@ class NewsCategorySelectorTableViewController: UITableViewController {
             editMode = true
             navigationItem.leftBarButtonItem?.enabled = false
             sender.title = "Save"
+            cancelButton.title = "Done"
             tableView.reloadData()
         }
     }

@@ -268,6 +268,7 @@
                     <size key="freeformSize" width="300" height="300"/>
                     <connections>
                         <outlet property="blackRadioButton" destination="Q4n-a2-Iz5" id="S6f-9p-6ai"/>
+                        <outlet property="cancelButton" destination="aEo-d0-uGy" id="QVw-vo-4Jg"/>
                         <outlet property="darkRadioButton" destination="yaQ-pW-h58" id="pEv-KE-2b0"/>
                         <outlet property="lightRadioButton" destination="lWG-zE-l2t" id="QPx-H3-uyG"/>
                         <outlet property="transRadioButton" destination="1qU-Xa-xTH" id="7GL-oj-ac2"/>
@@ -530,13 +531,64 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="2015-2016" id="msV-S2-yam">
-                        <barButtonItem key="leftBarButtonItem" title="January" id="YRv-9s-XuP"/>
+                        <barButtonItem key="leftBarButtonItem" title="January" id="YRv-9s-XuP">
+                            <connections>
+                                <segue destination="UB2-zb-bZz" kind="presentation" id="xTl-Ip-6sb"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="Gv6-MG-7I8"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIs-4m-Rv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="690" y="3249"/>
+            <point key="canvasLocation" x="699" y="3255"/>
+        </scene>
+        <!--2015-2016-->
+        <scene sceneID="S7a-v9-WLt">
+            <objects>
+                <tableViewController id="IEl-GU-O5e" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xef-W5-TUc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pxV-k7-tUK">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pxV-k7-tUK" id="oak-TL-1QV">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="IEl-GU-O5e" id="eyI-x8-aLL"/>
+                            <outlet property="delegate" destination="IEl-GU-O5e" id="CET-Ik-Cfp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="2015-2016" id="gpg-BG-A97"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UK0-gy-6Bk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2052" y="3255"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nig-9g-fny">
+            <objects>
+                <navigationController id="UB2-zb-bZz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EJw-qV-75D">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="IEl-GU-O5e" kind="relationship" relationship="rootViewController" id="IT1-73-CzH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Kc-TL-kF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1379" y="3255"/>
         </scene>
         <!--Events-->
         <scene sceneID="bRj-sL-wrR">
@@ -634,7 +686,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Categories" id="1AI-3G-Lfy">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Bdk-l0-sdU">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Bdk-l0-sdU">
                             <connections>
                                 <action selector="cancel:" destination="GTb-cm-umx" id="jxO-hh-FRE"/>
                             </connections>
@@ -646,6 +698,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="Bdk-l0-sdU" id="KQW-Ca-uzd"/>
                         <segue destination="IdZ-LE-SZP" kind="unwind" identifier="unwindToPostList" unwindAction="unwindToPostList:" id="ega-uT-BpB"/>
                     </connections>
                 </tableViewController>
@@ -1033,6 +1086,6 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7Nm-5I-O9A"/>
+        <segue reference="K1Y-PD-scn"/>
     </inferredMetricsTieBreakers>
 </document>
