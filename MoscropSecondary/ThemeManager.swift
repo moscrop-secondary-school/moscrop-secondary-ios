@@ -23,10 +23,9 @@ struct ThemeManager {
         UINavigationBar.appearance().titleTextAttributes = titleDict as [NSObject : AnyObject]
         
         UIButton.appearance().tintColor = theme.buttonColor
-        
         UINavigationBar.appearance().barTintColor = theme.barColor
         UITabBar.appearance().barTintColor = theme.barColor
-        
+
         
     }
 }

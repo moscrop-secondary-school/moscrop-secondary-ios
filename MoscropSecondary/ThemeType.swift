@@ -18,7 +18,7 @@ enum ThemeType : String {
         case .Light:
             return UIColor(red: 0.0/255.0, green: 122.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         case .Dark:
-            return UIColor(red: 242.0/255.0, green: 101.0/255.0, blue: 34.0/255.0, alpha: 1.0)
+            return UIColor(red: 242.0/255.0, green: 30.0/255.0, blue: 34.0/255.0, alpha: 1.0)
         case .Black:
             return UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         
