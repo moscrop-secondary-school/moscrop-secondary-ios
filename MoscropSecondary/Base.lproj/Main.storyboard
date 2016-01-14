@@ -491,13 +491,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="drW-km-2oN" id="HTu-YT-mqQ">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uv-Os-F4F">
-                                            <rect key="frame" x="8" y="37" width="41" height="21"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOZ-4D-AFu">
                                             <rect key="frame" x="70" y="12" width="81" height="21"/>
                                             <animations/>
@@ -513,9 +506,16 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="19" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wW9-gJ-g5H">
-                                            <rect key="frame" x="13" y="8" width="30" height="26"/>
+                                            <rect key="frame" x="16" y="8" width="24" height="26"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uv-Os-F4F">
+                                            <rect key="frame" x="10" y="37" width="37" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -533,7 +533,7 @@
                     <navigationItem key="navigationItem" title="2015-2016" id="msV-S2-yam">
                         <barButtonItem key="leftBarButtonItem" title="January" id="YRv-9s-XuP">
                             <connections>
-                                <segue destination="UB2-zb-bZz" kind="presentation" id="xTl-Ip-6sb"/>
+                                <segue destination="UB2-zb-bZz" kind="presentation" id="3c8-le-3FF"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="Gv6-MG-7I8"/>
@@ -546,20 +546,36 @@
         <!--2015-2016-->
         <scene sceneID="S7a-v9-WLt">
             <objects>
-                <tableViewController id="IEl-GU-O5e" sceneMemberID="viewController">
+                <tableViewController id="IEl-GU-O5e" customClass="MonthTableViewController" customModule="MoscropSecondary" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xef-W5-TUc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pxV-k7-tUK">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="monthCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="monthCell" id="pxV-k7-tUK" customClass="MonthTableViewCell" customModule="MoscropSecondary" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pxV-k7-tUK" id="oak-TL-1QV">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="header" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wap-jW-DPh">
+                                            <rect key="frame" x="8" y="11" width="584" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="wap-jW-DPh" firstAttribute="leading" secondItem="oak-TL-1QV" secondAttribute="leadingMargin" id="Wyw-LC-Z6b"/>
+                                        <constraint firstAttribute="centerY" secondItem="wap-jW-DPh" secondAttribute="centerY" id="wlW-1g-Ru6"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="headerLabel" destination="wap-jW-DPh" id="wZE-ZE-ibd"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -567,11 +583,17 @@
                             <outlet property="delegate" destination="IEl-GU-O5e" id="CET-Ik-Cfp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="2015-2016" id="gpg-BG-A97"/>
+                    <navigationItem key="navigationItem" title="2015-2016" id="gpg-BG-A97">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="XiK-wB-3aB">
+                            <connections>
+                                <action selector="doneClicked:" destination="IEl-GU-O5e" id="7nR-kg-nSn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UK0-gy-6Bk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2052" y="3255"/>
+            <point key="canvasLocation" x="2046" y="3255"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nig-9g-fny">
