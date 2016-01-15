@@ -10,6 +10,9 @@ import UIKit
 
 class MonthTableViewController: UITableViewController {
     var months = ["September", "October", "November", "December", "January", "February", "March", "April", "May", "June", "July", "August"]
+    
+    var selectedMonth: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,8 +48,21 @@ class MonthTableViewController: UITableViewController {
         cell.headerLabel.text = months[indexPath.row]
         return cell
     }
-    @IBAction func doneClicked(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? MonthTableViewCell {
+            performSegueWithIdentifier("unwindToPostList", sender: cell)
+        }
+//        dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let selectedCell = sender as? MonthTableViewCell, selectedPath = self.tableView.indexPathForCell(selectedCell) {
+            selectedMonth = months[selectedPath.row]
+        }
+    }
+    
+    
 
 }

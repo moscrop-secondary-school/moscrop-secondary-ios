@@ -479,7 +479,7 @@
         <!--2015-2016-->
         <scene sceneID="0G7-WI-hb2">
             <objects>
-                <tableViewController id="b1Q-7g-bkW" sceneMemberID="viewController">
+                <tableViewController id="b1Q-7g-bkW" customClass="CalendarTableViewController" customModule="MoscropSecondary" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" id="CBJ-x2-eTm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -533,11 +533,14 @@
                     <navigationItem key="navigationItem" title="2015-2016" id="msV-S2-yam">
                         <barButtonItem key="leftBarButtonItem" title="January" id="YRv-9s-XuP">
                             <connections>
-                                <segue destination="UB2-zb-bZz" kind="presentation" id="3c8-le-3FF"/>
+                                <segue destination="UB2-zb-bZz" kind="presentation" identifier="month" id="3c8-le-3FF"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="Gv6-MG-7I8"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="monthButton" destination="YRv-9s-XuP" id="Njb-P0-EeS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIs-4m-Rv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -583,15 +586,13 @@
                             <outlet property="delegate" destination="IEl-GU-O5e" id="CET-Ik-Cfp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="2015-2016" id="gpg-BG-A97">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="XiK-wB-3aB">
-                            <connections>
-                                <action selector="doneClicked:" destination="IEl-GU-O5e" id="7nR-kg-nSn"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="2015-2016" id="gpg-BG-A97"/>
+                    <connections>
+                        <segue destination="eBW-NA-E76" kind="unwind" identifier="unwindToPostList" unwindAction="unwindToPostList:" id="4dE-pN-Rce"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UK0-gy-6Bk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="eBW-NA-E76" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2046" y="3255"/>
         </scene>

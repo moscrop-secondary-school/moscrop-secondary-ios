@@ -31,6 +31,7 @@
 		96B3F7531BC5A74600687294 /* TeacherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3F7521BC5A74600687294 /* TeacherTableViewCell.swift */; };
 		96B7E97F1C48510F003E7036 /* MonthTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B7E97E1C48510F003E7036 /* MonthTableViewController.swift */; };
 		96B7E9811C48514C003E7036 /* MonthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B7E9801C48514C003E7036 /* MonthTableViewCell.swift */; };
+		96B7E9831C486B96003E7036 /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B7E9821C486B96003E7036 /* CalendarTableViewController.swift */; };
 		96BA74FE1C3B214800AE0EB7 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA74FD1C3B214800AE0EB7 /* SettingTableViewController.swift */; };
 		96BA75021C3B65B300AE0EB7 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA75011C3B65B300AE0EB7 /* SettingTableViewCell.swift */; };
 		96BEECDD1BCB08F10039F935 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BEECDC1BCB08F10039F935 /* MoreTableViewController.swift */; };
@@ -83,6 +84,7 @@
 		96B3F7521BC5A74600687294 /* TeacherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTableViewCell.swift; sourceTree = "<group>"; };
 		96B7E97E1C48510F003E7036 /* MonthTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthTableViewController.swift; sourceTree = "<group>"; };
 		96B7E9801C48514C003E7036 /* MonthTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthTableViewCell.swift; sourceTree = "<group>"; };
+		96B7E9821C486B96003E7036 /* CalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
 		96BA74FD1C3B214800AE0EB7 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		96BA75011C3B65B300AE0EB7 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		96BEECDC1BCB08F10039F935 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
@@ -119,8 +121,8 @@
 		1425E15C1BB5210A004CD2A4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				96E582341C46CD7800C2645B /* Calendar */,
 				1448F20F1BCB911300B5FDD2 /* Posts */,
+				96E582341C46CD7800C2645B /* Calendar */,
 				1448F2111BCB914200B5FDD2 /* Teachers */,
 				96C4106D1C3E131000730014 /* More */,
 				1450843C1BAA797200B51F48 /* Main.storyboard */,
@@ -293,6 +295,7 @@
 		96E582341C46CD7800C2645B /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				96B7E9821C486B96003E7036 /* CalendarTableViewController.swift */,
 				96B7E97E1C48510F003E7036 /* MonthTableViewController.swift */,
 				96B7E9801C48514C003E7036 /* MonthTableViewCell.swift */,
 			);
@@ -463,6 +466,7 @@
 				96B3F7511BC491F200687294 /* TeacherTableViewController.swift in Sources */,
 				96B3F7531BC5A74600687294 /* TeacherTableViewCell.swift in Sources */,
 				145084371BAA797200B51F48 /* AppDelegate.swift in Sources */,
+				96B7E9831C486B96003E7036 /* CalendarTableViewController.swift in Sources */,
 				96BEECE51BCC8BB30039F935 /* MoreTableViewCell.swift in Sources */,
 				147951AD1BC1085C00640AF7 /* ParseCacheHelper.swift in Sources */,
 				96317B5C1C3F137900FFE593 /* ThemeType.swift in Sources */,
