@@ -134,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				145B3A601BAE55C400C7C523 /* Utils.swift */,
+				147951AC1BC1085C00640AF7 /* ParseCacheHelper.swift */,
+				141F4B661BC35D1E00D657F6 /* ParseCategoryHelper.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -212,8 +214,6 @@
 		145084331BAA797200B51F48 /* MoscropSecondary */ = {
 			isa = PBXGroup;
 			children = (
-				147951AC1BC1085C00640AF7 /* ParseCacheHelper.swift */,
-				141F4B661BC35D1E00D657F6 /* ParseCategoryHelper.swift */,
 				145084361BAA797200B51F48 /* AppDelegate.swift */,
 				1425E15E1BB52151004CD2A4 /* Models */,
 				1425E15C1BB5210A004CD2A4 /* UI */,
