@@ -33,6 +33,7 @@
 		96B7E9811C48514C003E7036 /* MonthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B7E9801C48514C003E7036 /* MonthTableViewCell.swift */; };
 		96B7E9831C486B96003E7036 /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B7E9821C486B96003E7036 /* CalendarTableViewController.swift */; };
 		96B7E9851C4993AF003E7036 /* CalendarParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B7E9841C4993AE003E7036 /* CalendarParser.swift */; };
+		96B7E9871C4ACA98003E7036 /* GCalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B7E9861C4ACA98003E7036 /* GCalEvent.swift */; };
 		96BA74FE1C3B214800AE0EB7 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA74FD1C3B214800AE0EB7 /* SettingTableViewController.swift */; };
 		96BA75021C3B65B300AE0EB7 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA75011C3B65B300AE0EB7 /* SettingTableViewCell.swift */; };
 		96BEECDD1BCB08F10039F935 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BEECDC1BCB08F10039F935 /* MoreTableViewController.swift */; };
@@ -87,6 +88,7 @@
 		96B7E9801C48514C003E7036 /* MonthTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthTableViewCell.swift; sourceTree = "<group>"; };
 		96B7E9821C486B96003E7036 /* CalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
 		96B7E9841C4993AE003E7036 /* CalendarParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarParser.swift; sourceTree = "<group>"; };
+		96B7E9861C4ACA98003E7036 /* GCalEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCalEvent.swift; sourceTree = "<group>"; };
 		96BA74FD1C3B214800AE0EB7 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		96BA75011C3B65B300AE0EB7 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		96BEECDC1BCB08F10039F935 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				96317B5B1C3F137900FFE593 /* ThemeType.swift */,
 				96317B5D1C40336200FFE593 /* ThemeManager.swift */,
 				96F9FCD01C42F77B00C242F1 /* NetworkStatus.swift */,
+				96B7E9861C4ACA98003E7036 /* GCalEvent.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				96FC98321BC34B4A00B35E24 /* LoadMoreTableViewCell.swift in Sources */,
 				96317B5E1C40336200FFE593 /* ThemeManager.swift in Sources */,
 				96F9FCD11C42F77B00C242F1 /* NetworkStatus.swift in Sources */,
+				96B7E9871C4ACA98003E7036 /* GCalEvent.swift in Sources */,
 				96BA74FE1C3B214800AE0EB7 /* SettingTableViewController.swift in Sources */,
 				1448F2171BCB933E00B5FDD2 /* PostTableViewController.swift in Sources */,
 				145B3A671BAF5CD000C7C523 /* NewsCategorySelectorTableViewCell.swift in Sources */,
