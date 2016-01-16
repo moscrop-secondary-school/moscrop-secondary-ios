@@ -11,10 +11,10 @@ class GCalEvent {
     var title: String
     var description: String
     var location: String
-    var startTime: CLong
-    var endTime: CLong
+    var startTime: Int64
+    var endTime: Int64
     
-    init (title: String, description: String, location: String, startTime: CLong, endTime: CLong) {
+    init (title: String, description: String, location: String, startTime: Int64, endTime: Int64) {
         self.title = title
         self.description = description
         self.location = location

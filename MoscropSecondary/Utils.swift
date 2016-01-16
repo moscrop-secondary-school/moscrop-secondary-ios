@@ -98,6 +98,32 @@ class Utils {
         return month
     }
     
+    class func parseRCF339Date(dateStr: String, dateOnly: Bool) -> NSDate{
+        if (dateStr.hasSuffix("Z")) {         // End in Z means no time zone
+//            SimpleDateFormat noTimeZoneFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+            let date:NSDate = dateFormatter.dateFromString(dateStr)!
+            return date
+        } else {
+            if(!dateOnly) {     // Proper RCF 3339 format with time zone
+//                SimpleDateFormat withTimeZoneFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZZZZ");
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
+                let date:NSDate = dateFormatter.dateFromString(dateStr)!
+                return date
+            } else {                        // Format uncertain, only take common substring
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+//                SimpleDateFormat shortDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                var substring: String = dateStr.substringToIndex(advance(dateStr.startIndex, 10))
+                let date:NSDate = dateFormatter.dateFromString(dateStr)!
+                return date
+            }
+        }
+        return NSDate();
+    }
+    
     class func createJsonFromString(jsonString: String) -> JSON {
         let dataFromString = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
         return JSON(data: dataFromString)

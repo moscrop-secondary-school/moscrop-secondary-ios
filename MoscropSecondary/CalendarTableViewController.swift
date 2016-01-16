@@ -18,7 +18,9 @@ class CalendarTableViewController: UITableViewController {
         var date = Utils.getDate()
         month = Utils.convertNumToMonth(date.month)
         monthButton.title = month
-        CalendarParser.parseJSONToEvent()
+        CalendarParser.parseJSON { (events) -> () in
+            print(events[0].startTime)
+        }
     }
 
     override func didReceiveMemoryWarning() {
