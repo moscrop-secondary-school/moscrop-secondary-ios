@@ -36,8 +36,8 @@ class CalendarParser {
         var title = ""
         var description = ""
         var location = ""
-        var startTime:Int64 = -1
-        var endTime:Int64 = -1
+        var startDate:NSDate = NSDate()
+        var endDate:NSDate = NSDate()
         if let itemTitle = item["summary"].string {
             title = itemTitle
         }
@@ -48,28 +48,24 @@ class CalendarParser {
             location = itemLoc
         }
         if let itemStart = item["start"]["dateTime"].string{
-            startTime = Int64(Utils.parseRCF339Date(itemStart, dateOnly: false).timeIntervalSince1970 * 1000)
+            startDate = Utils.parseRCF339Date(itemStart, dateOnly: false)
         }
         
-        if (startTime == -1) {
-            if let itemStart = item["start"]["date"].string {
-                startTime = Int64(Utils.parseRCF339Date(itemStart, dateOnly: true).timeIntervalSince1970 * 1000)
-            }
-            
+        if let itemStart = item["start"]["date"].string {
+            startDate = Utils.parseRCF339Date(itemStart, dateOnly: true)
         }
+        
         
         if let itemEnd = item["end"]["dateTime"].string{
-            endTime = Int64(Utils.parseRCF339Date(itemEnd, dateOnly: false).timeIntervalSince1970 * 1000)
+            endDate = Utils.parseRCF339Date(itemEnd, dateOnly: false)
         }
         
-        if (endTime == -1) {
-            if let itemEnd = item["end"]["date"].string{
-                endTime = Int64(Utils.parseRCF339Date(itemEnd,dateOnly: true).timeIntervalSince1970 * 1000)
-            }
+        if let itemEnd = item["end"]["date"].string{
+            endDate = Utils.parseRCF339Date(itemEnd,dateOnly: true)
+        }
             
-        }
         
-        var gEvent = GCalEvent(title: title, description: description, location: location, startTime: startTime, endTime: endTime)
+        var gEvent = GCalEvent(title: title, description: description, location: location, startDate: startDate, endDate: endDate)
         
         return gEvent
     }
