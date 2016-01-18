@@ -126,10 +126,15 @@ class Utils {
         var oneDayFuture: NSDate = addDay(startDate, amount: 1)
         var oneDayFutureComponents = dateToComponents(oneDayFuture)
         
-        if (startComponents.day == endComponents.day && startComponents.month == endComponents.month && startComponents.year == endComponents.year || oneDayFutureComponents.day == endComponents.day && oneDayFutureComponents.month == endComponents.month && oneDayFutureComponents.year == endComponents.year){
+        if (sameDay(startDate, endDate: endDate) || oneDayFutureComponents.day == endComponents.day && oneDayFutureComponents.month == endComponents.month && oneDayFutureComponents.year == endComponents.year){
             return true;
         }
         return false;
+    }
+    class func sameDay(startDate: NSDate, endDate: NSDate) -> Bool{
+        var startComponents = dateToComponents(startDate)
+        var endComponents = dateToComponents(endDate)
+        return startComponents.day == endComponents.day && startComponents.month == endComponents.month && startComponents.year == endComponents.year
     }
     
     class func addDay(date: NSDate, amount: Int) -> NSDate{

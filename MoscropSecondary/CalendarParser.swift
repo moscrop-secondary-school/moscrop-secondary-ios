@@ -26,6 +26,18 @@ class CalendarParser {
                             array.append(gEvent)
                         } else {
                             //append more gEvent because it is a multiple days event
+                            var title = gEvent.title
+                            var description = gEvent.description
+                            var location = gEvent.location
+                            var startDate:NSDate = gEvent.startDate
+                            var endDate:NSDate = gEvent.endDate
+                            
+                            while !Utils.sameDay(startDate, endDate: endDate){
+                                var newGEvent = GCalEvent(title: title, description: description, location: location, startDate: startDate, endDate: endDate)
+                                array.append(newGEvent)
+                                startDate = Utils.addDay(startDate, amount: 1)
+                            }
+                            
                         }
                         
                         
