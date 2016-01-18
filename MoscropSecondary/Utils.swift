@@ -120,6 +120,24 @@ class Utils {
         return NSDate();
     }
     
+    class func isWithinOneDay(startDate: NSDate, endDate: NSDate) -> Bool{
+        var startComponents = dateToComponents(startDate)
+        var endComponents = dateToComponents(endDate)
+        var oneDayFuture: NSDate = addDay(startDate, amount: 1)
+        var oneDayFutureComponents = dateToComponents(oneDayFuture)
+        
+        if (startComponents.day == endComponents.day && startComponents.month == endComponents.month && startComponents.year == endComponents.year || oneDayFutureComponents.day == endComponents.day && oneDayFutureComponents.month == endComponents.month && oneDayFutureComponents.year == endComponents.year){
+            return true;
+        }
+        return false;
+    }
+    
+    class func addDay(date: NSDate, amount: Int) -> NSDate{
+        let calendar = NSCalendar.currentCalendar()
+        let oneDay = calendar.dateByAddingUnit(NSCalendarUnit.CalendarUnitDay, value: amount, toDate: date, options: nil)
+        return oneDay!
+    }
+    
     
     class func createJsonFromString(jsonString: String) -> JSON {
         let dataFromString = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!

@@ -22,7 +22,13 @@ class CalendarParser {
                 if let items = json["items"] as? JSON {
                     for var index = 0; index < items.count; ++index {
                         var gEvent = self.createEvent(items[index])
-                        array.append(gEvent)
+                        if (Utils.isWithinOneDay(gEvent.startDate, endDate: gEvent.endDate)){
+                            array.append(gEvent)
+                        } else {
+                            //append more gEvent because it is a multiple days event
+                        }
+                        
+                        
                     }
                     completionHandler(events: array)
                 }

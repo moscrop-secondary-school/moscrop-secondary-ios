@@ -23,6 +23,7 @@ class CalendarTableViewController: UITableViewController {
             self.events = events;
             self.tableView.reloadData()
             print(Utils.dateToComponents(events[0].startDate))
+            print(Utils.dateToComponents(events[0].endDate))
         }
     }
 
@@ -36,6 +37,11 @@ class CalendarTableViewController: UITableViewController {
         
         cell.titleLabel.text = events[indexPath.row].title
         cell.descriptionLabel.text = events[indexPath.row].description
+        var day = String(Utils.dateToComponents(events[indexPath.row].startDate).day)
+        if (day.toInt() < 10){
+            day = "0" + day
+        }
+        cell.dayLabel.text = day
         return cell
     }
 
