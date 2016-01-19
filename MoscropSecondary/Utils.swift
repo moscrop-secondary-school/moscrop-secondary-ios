@@ -150,6 +150,37 @@ class Utils {
         return false
     }
     
+    class func dateToWeekday(date: NSDate) -> Int {
+        // Sunday = 1; Monday = 2; Tuesday = 3; Wednesday = 4; Thursday = 5; Friday = 6; Saturday = 7
+        let myCalendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+        let myComponents = myCalendar?.components(.WeekdayCalendarUnit, fromDate: date)
+        let weekDay = myComponents?.weekday
+        return weekDay!
+    }
+    
+    class func weekdayToTag(weekday: Int) -> String {
+        var str = ""
+        switch weekday{
+        case 1:
+            str = "Monday"
+        case 2:
+            str = "Tuesday"
+        case 3:
+            str = "Wednesday"
+        case 4:
+            str = "Thursday"
+        case 5:
+            str = "Friday"
+        case 6:
+            str = "Saturday"
+        case 7:
+            str = "Sunday"
+        default:
+            str = "Missing"
+        }
+        return str
+    }
+    
     
     class func createJsonFromString(jsonString: String) -> JSON {
         let dataFromString = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!

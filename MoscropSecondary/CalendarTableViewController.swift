@@ -22,8 +22,6 @@ class CalendarTableViewController: UITableViewController {
         CalendarParser.parseJSON { (events) -> () in
             self.events = events;
             self.tableView.reloadData()
-            print(Utils.dateToComponents(events[0].startDate))
-            print(Utils.dateToComponents(events[0].endDate))
         }
     }
 
@@ -42,6 +40,11 @@ class CalendarTableViewController: UITableViewController {
             day = "0" + day
         }
         cell.dayLabel.text = day
+        
+        var weekDay = Utils.weekdayToTag(Utils.dateToWeekday(events[indexPath.row].startDate))
+        var substring: String = weekDay.substringToIndex(advance(weekDay.startIndex, 3))
+        cell.weekLabel.text = substring
+        
         return cell
     }
 
