@@ -40,8 +40,14 @@ class CalendarParser {
                             
                         }
                         
-                        
                     }
+                    array.sort({ (event1: GCalEvent, event2: GCalEvent) -> Bool in
+                        if (Utils.sameDay(event1.startDate, endDate: event2.startDate)){
+                            return event1.title < event2.title
+                        } else {
+                            return Utils.isLessDate(event1.startDate, date2: event2.startDate)
+                        }
+                    })
                     completionHandler(events: array)
                 }
                 

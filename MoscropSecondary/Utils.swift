@@ -142,6 +142,13 @@ class Utils {
         let oneDay = calendar.dateByAddingUnit(NSCalendarUnit.CalendarUnitDay, value: amount, toDate: date, options: nil)
         return oneDay!
     }
+    class func isLessDate(date1: NSDate, date2: NSDate) -> Bool{
+        if date1.compare(date2) == NSComparisonResult.OrderedAscending {
+            return true
+        }
+        
+        return false
+    }
     
     
     class func createJsonFromString(jsonString: String) -> JSON {
