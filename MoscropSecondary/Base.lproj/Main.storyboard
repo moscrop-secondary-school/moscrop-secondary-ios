@@ -603,7 +603,13 @@
                             <outlet property="delegate" destination="IEl-GU-O5e" id="CET-Ik-Cfp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="2015-2016" id="gpg-BG-A97"/>
+                    <navigationItem key="navigationItem" title="2015-2016" id="gpg-BG-A97">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="KFG-1D-pbI">
+                            <connections>
+                                <action selector="cancelClick:" destination="IEl-GU-O5e" id="Kyj-nn-smZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="eBW-NA-E76" kind="unwind" identifier="unwindToPostList" unwindAction="unwindToPostList:" id="4dE-pN-Rce"/>
                     </connections>

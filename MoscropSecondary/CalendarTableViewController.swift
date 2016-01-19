@@ -18,6 +18,7 @@ class CalendarTableViewController: UITableViewController {
         super.viewDidLoad()
         var date = Utils.dateToComponents(NSDate())
         month = Utils.convertNumToMonth(date.month)
+        self.navigationItem.title = String(date.year - 1) + "-" + String(date.year)
         monthButton.title = month
         CalendarParser.parseJSON { (events) -> () in
             self.events = events;

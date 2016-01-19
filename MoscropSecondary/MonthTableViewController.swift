@@ -57,6 +57,10 @@ class MonthTableViewController: UITableViewController {
     }
     
     
+    @IBAction func cancelClick(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let selectedCell = sender as? MonthTableViewCell, selectedPath = self.tableView.indexPathForCell(selectedCell) {
             selectedMonth = months[selectedPath.row]

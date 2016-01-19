@@ -12,7 +12,7 @@ import SwiftyJSON
 class CalendarParser {
     
     class func parseJSON(completionHandler: (events: [GCalEvent]) -> ()){
-        let url = NSURL(string: "https://www.googleapis.com/calendar/v3/calendars/moscroppanthers@gmail.com/events?maxResults=1000&orderBy=startTime&singleEvents=true&key=AIzaSyDQgD1es2FQdm4xTA1tU8vFniOglwe4HsE")
+        let url = NSURL(string: "https://www.googleapis.com/calendar/v3/calendars/moscroppanthers@gmail.com/events?maxResults=100&orderBy=startTime&singleEvents=true&key=AIzaSyDQgD1es2FQdm4xTA1tU8vFniOglwe4HsE")
         var request = NSURLRequest(URL: url!)
         var session = NSURLSession.sharedSession()
         var array = [GCalEvent]()
