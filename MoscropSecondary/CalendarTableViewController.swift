@@ -13,6 +13,7 @@ class CalendarTableViewController: UITableViewController {
     @IBOutlet var monthButton: UIBarButtonItem!
     var month = "September"
     var events: [GCalEvent] = []
+    var duration = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,7 @@ class CalendarTableViewController: UITableViewController {
         var substring: String = weekDay.substringToIndex(advance(weekDay.startIndex, 3))
         cell.weekLabel.text = substring
         
-        var duration = "All Day"
+        duration = "All Day"
         var startComponents = Utils.dateToComponents(events[indexPath.row].startDate)
         var startTimeHour = startComponents.hour
         var startTimeMinute = startComponents.minute
@@ -65,6 +66,8 @@ class CalendarTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var cell = tableView.cellForRowAtIndexPath(indexPath) as! CalendarTableViewCell
         var message = ""
+        
+        message = "\nDuration: " + duration
         
         let alert = UIAlertController(title: cell.titleLabel.text, message: message, preferredStyle: .Alert)
         

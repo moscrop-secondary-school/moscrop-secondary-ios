@@ -184,9 +184,31 @@ class Utils {
     
     
     class func createDuration(startHour :Int, startMinute :Int, endHour :Int, endMinute :Int) -> String {
-        var start:String = addZeroSingleDigit(String(startHour)) + ":" + addZeroSingleDigit(String(startMinute))
-        var end:String = addZeroSingleDigit(String(endHour)) + ":" + addZeroSingleDigit(String(endMinute))
-        return start + " - " + end
+        var startTimeHour = startHour
+        var endTimeHour = endHour
+        var isAm = true
+        
+        if (startTimeHour > 12){
+            startTimeHour = startTimeHour - 12
+        }
+        if (endTimeHour > 12){
+            endTimeHour = endTimeHour - 12
+            isAm = false
+            
+        }
+        var stamp = ""
+        var start:String = addZeroSingleDigit(String(startTimeHour)) + ":" + addZeroSingleDigit(String(startMinute))
+        var end:String = addZeroSingleDigit(String(endTimeHour)) + ":" + addZeroSingleDigit(String(endMinute))
+        
+        stamp = start + " - " + end
+        
+        if (isAm){
+            stamp += " am"
+        } else {
+            stamp += " pm"
+        }
+        
+        return stamp
     }
     
     class func addZeroSingleDigit(num :String) -> String {

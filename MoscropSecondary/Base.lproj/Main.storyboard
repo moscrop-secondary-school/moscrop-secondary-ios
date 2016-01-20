@@ -505,8 +505,8 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uv-Os-F4F">
-                                            <rect key="frame" x="13" y="36.5" width="34.5" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uv-Os-F4F">
+                                            <rect key="frame" x="11" y="36" width="34.5" height="20.5"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="34.5" id="9V2-p1-yDJ"/>
@@ -515,7 +515,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Event Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocb-LO-IYd">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Event Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocb-LO-IYd">
                                             <rect key="frame" x="70" y="36" width="522" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -529,10 +529,11 @@
                                         <constraint firstItem="6uv-Os-F4F" firstAttribute="top" secondItem="wW9-gJ-g5H" secondAttribute="bottom" constant="3" id="936-YB-HYk"/>
                                         <constraint firstItem="FOZ-4D-AFu" firstAttribute="top" secondItem="HTu-YT-mqQ" secondAttribute="topMargin" constant="4" id="BuF-zh-OlF"/>
                                         <constraint firstItem="ocb-LO-IYd" firstAttribute="leading" secondItem="6uv-Os-F4F" secondAttribute="trailing" constant="22.5" id="C1g-Do-ngf"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ocb-LO-IYd" secondAttribute="bottom" constant="3.5" id="L5D-0r-mLE"/>
                                         <constraint firstItem="ocb-LO-IYd" firstAttribute="top" secondItem="FOZ-4D-AFu" secondAttribute="bottom" constant="4" id="YyL-n8-BVM"/>
                                         <constraint firstItem="wW9-gJ-g5H" firstAttribute="leading" secondItem="HTu-YT-mqQ" secondAttribute="leadingMargin" constant="8" id="a0d-zL-mah"/>
                                         <constraint firstItem="FOZ-4D-AFu" firstAttribute="leading" secondItem="wW9-gJ-g5H" secondAttribute="trailing" constant="29" id="dsX-go-HUZ"/>
-                                        <constraint firstItem="6uv-Os-F4F" firstAttribute="leading" secondItem="HTu-YT-mqQ" secondAttribute="leadingMargin" constant="5" id="ntG-Gt-Iuq"/>
+                                        <constraint firstItem="6uv-Os-F4F" firstAttribute="leading" secondItem="HTu-YT-mqQ" secondAttribute="leadingMargin" constant="3" id="ntG-Gt-Iuq"/>
                                         <constraint firstItem="FOZ-4D-AFu" firstAttribute="trailing" secondItem="HTu-YT-mqQ" secondAttribute="trailingMargin" id="w0N-bW-lRM"/>
                                     </constraints>
                                 </tableViewCellContentView>
