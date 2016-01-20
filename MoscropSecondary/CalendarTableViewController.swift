@@ -26,6 +26,8 @@ class CalendarTableViewController: UITableViewController {
             self.tableView.reloadData()
             print(Utils.dateToComponents(events[2].endDate).hour)
         }
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+        self.tableView.estimatedRowHeight = 69.0;
     }
 
     override func didReceiveMemoryWarning() {
