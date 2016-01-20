@@ -85,7 +85,20 @@ class CalendarTableViewController: UITableViewController {
         
         presentViewController(alert, animated: true, completion: nil)
     }
+    
+    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if let visibleIndexPaths = self.tableView.indexPathsForVisibleRows() as? [NSIndexPath] {
+            
+            var indexPathRow = visibleIndexPaths[0].row + 1
+            
+            if indexPathRow < 0 {
+                indexPathRow -= 1
+            }
 
+            monthButton.title = (Utils.convertNumToMonth(Utils.dateToComponents(events[indexPathRow].startDate).month))
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

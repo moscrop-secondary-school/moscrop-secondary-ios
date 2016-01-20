@@ -27,7 +27,6 @@ class Utils {
         } else {
             return NetworkStatus.NoConnection
         }
-        
     }
     
     class func getRelativeTime(date: NSDate) -> String {
