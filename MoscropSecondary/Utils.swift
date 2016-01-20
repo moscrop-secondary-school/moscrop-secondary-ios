@@ -59,7 +59,7 @@ class Utils {
     
     class func dateToComponents(date :NSDate) -> NSDateComponents {
         let calendar = NSCalendar.currentCalendar()
-        let unitFlags = NSCalendarUnit.DayCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.YearCalendarUnit
+        let unitFlags = NSCalendarUnit.DayCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond
         let components = calendar.components(unitFlags, fromDate: date) as NSDateComponents
         return components
     }
@@ -106,8 +106,9 @@ class Utils {
         } else {
             if(!dateOnly) {     // Proper RCF 3339 format with time zone
                 let dateFormatter = NSDateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
-                let date:NSDate = dateFormatter.dateFromString(dateStr)!
+                var substring = dateStr.substringToIndex(advance(dateStr.startIndex, 19))
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                let date:NSDate = dateFormatter.dateFromString(substring)!
                 return date
             } else {                        // Format uncertain, only take common substring
                 let dateFormatter = NSDateFormatter()
@@ -179,6 +180,21 @@ class Utils {
             str = "Missing"
         }
         return str
+    }
+    
+    
+    class func createDuration(startHour :Int, startMinute :Int, endHour :Int, endMinute :Int) -> String {
+        var start:String = addZeroSingleDigit(String(startHour)) + ":" + addZeroSingleDigit(String(startMinute))
+        var end:String = addZeroSingleDigit(String(endHour)) + ":" + addZeroSingleDigit(String(endMinute))
+        return start + " - " + end
+    }
+    
+    class func addZeroSingleDigit(num :String) -> String {
+        var int = num
+        if (int.toInt() < 10){
+            int = "0" + int
+        }
+        return int
     }
     
     

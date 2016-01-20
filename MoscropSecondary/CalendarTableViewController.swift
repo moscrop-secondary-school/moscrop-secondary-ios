@@ -23,6 +23,7 @@ class CalendarTableViewController: UITableViewController {
         CalendarParser.parseJSON { (events) -> () in
             self.events = events;
             self.tableView.reloadData()
+            print(Utils.dateToComponents(events[2].endDate).hour)
         }
     }
 
@@ -37,16 +38,49 @@ class CalendarTableViewController: UITableViewController {
         cell.titleLabel.text = events[indexPath.row].title
         cell.descriptionLabel.text = events[indexPath.row].description
         var day = String(Utils.dateToComponents(events[indexPath.row].startDate).day)
-        if (day.toInt() < 10){
-            day = "0" + day
-        }
+        day = Utils.addZeroSingleDigit(day)
         cell.dayLabel.text = day
         
         var weekDay = Utils.weekdayToTag(Utils.dateToWeekday(events[indexPath.row].startDate))
         var substring: String = weekDay.substringToIndex(advance(weekDay.startIndex, 3))
         cell.weekLabel.text = substring
         
+        var duration = "All Day"
+        var startComponents = Utils.dateToComponents(events[indexPath.row].startDate)
+        var startTimeHour = startComponents.hour
+        var startTimeMinute = startComponents.minute
+        var endComponents = Utils.dateToComponents(events[indexPath.row].endDate)
+        var endTimeHour = endComponents.hour
+        var endTimeMinute = endComponents.minute
+        if !(startTimeHour == 0 && startTimeMinute == 0 && endTimeHour == 0 && endTimeMinute == 0){
+            
+            
+            duration = Utils.createDuration(startTimeHour, startMinute: startTimeMinute, endHour: endTimeHour, endMinute: endTimeMinute)
+        }
+        
+        cell.descriptionLabel.text = duration
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as! CalendarTableViewCell
+        var message = ""
+        
+        let alert = UIAlertController(title: cell.titleLabel.text, message: message, preferredStyle: .Alert)
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .Default) {(action) -> Void in
+            
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
+        }
+        
+        alert.addAction(defaultAction)
+        
+        if ThemeManager.currentTheme() == ThemeType.Black {
+            alert.view.tintColor = UIColor.blackColor();
+        }
+        
+        presentViewController(alert, animated: true, completion: nil)
     }
 
     // MARK: - Table view data source
