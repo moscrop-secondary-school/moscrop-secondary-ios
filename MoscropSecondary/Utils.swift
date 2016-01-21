@@ -219,6 +219,7 @@ class Utils {
     }
     
     
+    
     class func createJsonFromString(jsonString: String) -> JSON {
         let dataFromString = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
         return JSON(data: dataFromString)

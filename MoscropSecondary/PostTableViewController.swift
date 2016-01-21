@@ -49,11 +49,8 @@ class PostTableViewController: UITableViewController {
             wifiChecked = defaults.boolForKey("WifiOnly")
         }
         
-        
-    }
-    
-    override func viewDidAppear(animated: Bool) {
         refresh()
+        
     }
     
     func loadFeed(fromLoadMoreCell cell: LoadMoreTableViewCell? = nil) {   // TODO rename so it flows in English
@@ -153,7 +150,7 @@ class PostTableViewController: UITableViewController {
         
         if (indexPath.row == posts.count) {
             
-            var cell = tableView.dequeueReusableCellWithIdentifier("LoadMore") as! LoadMoreTableViewCell
+            var cell = tableView.dequeueReusableCellWithIdentifier("LoadMore", forIndexPath: indexPath) as! LoadMoreTableViewCell
             cell.spinner.hidden = true
             if (!self.hasMoreLoad) {
                 cell.hidden = true
