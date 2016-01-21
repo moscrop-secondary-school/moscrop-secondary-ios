@@ -15,7 +15,6 @@ class CalendarTableViewController: UITableViewController {
     var day = 1
     var events: [GCalEvent] = []
     var duration = ""
-    var parsed = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,32 +79,30 @@ class CalendarTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if parsed {
-            var cell = tableView.cellForRowAtIndexPath(indexPath) as! CalendarTableViewCell
-            var message = ""
-            if (events[indexPath.row].location != ""){
-                message = "\nDuration\n " + duration + "\n\nLocation\n" + events[indexPath.row].location
-            } else {
-                message = "\nDuration\n " + duration
-            }
-            
-            
-            let alert = UIAlertController(title: cell.titleLabel.text, message: message, preferredStyle: .Alert)
-            
-            let defaultAction = UIAlertAction(title: "OK", style: .Default) {(action) -> Void in
-                
-                self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-                
-            }
-            
-            alert.addAction(defaultAction)
-            
-            if ThemeManager.currentTheme() == ThemeType.Black {
-                alert.view.tintColor = UIColor.blackColor();
-            }
-            
-            presentViewController(alert, animated: true, completion: nil)
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as! CalendarTableViewCell
+        var message = ""
+        if (events[indexPath.row].location != ""){
+            message = "\nDuration\n " + duration + "\n\nLocation\n" + events[indexPath.row].location
+        } else {
+            message = "\nDuration\n " + duration
         }
+            
+            
+        let alert = UIAlertController(title: cell.titleLabel.text, message: message, preferredStyle: .Alert)
+            
+        let defaultAction = UIAlertAction(title: "OK", style: .Default) {(action) -> Void in
+                
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                
+        }
+            
+        alert.addAction(defaultAction)
+            
+        if ThemeManager.currentTheme() == ThemeType.Black {
+            alert.view.tintColor = UIColor.blackColor();
+        }
+            
+        presentViewController(alert, animated: true, completion: nil)
         
     }
     
@@ -158,13 +155,20 @@ class CalendarTableViewController: UITableViewController {
                     return index
                 }
             }
+            return events.count - 1
         } else {
-            for var index = 0; index < events.count; ++index {
-                var components = Utils.dateToComponents(events[index].startDate)
-                if Utils.convertNumToMonth(components.month) == month && String(components.day) == day{
-                    return index
+            var fast = 0
+            while fast < events.count {
+                var eventDate = events[fast].startDate
+                if eventDate.isEqualToDate(NSDate()){
+                    return fast
                 }
+                if Utils.isLessDate(NSDate(), date2: eventDate){
+                    return fast - 1
+                }
+                fast += 1
             }
+            return events.count - 1
         }
         
         return 9
