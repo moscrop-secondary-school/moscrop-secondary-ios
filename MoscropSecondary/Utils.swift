@@ -150,6 +150,13 @@ class Utils {
         return false
     }
     
+    class func isEqualToDate(date1: NSDate, date2: NSDate) -> Bool{
+        var date1components = dateToComponents(date1)
+        var date2components = dateToComponents(date2)
+        
+        return date1components.year == date2components.year && date1components.month == date2components.month && date1components.day == date2components.day
+    }
+    
     class func dateToWeekday(date: NSDate) -> Int {
         // Sunday = 1; Monday = 2; Tuesday = 3; Wednesday = 4; Thursday = 5; Friday = 6; Saturday = 7
         let myCalendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)

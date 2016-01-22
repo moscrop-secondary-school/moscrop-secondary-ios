@@ -140,9 +140,12 @@ class CalendarTableViewController: UITableViewController {
             if month != selectedMonth {
                 month = selectedMonth
                 monthButton.title = selectedMonth
-                var indexPath = NSIndexPath(forRow: self.dateToFirstRow(self.month, day: ""), inSection: 0)
-                self.tableView.scrollToRowAtIndexPath(indexPath,
-                    atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+                if events.count > 0 {
+                    var indexPath = NSIndexPath(forRow: self.dateToFirstRow(self.month, day: ""), inSection: 0)
+                    self.tableView.scrollToRowAtIndexPath(indexPath,
+                        atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+
+                }
             }
         }
 
@@ -160,18 +163,16 @@ class CalendarTableViewController: UITableViewController {
             var fast = 0
             while fast < events.count {
                 var eventDate = events[fast].startDate
-                if eventDate.isEqualToDate(NSDate()){
+                if Utils.isEqualToDate(eventDate, date2: NSDate()){
                     return fast
-                }
-                if Utils.isLessDate(NSDate(), date2: eventDate){
-                    return fast - 1
+                } else if Utils.isLessDate(NSDate(), date2: eventDate){
+                        return fast - 1
                 }
                 fast += 1
             }
+            
             return events.count - 1
         }
-        
-        return 9
     }
     
 
