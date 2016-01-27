@@ -28,7 +28,7 @@ class MoreTableViewController: UITableViewController {
         vc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         vc.modalPresentationStyle = UIModalPresentationStyle.FullScreen
         if (sender.direction == .Right) {
-            vc.selectedIndex = 2
+            vc.selectedIndex = 3
             self.presentViewController(vc, animated: true, completion: nil)
         }
     }

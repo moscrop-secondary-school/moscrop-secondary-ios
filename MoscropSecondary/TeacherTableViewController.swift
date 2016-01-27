@@ -43,11 +43,11 @@ class TeacherTableViewController: UITableViewController, UISearchBarDelegate {
         vc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         vc.modalPresentationStyle = UIModalPresentationStyle.FullScreen
         if (sender.direction == .Left) {
-            vc.selectedIndex = 3
+            vc.selectedIndex = 4
             self.presentViewController(vc, animated: true, completion: nil)
         }
         if (sender.direction == .Right) {
-            vc.selectedIndex = 1
+            vc.selectedIndex = 2
 
             self.presentViewController(vc, animated: true, completion: nil)
         }
@@ -64,6 +64,9 @@ class TeacherTableViewController: UITableViewController, UISearchBarDelegate {
         var query = PFQuery(className:"teachers")
         query.includeKey("Dept")
         query.orderByAscending("LastName")
+        if self.searchBar.text != "" {
+            query.whereKey("searchText", containsString: self.searchBar.text.lowercaseString)
+        }
         if Utils.checkConnection() == NetworkStatus.WiFiConnection {
             query.cachePolicy = .NetworkOnly
         } else if Utils.checkConnection() == NetworkStatus.WWANConnection {
@@ -75,9 +78,7 @@ class TeacherTableViewController: UITableViewController, UISearchBarDelegate {
         } else {
             query.cachePolicy = .CacheOnly
         }
-        if self.searchBar.text != "" {
-            query.whereKey("searchText", containsString: self.searchBar.text.lowercaseString)
-        }
+        
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
         
             if error == nil {

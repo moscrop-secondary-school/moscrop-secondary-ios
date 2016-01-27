@@ -35,9 +35,31 @@ class CalendarTableViewController: UITableViewController {
             }
         }
         
+        var leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
+        leftSwipe.direction = .Left
+        var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
+        rightSwipe.direction = .Right
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
         
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 69.0;
+    }
+    
+    func handleSwipe(sender:UISwipeGestureRecognizer){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+        vc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        vc.modalPresentationStyle = UIModalPresentationStyle.FullScreen
+        if (sender.direction == .Left) {
+            vc.selectedIndex = 3
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+        if (sender.direction == .Right) {
+            vc.selectedIndex = 1
+            
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
     }
 
     
