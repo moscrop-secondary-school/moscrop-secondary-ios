@@ -65,7 +65,7 @@ class TeacherTableViewController: UITableViewController, UISearchBarDelegate {
         query.includeKey("Dept")
         query.orderByAscending("LastName")
         
-        if Utils.checkConnection() == NetworkStatus.WiFiConnection {
+        if Utils.checkConnection() == NetworkStatus.WiFiConnection && Utils.isConnectedToNetwork(){
             query.cachePolicy = .NetworkOnly
         } else if Utils.checkConnection() == NetworkStatus.WWANConnection {
             if self.wifiChecked {
