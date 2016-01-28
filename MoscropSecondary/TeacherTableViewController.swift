@@ -64,10 +64,8 @@ class TeacherTableViewController: UITableViewController, UISearchBarDelegate {
         var query = PFQuery(className:"teachers")
         query.includeKey("Dept")
         query.orderByAscending("LastName")
-        if self.searchBar.text != "" {
-            query.whereKey("searchText", containsString: self.searchBar.text.lowercaseString)
-        }
-        if Utils.checkConnection() == NetworkStatus.WiFiConnection {
+        
+        if Utils.checkConnection() == NetworkStatus.WiFiConnection && Utils.isConnectedToNetwork(){
             query.cachePolicy = .NetworkOnly
         } else if Utils.checkConnection() == NetworkStatus.WWANConnection {
             if self.wifiChecked {
@@ -77,6 +75,11 @@ class TeacherTableViewController: UITableViewController, UISearchBarDelegate {
             }
         } else {
             query.cachePolicy = .CacheOnly
+        }
+        print(query.hasCachedResult())
+        if self.searchBar.text != "" {
+            
+            query.whereKey("searchText", containsString: self.searchBar.text.lowercaseString)
         }
         
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
@@ -167,6 +170,7 @@ class TeacherTableViewController: UITableViewController, UISearchBarDelegate {
             
         
         }
+//        print(teacher["searchText"])
         
         if let dept = teacher["Department"] as? String{
             cell.fieldWorkLabel.text = dept
@@ -178,6 +182,7 @@ class TeacherTableViewController: UITableViewController, UISearchBarDelegate {
 //                                print(url)
                         }
             }
+            
                     
         if url != nil {
             
