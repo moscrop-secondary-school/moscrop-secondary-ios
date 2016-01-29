@@ -27,6 +27,8 @@
 		4FE174982E7CCAB368D9FA02 /* Pods_MoscropSecondary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E264BF2F5D25F02307229AA /* Pods_MoscropSecondary.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		96317B5C1C3F137900FFE593 /* ThemeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96317B5B1C3F137900FFE593 /* ThemeType.swift */; };
 		96317B5E1C40336200FFE593 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96317B5D1C40336200FFE593 /* ThemeManager.swift */; };
+		965F4B801C5C14AB0052A95E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965F4B7F1C5C14AB0052A95E /* CoreData.framework */; };
+		965F4B831C5C151F0052A95E /* CoreDataTutorial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 965F4B811C5C151F0052A95E /* CoreDataTutorial.xcdatamodeld */; };
 		96B3F7511BC491F200687294 /* TeacherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3F7501BC491F200687294 /* TeacherTableViewController.swift */; };
 		96B3F7531BC5A74600687294 /* TeacherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3F7521BC5A74600687294 /* TeacherTableViewCell.swift */; };
 		96B7E97F1C48510F003E7036 /* MonthTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B7E97E1C48510F003E7036 /* MonthTableViewController.swift */; };
@@ -83,6 +85,8 @@
 		6E264BF2F5D25F02307229AA /* Pods_MoscropSecondary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoscropSecondary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96317B5B1C3F137900FFE593 /* ThemeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeType.swift; sourceTree = "<group>"; };
 		96317B5D1C40336200FFE593 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		965F4B7F1C5C14AB0052A95E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		965F4B821C5C151F0052A95E /* CoreDataTutorial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataTutorial.xcdatamodel; sourceTree = "<group>"; };
 		96B3F7501BC491F200687294 /* TeacherTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTableViewController.swift; sourceTree = "<group>"; };
 		96B3F7521BC5A74600687294 /* TeacherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTableViewCell.swift; sourceTree = "<group>"; };
 		96B7E97E1C48510F003E7036 /* MonthTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthTableViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				965F4B801C5C14AB0052A95E /* CoreData.framework in Frameworks */,
 				4FE174982E7CCAB368D9FA02 /* Pods_MoscropSecondary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,6 +233,7 @@
 				1425E15D1BB52140004CD2A4 /* Utils */,
 				1450843F1BAA797200B51F48 /* Images.xcassets */,
 				145084411BAA797200B51F48 /* LaunchScreen.xib */,
+				965F4B811C5C151F0052A95E /* CoreDataTutorial.xcdatamodeld */,
 				145084341BAA797200B51F48 /* Supporting Files */,
 			);
 			path = MoscropSecondary;
@@ -265,6 +271,7 @@
 		2B415F4217F8F4E4FD4A848A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				965F4B7F1C5C14AB0052A95E /* CoreData.framework */,
 				6E264BF2F5D25F02307229AA /* Pods_MoscropSecondary.framework */,
 			);
 			name = Frameworks;
@@ -367,6 +374,7 @@
 		145084291BAA797100B51F48 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Ivon Liu";
 				TargetAttributes = {
@@ -484,6 +492,7 @@
 				96317B5E1C40336200FFE593 /* ThemeManager.swift in Sources */,
 				96F9FCD11C42F77B00C242F1 /* NetworkStatus.swift in Sources */,
 				96B7E9891C4AF418003E7036 /* CalendarTableViewCell.swift in Sources */,
+				965F4B831C5C151F0052A95E /* CoreDataTutorial.xcdatamodeld in Sources */,
 				96B7E9871C4ACA98003E7036 /* GCalEvent.swift in Sources */,
 				96BA74FE1C3B214800AE0EB7 /* SettingTableViewController.swift in Sources */,
 				1448F2171BCB933E00B5FDD2 /* PostTableViewController.swift in Sources */,
@@ -720,6 +729,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		965F4B811C5C151F0052A95E /* CoreDataTutorial.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				965F4B821C5C151F0052A95E /* CoreDataTutorial.xcdatamodel */,
+			);
+			currentVersion = 965F4B821C5C151F0052A95E /* CoreDataTutorial.xcdatamodel */;
+			name = CoreDataTutorial.xcdatamodeld;
+			path = ../../CoreDataTutorial/CoreDataTutorial/CoreDataTutorial.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 145084291BAA797100B51F48 /* Project object */;
 }

@@ -4,3 +4,4 @@
 
 #import "Reachability.h"
 #import "DLRadioButton.h"
+#import <CoreData/CoreData.h>
