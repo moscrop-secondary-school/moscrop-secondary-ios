@@ -26,6 +26,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Configure Theme
         let theme = ThemeManager.currentTheme()
         ThemeManager.applyTheme(theme)
+        
+        CalendarParser.parseJSON { (events) -> () in
+//            self.events = events;
+            //            self.tableView.reloadData()
+            //print(Utils.dateToComponents(events[2].endDate).hour)
+//            dispatch_async(dispatch_get_main_queue()) {
+//                self.tableView.reloadData()
+//                var indexPath = NSIndexPath(forRow: self.dateToFirstRow(self.month, day: String(self.day)), inSection: 0)
+//                self.tableView.scrollToRowAtIndexPath(indexPath,
+//                    atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+//            }
+        }
+        
         return true
     }
     

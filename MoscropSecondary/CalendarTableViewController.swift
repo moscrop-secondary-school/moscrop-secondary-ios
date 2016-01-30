@@ -23,17 +23,47 @@ class CalendarTableViewController: UITableViewController {
         day = date.day
         self.navigationItem.title = String(date.year - 1) + "-" + String(date.year)
         monthButton.title = month
-        CalendarParser.parseJSON { (events) -> () in
-            self.events = events;
-//            self.tableView.reloadData()
-            print(Utils.dateToComponents(events[2].endDate).hour)
-            dispatch_async(dispatch_get_main_queue()) {
-                self.tableView.reloadData()
-                var indexPath = NSIndexPath(forRow: self.dateToFirstRow(self.month, day: String(self.day)), inSection: 0)
-                self.tableView.scrollToRowAtIndexPath(indexPath,
-                    atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+//        CalendarParser.parseJSON { (events) -> () in
+//            self.events = events;
+////            self.tableView.reloadData()
+//            print(Utils.dateToComponents(events[2].endDate).hour)
+//            dispatch_async(dispatch_get_main_queue()) {
+//                self.tableView.reloadData()
+//                var indexPath = NSIndexPath(forRow: self.dateToFirstRow(self.month, day: String(self.day)), inSection: 0)
+//                self.tableView.scrollToRowAtIndexPath(indexPath,
+//                    atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+//            }
+//        }
+        
+        //1
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        var error: NSError?
+        let fetchRequest = NSFetchRequest(entityName: "CalendarEvent")
+        let fetchResults = managedContext!.executeFetchRequest(fetchRequest, error: &error)
+        
+        if let CalEvents = fetchResults{
+    
+            for CalEvent in CalEvents {
+                var title:String = CalEvent.valueForKey("title") as! String
+                var desc:String = CalEvent.valueForKey("desc") as! String
+                var location:String = CalEvent.valueForKey("location") as! String
+                var startDate:NSDate = CalEvent.valueForKey("startDate") as! NSDate
+                var endDate:NSDate = CalEvent.valueForKey("endDate") as! NSDate
+                events.append(GCalEvent(title: title, description: desc, location: location, startDate: startDate, endDate: endDate))
             }
+            
+        }else{
+            println("Could not fetch \(error), \(error!.userInfo)")
         }
+        
+        self.tableView.reloadData()
+        var indexPath = NSIndexPath(forRow: self.dateToFirstRow(self.month, day: String(self.day)), inSection: 0)
+        self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
         
         var leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
         leftSwipe.direction = .Left
@@ -45,6 +75,7 @@ class CalendarTableViewController: UITableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 69.0;
     }
+    
     
     func handleSwipe(sender:UISwipeGestureRecognizer){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
