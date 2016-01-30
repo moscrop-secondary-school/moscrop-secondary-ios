@@ -47,23 +47,36 @@ class CalendarTableViewController: UITableViewController {
         let fetchResults = managedContext!.executeFetchRequest(fetchRequest, error: &error)
         
         if let CalEvents = fetchResults{
-    
-            for CalEvent in CalEvents {
-                var title:String = CalEvent.valueForKey("title") as! String
-                var desc:String = CalEvent.valueForKey("desc") as! String
-                var location:String = CalEvent.valueForKey("location") as! String
-                var startDate:NSDate = CalEvent.valueForKey("startDate") as! NSDate
-                var endDate:NSDate = CalEvent.valueForKey("endDate") as! NSDate
-                events.append(GCalEvent(title: title, description: desc, location: location, startDate: startDate, endDate: endDate))
+            if CalEvents.count > 0 {
+                for CalEvent in CalEvents {
+                    var title:String = CalEvent.valueForKey("title") as! String
+                    var desc:String = CalEvent.valueForKey("desc") as! String
+                    var location:String = CalEvent.valueForKey("location") as! String
+                    var startDate:NSDate = CalEvent.valueForKey("startDate") as! NSDate
+                    var endDate:NSDate = CalEvent.valueForKey("endDate") as! NSDate
+                    events.append(GCalEvent(title: title, description: desc, location: location, startDate: startDate, endDate: endDate))
+                }
+                events.sort({ (event1: GCalEvent, event2: GCalEvent) -> Bool in
+                    if (Utils.sameDay(event1.startDate, endDate: event2.startDate)){
+                        return event1.title < event2.title
+                    } else {
+                        return Utils.isLessDate(event1.startDate, date2: event2.startDate)
+                    }
+                })
+                
+                var indexPath = NSIndexPath(forRow: self.dateToFirstRow(self.month, day: String(self.day)), inSection: 0)
+                self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
             }
             
         }else{
             println("Could not fetch \(error), \(error!.userInfo)")
         }
         
+
+        
+        
         self.tableView.reloadData()
-        var indexPath = NSIndexPath(forRow: self.dateToFirstRow(self.month, day: String(self.day)), inSection: 0)
-        self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+        
         
         var leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
         leftSwipe.direction = .Left

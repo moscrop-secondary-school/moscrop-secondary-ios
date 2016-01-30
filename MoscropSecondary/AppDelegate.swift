@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import Bolts
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,17 +28,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let theme = ThemeManager.currentTheme()
         ThemeManager.applyTheme(theme)
         
-        CalendarParser.parseJSON { (events) -> () in
-//            self.events = events;
-            //            self.tableView.reloadData()
-            //print(Utils.dateToComponents(events[2].endDate).hour)
-//            dispatch_async(dispatch_get_main_queue()) {
-//                self.tableView.reloadData()
-//                var indexPath = NSIndexPath(forRow: self.dateToFirstRow(self.month, day: String(self.day)), inSection: 0)
-//                self.tableView.scrollToRowAtIndexPath(indexPath,
-//                    atScrollPosition: UITableViewScrollPosition.Top, animated: false)
-//            }
+        // Retrieve NSUserDefaults
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
+        var wifiChecked = true
+        
+        if (defaults.objectForKey("WifiOnly") != nil) {
+            wifiChecked = defaults.boolForKey("WifiOnly")
         }
+        if Utils.checkConnection() == NetworkStatus.WiFiConnection && Utils.isConnectedToNetwork() {
+            clearEntity()
+            CalendarParser.parseJSON { (events) -> () in
+                
+            }
+        }
+        if Utils.checkConnection() == NetworkStatus.WWANConnection {
+            if !wifiChecked {
+                clearEntity()
+                CalendarParser.parseJSON { (events) -> () in
+                    
+                }
+            }
+        }
+
+        
         
         return true
     }
@@ -54,6 +68,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             defaults.setObject(theme, forKey: "Theme")
         }
         defaults.synchronize()
+    }
+    
+    func clearEntity() {
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let request = NSFetchRequest(entityName: "CalendarEvent")
+        
+        var myList = managedContext!.executeFetchRequest(request, error: nil) as! [NSManagedObject]
+        
+        
+        var bas: NSManagedObject!
+        for bas in myList {
+            managedContext!.deleteObject(bas as NSManagedObject)
+        }
+            
+        myList.removeAll(keepCapacity: false)
+            
+        managedContext!.save(nil)
+
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
