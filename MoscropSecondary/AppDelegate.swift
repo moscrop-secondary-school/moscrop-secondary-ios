@@ -36,23 +36,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (defaults.objectForKey("WifiOnly") != nil) {
             wifiChecked = defaults.boolForKey("WifiOnly")
         }
-        if Utils.checkConnection() == NetworkStatus.WiFiConnection && Utils.isConnectedToNetwork() {
+        if (Utils.checkConnection() == NetworkStatus.WiFiConnection && Utils.isConnectedToNetwork()) || (Utils.checkConnection() == NetworkStatus.WWANConnection && Utils.isConnectedToNetwork() && !wifiChecked){
+            
             clearEntity()
-            CalendarParser.parseJSON { (events) -> () in
-                
-            }
-        }
-        if Utils.checkConnection() == NetworkStatus.WWANConnection {
-            if !wifiChecked {
-                clearEntity()
-                CalendarParser.parseJSON { (events) -> () in
-                    
-                }
-            }
+            CalendarParser.parseJSON()
         }
 
-        
-        
         return true
     }
     

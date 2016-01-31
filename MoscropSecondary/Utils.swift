@@ -246,6 +246,15 @@ class Utils {
         return int
     }
     
+    class func currentBegSchoolYear() -> Int {
+        var date = NSDate()
+        var components = dateToComponents(date)
+        if (components.month >= 9 && components.month <= 12){
+            return components.year
+        } else {
+            return components.year - 1
+        }
+    }
     
     
     class func createJsonFromString(jsonString: String) -> JSON {

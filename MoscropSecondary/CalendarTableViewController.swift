@@ -14,34 +14,21 @@ class CalendarTableViewController: UITableViewController {
     var month = "September"
     var day = 1
     var events: [GCalEvent] = []
-    var duration = ""
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         var date = Utils.dateToComponents(NSDate())
         month = Utils.convertNumToMonth(date.month)
         day = date.day
-        self.navigationItem.title = String(date.year - 1) + "-" + String(date.year)
+        self.navigationItem.title = String(Utils.currentBegSchoolYear()) + "-" + String(Utils.currentBegSchoolYear() + 1)
         monthButton.title = month
-//        CalendarParser.parseJSON { (events) -> () in
-//            self.events = events;
-////            self.tableView.reloadData()
-//            print(Utils.dateToComponents(events[2].endDate).hour)
-//            dispatch_async(dispatch_get_main_queue()) {
-//                self.tableView.reloadData()
-//                var indexPath = NSIndexPath(forRow: self.dateToFirstRow(self.month, day: String(self.day)), inSection: 0)
-//                self.tableView.scrollToRowAtIndexPath(indexPath,
-//                    atScrollPosition: UITableViewScrollPosition.Top, animated: false)
-//            }
-//        }
         
-        //1
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
         
-        //2
+        
         var error: NSError?
         let fetchRequest = NSFetchRequest(entityName: "CalendarEvent")
         let fetchResults = managedContext!.executeFetchRequest(fetchRequest, error: &error)
@@ -126,7 +113,7 @@ class CalendarTableViewController: UITableViewController {
         var weekDay = Utils.weekdayToTag(Utils.dateToWeekday(events[indexPath.row].startDate))
         var substring: String = weekDay.substringToIndex(advance(weekDay.startIndex, 3))
         cell.weekLabel.text = substring
-        
+        var duration = ""
         duration = "All Day"
         var startComponents = Utils.dateToComponents(events[indexPath.row].startDate)
         var startTimeHour = startComponents.hour
@@ -147,6 +134,19 @@ class CalendarTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var cell = tableView.cellForRowAtIndexPath(indexPath) as! CalendarTableViewCell
         var message = ""
+        var duration = "All Day"
+        var startComponents = Utils.dateToComponents(events[indexPath.row].startDate)
+        var startTimeHour = startComponents.hour
+        var startTimeMinute = startComponents.minute
+        var endComponents = Utils.dateToComponents(events[indexPath.row].endDate)
+        var endTimeHour = endComponents.hour
+        var endTimeMinute = endComponents.minute
+        if !(startTimeHour == 0 && startTimeMinute == 0 && endTimeHour == 0 && endTimeMinute == 0){
+            
+            
+            duration = Utils.createDuration(startTimeHour, startMinute: startTimeMinute, endHour: endTimeHour, endMinute: endTimeMinute)
+        }
+        
         if (events[indexPath.row].location != ""){
             message = "\nDuration\n " + duration + "\n\nLocation\n" + events[indexPath.row].location
         } else {

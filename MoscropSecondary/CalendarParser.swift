@@ -13,8 +13,9 @@ import CoreData
 
 class CalendarParser {
     
-    class func parseJSON(completionHandler: (events: [GCalEvent]) -> ()){
-        let url = NSURL(string: "https://www.googleapis.com/calendar/v3/calendars/moscroppanthers@gmail.com/events?maxResults=1000&orderBy=startTime&singleEvents=true&timeMin=2015-09-01T00:00:00.000Z&key=AIzaSyDQgD1es2FQdm4xTA1tU8vFniOglwe4HsE")
+    class func parseJSON(){
+        var begSchoolYear = String(Utils.currentBegSchoolYear())
+        let url = NSURL(string: "https://www.googleapis.com/calendar/v3/calendars/moscroppanthers@gmail.com/events?maxResults=1000&orderBy=startTime&singleEvents=true&timeMin=" + begSchoolYear+"-09-01T00:00:00.000Z&key=AIzaSyDQgD1es2FQdm4xTA1tU8vFniOglwe4HsE")
         var request = NSURLRequest(URL: url!)
         var session = NSURLSession.sharedSession()
         var array = [GCalEvent]()
