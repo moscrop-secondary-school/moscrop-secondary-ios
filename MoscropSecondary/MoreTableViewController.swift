@@ -10,7 +10,7 @@ import UIKit
 
 class MoreTableViewController: UITableViewController {
     
-    var more = ["Settings", "About", "Contact Us"]
+    var more = ["Settings", "Contact Us"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,10 +61,6 @@ class MoreTableViewController: UITableViewController {
             self.performSegueWithIdentifier("settings", sender: self)
         }
         else if indexPath.row == 1
-        {
-            self.performSegueWithIdentifier("about", sender: self)
-        }
-        else if indexPath.row == 2
         {
             let email = "moscropsecondarydev@gmail.com" //Contact Us Email
             let url = NSURL(string: "mailto:\(email)")
