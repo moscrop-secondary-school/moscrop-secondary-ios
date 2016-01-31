@@ -29,12 +29,7 @@ class PostTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
+        // Pull to refresh
         refresher = UIRefreshControl()
         refresher.attributedTitle = NSAttributedString(string: "Pull to Refresh")
         refresher.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
@@ -53,6 +48,7 @@ class PostTableViewController: UITableViewController {
         
     }
     
+    // load feeds from parse
     func loadFeed(fromLoadMoreCell cell: LoadMoreTableViewCell? = nil) {   // TODO rename so it flows in English
         
         let append = cell != nil
@@ -144,9 +140,8 @@ class PostTableViewController: UITableViewController {
         }
     }
     
+    // Display cells according to indexPath
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        
         
         if (indexPath.row == posts.count) {
             

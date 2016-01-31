@@ -17,14 +17,17 @@ class CalendarTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Uses current date to calculate the beginning school year and update the navigation item
         var date = Utils.dateToComponents(NSDate())
         month = Utils.convertNumToMonth(date.month)
         day = date.day
         self.navigationItem.title = String(Utils.currentBegSchoolYear()) + "-" + String(Utils.currentBegSchoolYear() + 1)
+        
+        // Set the Month Button to current month
         monthButton.title = month
         
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
+        // Retrieves calendar events from Core Data
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
         
@@ -41,8 +44,10 @@ class CalendarTableViewController: UITableViewController {
                     var location:String = CalEvent.valueForKey("location") as! String
                     var startDate:NSDate = CalEvent.valueForKey("startDate") as! NSDate
                     var endDate:NSDate = CalEvent.valueForKey("endDate") as! NSDate
+                    // append them to events as GCalEvent
                     events.append(GCalEvent(title: title, description: desc, location: location, startDate: startDate, endDate: endDate))
                 }
+                // Sort the events array so that it displays first in ascending of date, then in ascending of title
                 events.sort({ (event1: GCalEvent, event2: GCalEvent) -> Bool in
                     if (Utils.sameDay(event1.startDate, endDate: event2.startDate)){
                         return event1.title < event2.title
@@ -51,6 +56,7 @@ class CalendarTableViewController: UITableViewController {
                     }
                 })
                 
+                // Scrolls to first index based on current date
                 var indexPath = NSIndexPath(forRow: self.dateToFirstRow(self.month, day: String(self.day)), inSection: 0)
                 self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
             }
@@ -65,6 +71,7 @@ class CalendarTableViewController: UITableViewController {
         self.tableView.reloadData()
         
         
+        // Swipe GestureRecognizer
         var leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
         leftSwipe.direction = .Left
         var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
@@ -72,6 +79,7 @@ class CalendarTableViewController: UITableViewController {
         view.addGestureRecognizer(leftSwipe)
         view.addGestureRecognizer(rightSwipe)
         
+        // Dynamic Cell Height
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 69.0;
     }
@@ -99,6 +107,7 @@ class CalendarTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Displays cell according to the indexPath the cell is on
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("calendar", forIndexPath: indexPath) as! CalendarTableViewCell
@@ -121,8 +130,8 @@ class CalendarTableViewController: UITableViewController {
         var endComponents = Utils.dateToComponents(events[indexPath.row].endDate)
         var endTimeHour = endComponents.hour
         var endTimeMinute = endComponents.minute
+        // Calculate duration for descriptionLabel
         if !(startTimeHour == 0 && startTimeMinute == 0 && endTimeHour == 0 && endTimeMinute == 0){
-            
             
             duration = Utils.createDuration(startTimeHour, startMinute: startTimeMinute, endHour: endTimeHour, endMinute: endTimeMinute)
         }
@@ -172,6 +181,7 @@ class CalendarTableViewController: UITableViewController {
         
     }
     
+    // When scroll ended, monthButton is updated
     override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if let visibleIndexPaths = self.tableView.indexPathsForVisibleRows() as? [NSIndexPath] {
             if visibleIndexPaths.count > 0 {
@@ -217,6 +227,7 @@ class CalendarTableViewController: UITableViewController {
 
     }
     
+    // first row is always either on the first date that matches the current date or the one slightly less than the current date
     func dateToFirstRow(month: String, day: String) -> Int{
         if day == "" {
             for var index = 0; index < events.count; ++index {
@@ -229,7 +240,7 @@ class CalendarTableViewController: UITableViewController {
             var fast = 0
             while fast < events.count {
                 var eventDate = events[fast].startDate
-                if Utils.isEqualToDate(eventDate, date2: NSDate()){
+                if Utils.sameDay(eventDate, endDate: NSDate()){
                     return fast
                 } else if Utils.isLessDate(NSDate(), date2: eventDate){
                         return fast - 1

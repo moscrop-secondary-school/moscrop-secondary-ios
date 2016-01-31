@@ -14,12 +14,14 @@ class SettingTableViewController: UITableViewController, UIPopoverPresentationCo
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Retrieves NSUserDefault for WifiOnly
         var defaults = NSUserDefaults.standardUserDefaults()
         
         if (defaults.objectForKey("WifiOnly") != nil) {
             wifiChecked = defaults.boolForKey("WifiOnly")
         }
         
+        // Gesture Recognizer
         var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
         rightSwipe.direction = .Right
         view.addGestureRecognizer(rightSwipe)
@@ -47,6 +49,7 @@ class SettingTableViewController: UITableViewController, UIPopoverPresentationCo
     }
     
     
+    // Displays the checkmark of the cell when wifiChecked is true
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
         if(indexPath.row == 0){

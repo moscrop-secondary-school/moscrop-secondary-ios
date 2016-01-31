@@ -13,8 +13,10 @@ import CoreData
 
 class CalendarParser {
     
+    // parse JSON from gogoel api
     class func parseJSON(){
         var begSchoolYear = String(Utils.currentBegSchoolYear())
+        // Dynamically genereates url according to school year
         let url = NSURL(string: "https://www.googleapis.com/calendar/v3/calendars/moscroppanthers@gmail.com/events?maxResults=1000&orderBy=startTime&singleEvents=true&timeMin=" + begSchoolYear+"-09-01T00:00:00.000Z&key=AIzaSyDQgD1es2FQdm4xTA1tU8vFniOglwe4HsE")
         var request = NSURLRequest(URL: url!)
         var session = NSURLSession.sharedSession()
@@ -25,10 +27,12 @@ class CalendarParser {
             if (error == nil){
                 if let items = json["items"] as? JSON {
                     for var index = 0; index < items.count; ++index {
+                        
+                        // creates a temp GCalEvent to store data
                         var gEvent = self.createEvent(items[index])
                         
                         if (Utils.isWithinOneDay(gEvent.startDate, endDate: gEvent.endDate)){
-//                            array.append(gEvent)
+
                             var title = gEvent.title
                             var description = gEvent.description
                             var location = gEvent.location
@@ -44,9 +48,6 @@ class CalendarParser {
                             var startDate = gEvent.startDate
                             var endDate = gEvent.endDate
                             while !Utils.sameDay(startDate, endDate: endDate){
-                                
-                                var newGEvent = GCalEvent(title: title, description: description, location: location, startDate: startDate, endDate: endDate)
-//                                array.append(newGEvent)
                                 self.saveEvent(title, desc: description, location: location, startDate: startDate, endDate: endDate)
                                 startDate = Utils.addDay(startDate, amount: 1)
                             }
@@ -61,6 +62,7 @@ class CalendarParser {
         task.resume()
     }
     
+    // Saves event to Core Data
     class func saveEvent(name: String, desc: String, location: String, startDate: NSDate, endDate: NSDate) {
         
         let appDelegate =
@@ -90,6 +92,7 @@ class CalendarParser {
         }
     }
     
+    // Create GCalEvent
     class func createEvent(item: JSON) -> GCalEvent{
         var title = ""
         var description = ""

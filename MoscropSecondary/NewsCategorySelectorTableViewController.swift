@@ -20,16 +20,12 @@ class NewsCategorySelectorTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         loadCategories()
     }
     
+    
+    // populates the array with subscribed categories/ all categories
     func loadCategories() {
         subscribedCategories.removeAll(keepCapacity: false)
         subscribedCategories = ["Subscribed", "All"]
@@ -62,7 +58,8 @@ class NewsCategorySelectorTableViewController: UITableViewController {
             return subscribedCategories.count
         }
     }
-
+    
+    // Set text of cells
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("categorySelectorCell", forIndexPath: indexPath) as! NewsCategorySelectorTableViewCell
 

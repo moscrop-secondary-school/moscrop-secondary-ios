@@ -13,6 +13,7 @@ enum ThemeType : String {
     case Black = "Black"
     case TransparentBlack = "Trans"
     
+    // Main Color
     var mainColor: UIColor {
         switch self {
         case .Light:
@@ -27,6 +28,8 @@ enum ThemeType : String {
         
         }
     }
+    
+    // Bar Color
     var barColor: UIColor {
         switch self {
         case .Light:
@@ -39,12 +42,13 @@ enum ThemeType : String {
             return UIColor(red: 10.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 0.01)
         }
     }
+    // Button Color
     var buttonColor: UIColor {
         switch self {
         case .Light:
             return UIColor(red: 0.0/255.0, green: 122.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         case .Dark:
-            return UIColor(red: 242.0/255.0, green: 101.0/255.0, blue: 34.0/255.0, alpha: 1.0)
+            return UIColor(red: 100.0/255.0, green: 30.0/255.0, blue: 34.0/255.0, alpha: 1.0)
         case .Black:
             return UIColor(red: 10.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
             

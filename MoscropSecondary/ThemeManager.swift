@@ -8,13 +8,16 @@
 
 import UIKit
 struct ThemeManager {
+    // Retrieves current theme from NSUserDefaults
     static func currentTheme() -> ThemeType {
-        if let storedTheme = NSUserDefaults.standardUserDefaults().valueForKey("Theme") {
+        if let storedTheme: AnyObject = NSUserDefaults.standardUserDefaults().valueForKey("Theme") {
             return ThemeType(rawValue: storedTheme as! String)!
         } else {
             return ThemeType.Light
         }
     }
+    
+    // applies theme according to theme type specified
     static func applyTheme(theme: ThemeType) {
         
         let sharedApplication = UIApplication.sharedApplication()

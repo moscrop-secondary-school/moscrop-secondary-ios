@@ -36,6 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (defaults.objectForKey("WifiOnly") != nil) {
             wifiChecked = defaults.boolForKey("WifiOnly")
         }
+        
+        // Retrieve new Calendar JSON and save it to core data if there is wifi
         if (Utils.checkConnection() == NetworkStatus.WiFiConnection && Utils.isConnectedToNetwork()) || (Utils.checkConnection() == NetworkStatus.WWANConnection && Utils.isConnectedToNetwork() && !wifiChecked){
             
             clearEntity()

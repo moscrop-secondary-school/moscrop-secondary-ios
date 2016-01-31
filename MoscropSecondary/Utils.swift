@@ -11,10 +11,12 @@ import SwiftyJSON
 
 class Utils {
     
+    // get current time in Int64
     class func currentTimeMillis() -> Int64 {
         return Int64(NSDate().timeIntervalSince1970 * 1000)
     }
     
+    // Check if it is able to load google.com
     class func isConnectedToNetwork() -> Bool {
     
         var status: Bool = false
@@ -36,7 +38,8 @@ class Utils {
             
         return status
     }
-
+    
+    // Check Network Status with Reachability
     class func checkConnection() -> NetworkStatus {
         let reachability: Reachability = Reachability.reachabilityForInternetConnection()
         let networkStatus = reachability.currentReachabilityStatus().value
@@ -49,6 +52,7 @@ class Utils {
             return NetworkStatus.NoConnection
         }
     }
+    
     
     class func getRelativeTime(date: NSDate) -> String {
 
@@ -77,13 +81,15 @@ class Utils {
         return timestamp
     }
     
+    // changes date to components
     class func dateToComponents(date :NSDate) -> NSDateComponents {
         let calendar = NSCalendar.currentCalendar()
-        let unitFlags = NSCalendarUnit.DayCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond
+        let unitFlags = NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond
         let components = calendar.components(unitFlags, fromDate: date) as NSDateComponents
         return components
     }
     
+    // converts num to month in string
     class func convertNumToMonth(num :Int) -> String {
         var month = ""
         switch num {
@@ -117,6 +123,7 @@ class Utils {
         return month
     }
     
+    // parses google calendar json date to NSDate
     class func parseRCF339Date(dateStr: String, dateOnly: Bool) -> NSDate{
         if (dateStr.hasSuffix("Z")) {         // End in Z means no time zone
             let dateFormatter = NSDateFormatter()
@@ -138,9 +145,9 @@ class Utils {
                 return date
             }
         }
-        return NSDate();
     }
     
+    // Check if two dates are within one day
     class func isWithinOneDay(startDate: NSDate, endDate: NSDate) -> Bool{
         var startComponents = dateToComponents(startDate)
         var endComponents = dateToComponents(endDate)
@@ -152,17 +159,22 @@ class Utils {
         }
         return false;
     }
+    
+    // Check if two dates are on the same day
     class func sameDay(startDate: NSDate, endDate: NSDate) -> Bool{
         var startComponents = dateToComponents(startDate)
         var endComponents = dateToComponents(endDate)
         return startComponents.day == endComponents.day && startComponents.month == endComponents.month && startComponents.year == endComponents.year
     }
     
+    // Add number of day to date given
     class func addDay(date: NSDate, amount: Int) -> NSDate{
         let calendar = NSCalendar.currentCalendar()
         let oneDay = calendar.dateByAddingUnit(NSCalendarUnit.CalendarUnitDay, value: amount, toDate: date, options: nil)
         return oneDay!
     }
+    
+    // compares two date and see if the first one is less than second one
     class func isLessDate(date1: NSDate, date2: NSDate) -> Bool{
         if date1.compare(date2) == NSComparisonResult.OrderedAscending {
             return true
@@ -171,21 +183,16 @@ class Utils {
         return false
     }
     
-    class func isEqualToDate(date1: NSDate, date2: NSDate) -> Bool{
-        var date1components = dateToComponents(date1)
-        var date2components = dateToComponents(date2)
-        
-        return date1components.year == date2components.year && date1components.month == date2components.month && date1components.day == date2components.day
-    }
-    
+    // turns date to weekday
     class func dateToWeekday(date: NSDate) -> Int {
         // Sunday = 1; Monday = 2; Tuesday = 3; Wednesday = 4; Thursday = 5; Friday = 6; Saturday = 7
-        let myCalendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
-        let myComponents = myCalendar?.components(.WeekdayCalendarUnit, fromDate: date)
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        let myComponents = myCalendar?.components(.CalendarUnitWeekday, fromDate: date)
         let weekDay = myComponents?.weekday
         return weekDay!
     }
     
+    // weekday to weekday in string
     class func weekdayToTag(weekday: Int) -> String {
         var str = ""
         switch weekday{
@@ -209,7 +216,7 @@ class Utils {
         return str
     }
     
-    
+    // create duration stamp
     class func createDuration(startHour :Int, startMinute :Int, endHour :Int, endMinute :Int) -> String {
         var startTimeHour = startHour
         var endTimeHour = endHour
@@ -238,6 +245,7 @@ class Utils {
         return stamp
     }
     
+    // add zero in front of single digit
     class func addZeroSingleDigit(num :String) -> String {
         var int = num
         if (int.toInt() < 10){
@@ -246,6 +254,7 @@ class Utils {
         return int
     }
     
+    // calculates current beginning school year with current date
     class func currentBegSchoolYear() -> Int {
         var date = NSDate()
         var components = dateToComponents(date)
@@ -256,7 +265,7 @@ class Utils {
         }
     }
     
-    
+    // create json from string
     class func createJsonFromString(jsonString: String) -> JSON {
         let dataFromString = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
         return JSON(data: dataFromString)

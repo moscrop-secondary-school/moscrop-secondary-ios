@@ -16,11 +16,14 @@ class NewsTableViewController: PostTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = tag
+        
+        // Add Swipe Gesture
         var leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
         leftSwipe.direction = .Left
 
         view.addGestureRecognizer(leftSwipe)
     }
+    
     func handleSwipe(sender:UISwipeGestureRecognizer){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
@@ -33,7 +36,8 @@ class NewsTableViewController: PostTableViewController {
 
     }
     // MARK: - Navigation
-
+    
+    // Retrieves tags selected from NewsCategoryController
     @IBAction func unwindToPostList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? NewsCategorySelectorTableViewController, selectedTag = sourceViewController.selectedCategory {
             if tag != selectedTag {
