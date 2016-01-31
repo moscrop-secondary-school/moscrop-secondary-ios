@@ -296,61 +296,11 @@
             </objects>
             <point key="canvasLocation" x="750" y="1050"/>
         </scene>
-        <!--More Table View Controller-->
-        <scene sceneID="x1P-hY-PQC">
-            <objects>
-                <tableViewController id="EHA-CK-mxf" customClass="MoreTableViewController" customModule="MoscropSecondary" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="51" sectionHeaderHeight="22" sectionFooterHeight="22" id="xrx-J9-8bU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="moreCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="moreCell" rowHeight="51" id="kd3-Pe-TLh" customClass="MoreTableViewCell" customModule="MoscropSecondary" customModuleProvider="target">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kd3-Pe-TLh" id="yYL-vM-T6O">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="header" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuz-lj-GEb">
-                                            <rect key="frame" x="8" y="15" width="584" height="21"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <animations/>
-                                    <constraints>
-                                        <constraint firstAttribute="centerY" secondItem="xuz-lj-GEb" secondAttribute="centerY" id="Uh3-sa-opY"/>
-                                        <constraint firstItem="xuz-lj-GEb" firstAttribute="leading" secondItem="yYL-vM-T6O" secondAttribute="leadingMargin" id="Wn7-R6-fSA"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <animations/>
-                                <connections>
-                                    <outlet property="moreHeader" destination="xuz-lj-GEb" id="45M-k6-mAW"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="EHA-CK-mxf" id="2fa-aO-LtX"/>
-                            <outlet property="delegate" destination="EHA-CK-mxf" id="rWj-AX-oai"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="KiX-UP-nK0"/>
-                    <connections>
-                        <segue destination="bAJ-so-6SH" kind="show" identifier="settings" id="66R-C7-Q5j"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="03d-Kc-gqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1825" y="1732"/>
-        </scene>
-        <!--Setting Table View Controller-->
+        <!--Settings-->
         <scene sceneID="dhU-PG-j3y">
             <objects>
-                <tableViewController id="bAJ-so-6SH" customClass="SettingTableViewController" customModule="MoscropSecondary" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="2" rowHeight="59" sectionHeaderHeight="22" sectionFooterHeight="22" id="cL2-FL-jMT">
+                <tableViewController title="Settings" id="bAJ-so-6SH" customClass="SettingTableViewController" customModule="MoscropSecondary" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="3" rowHeight="59" sectionHeaderHeight="22" sectionFooterHeight="22" id="cL2-FL-jMT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -438,6 +388,46 @@
                                             <outlet property="subheaderLabel" destination="stN-zv-FF5" id="kLb-Xo-qXf"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="settingCell" id="Oc8-Tt-43L" customClass="SettingTableViewCell" customModule="MoscropSecondary" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oc8-Tt-43L" id="B25-Cd-LLh">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOt-YQ-LBS">
+                                                    <rect key="frame" x="16" y="8" width="524" height="20.5"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="524" id="SdS-NY-Ps3"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Feel free to contact if you have any suggestions to improve the app" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggm-PS-wuG">
+                                                    <rect key="frame" x="16" y="28" width="564" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ggm-PS-wuG" secondAttribute="trailing" constant="12" id="1XM-Z5-Vh0"/>
+                                                <constraint firstItem="ggm-PS-wuG" firstAttribute="leading" secondItem="B25-Cd-LLh" secondAttribute="leadingMargin" constant="8" id="3YS-pV-5pX"/>
+                                                <constraint firstItem="dOt-YQ-LBS" firstAttribute="top" secondItem="B25-Cd-LLh" secondAttribute="topMargin" id="7K2-cc-4vT"/>
+                                                <constraint firstItem="ggm-PS-wuG" firstAttribute="top" secondItem="B25-Cd-LLh" secondAttribute="topMargin" constant="20" id="F1j-ag-1lj"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ggm-PS-wuG" secondAttribute="bottom" constant="0.5" id="LJb-DM-nNJ"/>
+                                                <constraint firstItem="dOt-YQ-LBS" firstAttribute="leading" secondItem="B25-Cd-LLh" secondAttribute="leadingMargin" constant="8" id="Wk6-4R-a2J"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ggm-PS-wuG" secondAttribute="bottom" constant="1.5" id="v06-Nz-eCr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="headerLabel" destination="dOt-YQ-LBS" id="whu-uX-W6r"/>
+                                            <outlet property="subheaderLabel" destination="ggm-PS-wuG" id="TkI-YH-v5c"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -446,6 +436,7 @@
                             <outlet property="delegate" destination="bAJ-so-6SH" id="zk5-Rw-T2a"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="14d-ud-E9z"/>
                     <connections>
                         <segue destination="k6f-nW-Kag" kind="popoverPresentation" identifier="popoverSegue" popoverAnchorView="HQE-gC-smW" id="lXx-pE-l7t">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -651,7 +642,7 @@
                         <animations/>
                     </navigationBar>
                     <connections>
-                        <segue destination="EHA-CK-mxf" kind="relationship" relationship="rootViewController" id="z3h-ql-HFH"/>
+                        <segue destination="bAJ-so-6SH" kind="relationship" relationship="rootViewController" id="DKZ-Bg-Xng"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j3Q-Jl-Y96" userLabel="First Responder" sceneMemberID="firstResponder"/>

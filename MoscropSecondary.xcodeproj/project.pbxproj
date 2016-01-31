@@ -39,8 +39,6 @@
 		96B7E9891C4AF418003E7036 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B7E9881C4AF418003E7036 /* CalendarTableViewCell.swift */; };
 		96BA74FE1C3B214800AE0EB7 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA74FD1C3B214800AE0EB7 /* SettingTableViewController.swift */; };
 		96BA75021C3B65B300AE0EB7 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA75011C3B65B300AE0EB7 /* SettingTableViewCell.swift */; };
-		96BEECDD1BCB08F10039F935 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BEECDC1BCB08F10039F935 /* MoreTableViewController.swift */; };
-		96BEECE51BCC8BB30039F935 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BEECE41BCC8BB30039F935 /* MoreTableViewCell.swift */; };
 		96C4106C1C3DC57A00730014 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C4106B1C3DC57A00730014 /* Reachability.m */; };
 		96C410701C3EBFD400730014 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C4106F1C3EBFD400730014 /* DLRadioButton.m */; };
 		96EC79951C3ED36B0039A100 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EC79941C3ED36B0039A100 /* PopoverViewController.swift */; };
@@ -97,8 +95,6 @@
 		96B7E9881C4AF418003E7036 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		96BA74FD1C3B214800AE0EB7 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		96BA75011C3B65B300AE0EB7 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
-		96BEECDC1BCB08F10039F935 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
-		96BEECE41BCC8BB30039F935 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 		96C410691C3DC57A00730014 /* MoscropSecondary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MoscropSecondary-Bridging-Header.h"; sourceTree = "<group>"; };
 		96C4106A1C3DC57A00730014 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		96C4106B1C3DC57A00730014 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -280,8 +276,6 @@
 		96C4106D1C3E131000730014 /* More */ = {
 			isa = PBXGroup;
 			children = (
-				96BEECDC1BCB08F10039F935 /* MoreTableViewController.swift */,
-				96BEECE41BCC8BB30039F935 /* MoreTableViewCell.swift */,
 				96BA74FD1C3B214800AE0EB7 /* SettingTableViewController.swift */,
 				96BA75011C3B65B300AE0EB7 /* SettingTableViewCell.swift */,
 				96EC79941C3ED36B0039A100 /* PopoverViewController.swift */,
@@ -484,7 +478,6 @@
 				96B3F7531BC5A74600687294 /* TeacherTableViewCell.swift in Sources */,
 				145084371BAA797200B51F48 /* AppDelegate.swift in Sources */,
 				96B7E9831C486B96003E7036 /* CalendarTableViewController.swift in Sources */,
-				96BEECE51BCC8BB30039F935 /* MoreTableViewCell.swift in Sources */,
 				147951AD1BC1085C00640AF7 /* ParseCacheHelper.swift in Sources */,
 				96317B5C1C3F137900FFE593 /* ThemeType.swift in Sources */,
 				96B7E97F1C48510F003E7036 /* MonthTableViewController.swift in Sources */,
@@ -503,7 +496,6 @@
 				96BA75021C3B65B300AE0EB7 /* SettingTableViewCell.swift in Sources */,
 				145B3A631BAE937500C7C523 /* PostDetailViewController.swift in Sources */,
 				96C4106C1C3DC57A00730014 /* Reachability.m in Sources */,
-				96BEECDD1BCB08F10039F935 /* MoreTableViewController.swift in Sources */,
 				96C410701C3EBFD400730014 /* DLRadioButton.m in Sources */,
 				1440D0321BAAAE3B0002A0CE /* RSSItem.swift in Sources */,
 				96B7E9851C4993AF003E7036 /* CalendarParser.swift in Sources */,

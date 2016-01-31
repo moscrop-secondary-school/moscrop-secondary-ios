@@ -19,7 +19,26 @@ class SettingTableViewController: UITableViewController, UIPopoverPresentationCo
         if (defaults.objectForKey("WifiOnly") != nil) {
             wifiChecked = defaults.boolForKey("WifiOnly")
         }
+        
+        var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
+        rightSwipe.direction = .Right
+        view.addGestureRecognizer(rightSwipe)
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+        self.tableView.estimatedRowHeight = 58.0;
+        
         self.tableView.tableFooterView = UIView.new()
+    }
+    
+    func handleSwipe(sender:UISwipeGestureRecognizer){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+        vc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        vc.modalPresentationStyle = UIModalPresentationStyle.FullScreen
+        if (sender.direction == .Right) {
+            vc.selectedIndex = 3
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +82,10 @@ class SettingTableViewController: UITableViewController, UIPopoverPresentationCo
             defaults.setBool(wifiChecked, forKey: "WifiOnly")
         } else if (indexPath.row == 1){
             self.performSegueWithIdentifier("popoverSegue", sender: self)
+        } else if (indexPath.row == 2){
+            let email = "moscropsecondarydev@gmail.com" //Contact Us Email
+            let url = NSURL(string: "mailto:\(email)")
+            UIApplication.sharedApplication().openURL(url!)
         }
     }
     // MARK: - Table view data source
@@ -76,7 +99,7 @@ class SettingTableViewController: UITableViewController, UIPopoverPresentationCo
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 2
+        return 3
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "popoverSegue" {
