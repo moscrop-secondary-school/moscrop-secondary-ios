@@ -53,7 +53,10 @@ class SettingTableViewController: UITableViewController, UIPopoverPresentationCo
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
         if(indexPath.row == 0){
-    
+            if ThemeManager.currentTheme() == ThemeType.Black {
+                cell.tintColor = UIColor.blackColor()
+            }
+            
             if wifiChecked == false {
     
                 cell.accessoryType = .None
@@ -70,6 +73,7 @@ class SettingTableViewController: UITableViewController, UIPopoverPresentationCo
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.row == 0){
             var defaults = NSUserDefaults.standardUserDefaults()
+
             if let cell = tableView.cellForRowAtIndexPath(indexPath) {
                 if cell.accessoryType == .Checkmark
                 {

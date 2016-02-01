@@ -282,7 +282,7 @@
         <scene sceneID="kPR-Rp-sEc">
             <objects>
                 <navigationController id="JWH-lR-Snv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Teachers" image="first" id="edC-Ff-W5C"/>
+                    <tabBarItem key="tabBarItem" title="Teachers" image="Teacher" id="edC-Ff-W5C"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rKG-vF-T0u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -617,7 +617,7 @@
         <scene sceneID="bRj-sL-wrR">
             <objects>
                 <navigationController id="UaZ-Xk-fLu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Events" image="first" id="iHh-IC-Rkz"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="Event" id="iHh-IC-Rkz"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cz6-wK-yNX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -631,11 +631,11 @@
             </objects>
             <point key="canvasLocation" x="-122" y="3255"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Settings-->
         <scene sceneID="Ace-2v-sme">
             <objects>
                 <navigationController id="HYE-tE-2I3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="QYL-uY-fbr"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Setting" id="QYL-uY-fbr"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sxi-eV-VUO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -911,7 +911,7 @@
         <scene sceneID="kD0-ge-cFJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GG6-8c-Ebn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" image="first" id="s7I-WX-n1E"/>
+                    <tabBarItem key="tabBarItem" title="News" image="News" id="s7I-WX-n1E"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Mt-ly-RRC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1086,7 +1086,7 @@
         <scene sceneID="k9A-i8-o04">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UqS-cF-xOU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Newsletters" image="first" id="UAl-HS-7zu"/>
+                    <tabBarItem key="tabBarItem" title="Newsletters" image="Newsletters" id="UAl-HS-7zu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="162-be-7bw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1104,9 +1104,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Event" width="96" height="96"/>
+        <image name="News" width="96" height="96"/>
+        <image name="Newsletters" width="96" height="96"/>
         <image name="Placeholder" width="74" height="74"/>
+        <image name="Setting" width="96" height="96"/>
+        <image name="Teacher" width="96" height="96"/>
         <image name="default_teacher" width="256" height="256"/>
-        <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="K1Y-PD-scn"/>

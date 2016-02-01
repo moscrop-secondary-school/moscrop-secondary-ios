@@ -131,7 +131,7 @@
 				1448F20F1BCB911300B5FDD2 /* Posts */,
 				96E582341C46CD7800C2645B /* Calendar */,
 				1448F2111BCB914200B5FDD2 /* Teachers */,
-				96C4106D1C3E131000730014 /* More */,
+				96C4106D1C3E131000730014 /* Setting */,
 				1450843C1BAA797200B51F48 /* Main.storyboard */,
 			);
 			name = UI;
@@ -273,14 +273,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		96C4106D1C3E131000730014 /* More */ = {
+		96C4106D1C3E131000730014 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
 				96BA74FD1C3B214800AE0EB7 /* SettingTableViewController.swift */,
 				96BA75011C3B65B300AE0EB7 /* SettingTableViewCell.swift */,
 				96EC79941C3ED36B0039A100 /* PopoverViewController.swift */,
 			);
-			name = More;
+			name = Setting;
 			sourceTree = "<group>";
 		};
 		96C410711C3EBFF700730014 /* DLRadioButton */ = {

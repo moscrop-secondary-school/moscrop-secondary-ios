@@ -98,7 +98,7 @@ class PopoverViewController: UIViewController {
         alert.addAction(defaultAction)
         
         if ThemeManager.currentTheme() == ThemeType.Black {
-            alert.view.tintColor = UIColor.blackColor();
+            alert.view.tintColor = UIColor.blackColor()
         }
         
         presentViewController(alert, animated: true, completion: nil)
