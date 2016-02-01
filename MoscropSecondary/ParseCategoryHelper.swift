@@ -180,7 +180,7 @@ class ParseCategoryHelper {
         return subscribedTags
     }
     
-    private static let CATEGORIES_LIST_UPDATE_MIN_WAIT = 5*60*1000  // 5 minutes
+    private static let CATEGORIES_LIST_UPDATE_MIN_WAIT:Int64 = 5*60*1000  // 5 minutes
     
     class func downloadCategoriesList(endAction: Void -> Void) {
         
