@@ -98,26 +98,6 @@ class TeacherTableViewController: UITableViewController, UISearchBarDelegate {
             
         }
         
-        //        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
-        //
-        //            if error == nil {
-        //                if objects == nil || objects!.count == 0 {
-        //                    query.clearCachedResult()
-        //                }
-        //                self.teachers.removeAll(keepCapacity: false)
-        //
-        //                if let objects = objects as? [PFObject] {
-        //                    self.teachers = Array(objects.generate())
-        //                }
-        //
-        //
-        //                self.tableView.reloadData()
-        //
-        //            } else {
-        //                println("Error: \(error!) \(error!.userInfo)")
-        //            }
-        //        }
-        
         
     }
     

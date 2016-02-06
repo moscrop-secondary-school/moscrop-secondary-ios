@@ -42,7 +42,6 @@ class CalendarTableViewController: UITableViewController {
             // failure
             print("Fetch failed: \(error.localizedDescription)")
         }
-        //let fetchResults = managedContext!.executeFetchRequest(fetchRequest, error: &error)
         
         
         if CalEvents.count > 0 {

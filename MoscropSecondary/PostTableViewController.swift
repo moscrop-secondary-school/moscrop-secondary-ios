@@ -114,43 +114,6 @@ class PostTableViewController: UITableViewController {
                 }
                 
             })
-            //            query.findObjectsInBackgroundWithBlock { (list: [AnyObject]?, error: NSError?) -> Void in
-            //
-            //                self.refresher.endRefreshing()
-            //                if let cell = cell {
-            //                    self.view.userInteractionEnabled = true
-            //                    cell.spinner.stopAnimating()
-            //                    cell.spinner.hidden = true
-            //                    cell.loadLabel.hidden = false
-            //                }
-            //
-            //                if error == nil {
-            //                    // Remove empty cache that might get "orphaned"
-            //                    // before we lose a way to delete it.
-            //                    if list == nil || list!.count == 0 {
-            //                        query.clearCachedResult()
-            //                    }
-            //
-            //                    if let list = list as? [PFObject] {
-            //
-            //                        print("List has \(list.count) items")
-            //
-            //                        self.hasMoreLoad = list.count == 24
-            //
-            //                        if !append {
-            //                            self.posts.removeAll(keepCapacity: false)
-            //                            // TODO ClearOutdatedCachesTask
-            //                            self.posts = Array(list.generate())
-            //                        } else {
-            //                            self.posts += Array(list.generate())
-            //                        }
-            //
-            //                        self.tableView.reloadData()
-            //                    }
-            //                } else {
-            //                    print("Error: \(error!) \(error!.userInfo)")
-            //                }
-            //            }
         }
     }
     

@@ -110,20 +110,15 @@ class SettingTableViewController: UITableViewController, UIPopoverPresentationCo
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "popoverSegue" {
-            let index = NSIndexPath(index: 2)
-            let cell = tableView.rectForRowAtIndexPath(index)
+            let indexPath = NSIndexPath(forRow: 1, inSection: 0)
+            print(tableView.cellForRowAtIndexPath(indexPath))
             let popoverViewController = segue.destinationViewController 
             popoverViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
             popoverViewController.popoverPresentationController!.delegate = self
             let popoverPresentation = popoverViewController.popoverPresentationController
-            //popoverPresentation!.sourceView = cell
-            popoverPresentation!.sourceRect = CGRect(
-                x: cell.midX,
-                y: 0,
-                width: 1,
-                height: 1)
-            
-            popoverPresentation!.permittedArrowDirections  = UIPopoverArrowDirection.Up
+            popoverPresentation!.sourceView = tableView
+            popoverPresentation!.sourceRect = (tableView.cellForRowAtIndexPath(indexPath)?.frame)!
+            popoverPresentation!.permittedArrowDirections  = UIPopoverArrowDirection.Any
 
         }
     }
