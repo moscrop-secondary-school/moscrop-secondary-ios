@@ -12,7 +12,7 @@ Download from the app store at ...
 ##Contribute
 
 1. **Clone the Repository:** Clone the repo to your own profile. ```git clone [your cloned url]```
-2. **Download the correct version of XCode:** Download XCode 6.4 at https://developer.apple.com/downloads/ .
+2. **Download the correct version of XCode:** Download XCode 7.2 at https://developer.apple.com/downloads/ .
 3. **Open in XCode:** Open the folder in XCode once the installation is complete by File -> Open on the top bar and select the folder where you cloned the repo.
 4. **Clean the project:** Clean the project by Product -> Clean on the top bar.
 5. **Update:** Make changes to the project.
