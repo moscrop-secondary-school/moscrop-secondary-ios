@@ -178,11 +178,12 @@ class CalendarTableViewController: UITableViewController {
         
         alert.addAction(defaultAction)
         
-        if ThemeManager.currentTheme() == ThemeType.Black {
-            alert.view.tintColor = UIColor.blackColor();
-        }
-        
-        presentViewController(alert, animated: true, completion: nil)
+        presentViewController(alert, animated: true, completion: {
+            if ThemeManager.currentTheme() == ThemeType.Black {
+                alert.view.tintColor = UIColor.blackColor()
+                
+            }
+        })
         
     }
     
