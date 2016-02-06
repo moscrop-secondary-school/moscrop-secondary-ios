@@ -273,12 +273,11 @@ class TeacherTableViewController: UITableViewController, UISearchBarDelegate {
         alert.addAction(defaultAction)
     
         
-        presentViewController(alert, animated: true, completion: {
-            if ThemeManager.currentTheme() == ThemeType.Black {
-                alert.view.tintColor = UIColor.blackColor()
-                
-            }
-        })
+        presentViewController(alert, animated: true, completion: nil)
+        if ThemeManager.currentTheme() == ThemeType.Black {
+            alert.view.tintColor = UIColor.blackColor()
+            
+        }
         
     }
     

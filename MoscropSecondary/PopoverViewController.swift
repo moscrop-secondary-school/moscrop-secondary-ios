@@ -22,6 +22,7 @@ class PopoverViewController: UIViewController {
     
     var theme = ThemeType.Light.rawValue
     
+    var black = false
 
     
     override func viewDidLoad() {
@@ -31,6 +32,9 @@ class PopoverViewController: UIViewController {
         
         if (defaults.objectForKey("Theme") != nil){
             theme = defaults.objectForKey("Theme") as! String
+            if theme == ThemeType.Black.rawValue {
+                black = true
+            }
         }
         
         switch theme {
@@ -97,12 +101,12 @@ class PopoverViewController: UIViewController {
         
         alert.addAction(defaultAction)
         
-        presentViewController(alert, animated: true, completion: {
-            if ThemeManager.currentTheme() == ThemeType.Black {
-                alert.view.tintColor = UIColor.blackColor()
-                
-            }
-        })
+        presentViewController(alert, animated: true, completion: nil)
+        print(self.view.tintColor == UIColor.whiteColor())
+        if black {
+            alert.view.tintColor = UIColor.blackColor()
+            
+        }
         
     }
 
