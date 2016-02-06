@@ -5,6 +5,8 @@ school’s calendar and teachers’ contacts.
 ## Installation & Usage
 Download from the app store at ...
 
+![alt tag](https://cloud.githubusercontent.com/assets/11794656/12867891/9613220e-ccae-11e5-9836-d14f8dd67303.gif)
+
 ## Technologies
 <p><b>Programming Language:</b> Swift</p>
 <p><b>Back-End Development:</b> Parse (Database)</p>
