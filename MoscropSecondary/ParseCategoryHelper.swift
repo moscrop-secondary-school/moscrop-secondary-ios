@@ -26,14 +26,14 @@ class ParseCategoryHelper {
         if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
             
             let dir = dirs[0]
-            let path = dir.stringByAppendingPathComponent(TAG_LIST_JSON_DOCUMENTS)
+            let path = (dir as NSString).stringByAppendingPathComponent(TAG_LIST_JSON_DOCUMENTS)
             
             let checkValidation = NSFileManager.defaultManager()
             if !checkValidation.fileExistsAtPath(path) {
                 copyFromBundleToDocuments()
             }
             
-            let jsonStr = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil) ?? "{}"
+            let jsonStr = (try? String(contentsOfFile: path, encoding: NSUTF8StringEncoding)) ?? "{}"
             return Utils.createJsonFromString(jsonStr)
             
         }
@@ -44,14 +44,17 @@ class ParseCategoryHelper {
         
         // Read from bundle
         let bundlePath = NSBundle.mainBundle().pathForResource(TAG_LIST_JSON_BUNDLE, ofType: "json")
-        let jsonStr = String(contentsOfFile: bundlePath!, encoding: NSUTF8StringEncoding, error: nil) ?? "{}"
+        let jsonStr = (try? String(contentsOfFile: bundlePath!, encoding: NSUTF8StringEncoding)) ?? "{}"
         
         // Write to documents
         if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
             
             let dir = dirs[0]
-            let path = dir.stringByAppendingPathComponent(TAG_LIST_JSON_DOCUMENTS)
-            jsonStr.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
+            let path = (dir as NSString).stringByAppendingPathComponent(TAG_LIST_JSON_DOCUMENTS)
+            do {
+                try jsonStr.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
+            } catch _ {
+            }
         }
     }
     
@@ -72,7 +75,7 @@ class ParseCategoryHelper {
         if let categories = categories {
             var filterObjects = [PFObject]()
             for category in categories {
-                var filterObject = PFObject(className: "Categories")
+                let filterObject = PFObject(className: "Categories")
                 filterObject.objectId = category.id
                 filterObjects.append(filterObject)
             }
@@ -115,7 +118,7 @@ class ParseCategoryHelper {
         
         // Use custom comparator because we want
         // "Official" to remain at the top of the list
-        names.sort { (s1: String, s2: String) -> Bool in
+        names.sortInPlace { (s1: String, s2: String) -> Bool in
             if s1 == "Official" {
                 return true
             } else if s2 == "Official" {
@@ -129,7 +132,7 @@ class ParseCategoryHelper {
     }
     
     class func getSubscribedTags() -> [Category] {
-
+        
         let allCategories = getAllTags()
         
         // Get a list of tags the user subscribed to
@@ -167,7 +170,7 @@ class ParseCategoryHelper {
             }
         }
         
-        subscribedTags.sort { (s1: String, s2: String) -> Bool in
+        subscribedTags.sortInPlace { (s1: String, s2: String) -> Bool in
             if s1 == "Official" {
                 return true
             } else if s2 == "Official" {
@@ -201,8 +204,8 @@ class ParseCategoryHelper {
                     if millis > lastVersion {
                         var query = PFQuery(className:"Categories")
                         query.orderByAscending("name")
-                        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
-                            if let objects = objects as? [PFObject] {
+                        query.findObjectsInBackgroundWithBlock({ (objects: [PFObject]?, error: NSError?) -> Void in
+                            if let objects = objects {
                                 var root = Utils.createJsonFromString("{}")
                                 var tags = [JSON]()
                                 for object in objects {
@@ -217,13 +220,44 @@ class ParseCategoryHelper {
                                 if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
                                     
                                     let dir = dirs[0]
-                                    let path = dir.stringByAppendingPathComponent(self.TAG_LIST_JSON_DOCUMENTS)
+                                    let nsdir = dir as NSString
+                                    let path = nsdir.stringByAppendingPathComponent(self.TAG_LIST_JSON_DOCUMENTS)
+                                    
                                     if let string = root.rawString() {
-                                        string.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
+                                        do {
+                                            try string.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
+                                            
+                                        }
+                                        catch {
+                                            print("Error saving file at path: \(path) with error: \(error)")
+                                        }
                                     }
                                 }
                             }
-                        }
+                        })
+                        //                        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+                        //                            if let objects = objects as? [PFObject] {
+                        //                                var root = Utils.createJsonFromString("{}")
+                        //                                var tags = [JSON]()
+                        //                                for object in objects {
+                        //                                    let name = object["name"] as! String
+                        //                                    let id = object.objectId!
+                        //                                    let tag = Utils.createJsonFromString("{\"name\":\"\(name)\",\"id\":\"\(id)\"}")
+                        //                                    tags.append(tag)
+                        //                                }
+                        //
+                        //                                root["tags"] = JSON(tags)
+                        //
+                        //                                if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
+                        //
+                        //                                    let dir = dirs[0]
+                        //                                    let path = dir.stringByAppendingPathComponent(self.TAG_LIST_JSON_DOCUMENTS)
+                        //                                    if let string = root.rawString() {
+                        //                                        string.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
+                        //                                    }
+                        //                                }
+                        //                            }
+                        //                        }
                     }
                 }
                 // Call closure

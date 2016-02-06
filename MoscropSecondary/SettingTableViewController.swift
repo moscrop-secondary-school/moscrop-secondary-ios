@@ -15,21 +15,21 @@ class SettingTableViewController: UITableViewController, UIPopoverPresentationCo
     override func viewDidLoad() {
         super.viewDidLoad()
         // Retrieves NSUserDefault for WifiOnly
-        var defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = NSUserDefaults.standardUserDefaults()
         
         if (defaults.objectForKey("WifiOnly") != nil) {
             wifiChecked = defaults.boolForKey("WifiOnly")
         }
         
         // Gesture Recognizer
-        var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
         rightSwipe.direction = .Right
         view.addGestureRecognizer(rightSwipe)
         
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 58.0;
         
-        self.tableView.tableFooterView = UIView.new()
+        self.tableView.tableFooterView = UIView()
     }
     
     func handleSwipe(sender:UISwipeGestureRecognizer){
@@ -72,7 +72,7 @@ class SettingTableViewController: UITableViewController, UIPopoverPresentationCo
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.row == 0){
-            var defaults = NSUserDefaults.standardUserDefaults()
+            let defaults = NSUserDefaults.standardUserDefaults()
 
             if let cell = tableView.cellForRowAtIndexPath(indexPath) {
                 if cell.accessoryType == .Checkmark
@@ -110,9 +110,21 @@ class SettingTableViewController: UITableViewController, UIPopoverPresentationCo
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "popoverSegue" {
-            let popoverViewController = segue.destinationViewController as! UIViewController
+            let index = NSIndexPath(index: 2)
+            let cell = tableView.rectForRowAtIndexPath(index)
+            let popoverViewController = segue.destinationViewController 
             popoverViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
             popoverViewController.popoverPresentationController!.delegate = self
+            let popoverPresentation = popoverViewController.popoverPresentationController
+            //popoverPresentation!.sourceView = cell
+            popoverPresentation!.sourceRect = CGRect(
+                x: cell.midX,
+                y: 0,
+                width: 1,
+                height: 1)
+            
+            popoverPresentation!.permittedArrowDirections  = UIPopoverArrowDirection.Up
+
         }
     }
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {

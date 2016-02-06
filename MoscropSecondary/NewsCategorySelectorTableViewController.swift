@@ -66,7 +66,7 @@ class NewsCategorySelectorTableViewController: UITableViewController {
         // Configure the cell...
         if editMode {
             cell.nameLabel.text = allCategories[indexPath.row]
-            if contains(subscribedCategories, allCategories[indexPath.row]) {
+            if subscribedCategories.contains(allCategories[indexPath.row]) {
                 cell.nameLabel.textColor = UIColor.blackColor()
             } else {
                 cell.nameLabel.textColor = UIColor.lightGrayColor()
@@ -82,7 +82,7 @@ class NewsCategorySelectorTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let cell = tableView.cellForRowAtIndexPath(indexPath) as? NewsCategorySelectorTableViewCell {
             if editMode {
-                if contains(subscribedCategories, allCategories[indexPath.row]) {
+                if subscribedCategories.contains(allCategories[indexPath.row]) {
                     subscribedCategories = subscribedCategories.filter() { $0 != self.allCategories[indexPath.row] }
                     cell.nameLabel.textColor = UIColor.lightGrayColor()
                 } else {
@@ -106,7 +106,7 @@ class NewsCategorySelectorTableViewController: UITableViewController {
         if editMode {
             
             // Sort the subscribed tags alphabetically
-            subscribedCategories.sort { (s1: String, s2: String) -> Bool in
+            subscribedCategories.sortInPlace { (s1: String, s2: String) -> Bool in
                 if s1 == "Official" {
                     return true
                 } else if s2 == "Official" {

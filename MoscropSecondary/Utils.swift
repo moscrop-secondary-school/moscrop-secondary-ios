@@ -28,7 +28,7 @@ class Utils {
  
         var response: NSURLResponse?
     
-        var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: nil) as NSData?
+        var data = (try? NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)) as NSData?
     
         if let httpResponse = response as? NSHTTPURLResponse {
             if httpResponse.statusCode == 200 {
@@ -42,11 +42,11 @@ class Utils {
     // Check Network Status with Reachability
     class func checkConnection() -> NetworkStatus {
         let reachability: Reachability = Reachability.reachabilityForInternetConnection()
-        let networkStatus = reachability.currentReachabilityStatus().value
+        let networkStatus = reachability.currentReachabilityStatus().rawValue
 
-        if (networkStatus == ReachableViaWiFi.value){
+        if (networkStatus == ReachableViaWiFi.rawValue){
             return NetworkStatus.WiFiConnection
-        } else if (networkStatus == ReachableViaWWAN.value){
+        } else if (networkStatus == ReachableViaWWAN.rawValue){
             return NetworkStatus.WWANConnection
         } else {
             return NetworkStatus.NoConnection
@@ -84,7 +84,7 @@ class Utils {
     // changes date to components
     class func dateToComponents(date :NSDate) -> NSDateComponents {
         let calendar = NSCalendar.currentCalendar()
-        let unitFlags = NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond
+        let unitFlags: NSCalendarUnit = [NSCalendarUnit.Day, NSCalendarUnit.Month, NSCalendarUnit.Year, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second]
         let components = calendar.components(unitFlags, fromDate: date) as NSDateComponents
         return components
     }
@@ -133,14 +133,14 @@ class Utils {
         } else {
             if(!dateOnly) {     // Proper RCF 3339 format with time zone
                 let dateFormatter = NSDateFormatter()
-                var substring = dateStr.substringToIndex(advance(dateStr.startIndex, 19))
+                let substring = dateStr.substringToIndex(dateStr.startIndex.advancedBy(19))
                 dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
                 let date:NSDate = dateFormatter.dateFromString(substring)!
                 return date
             } else {                        // Format uncertain, only take common substring
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd"
-                var substring: String = dateStr.substringToIndex(advance(dateStr.startIndex, 10))
+                var substring: String = dateStr.substringToIndex(dateStr.startIndex.advancedBy(10))
                 let date:NSDate = dateFormatter.dateFromString(dateStr)!
                 return date
             }
@@ -150,9 +150,9 @@ class Utils {
     // Check if two dates are within one day
     class func isWithinOneDay(startDate: NSDate, endDate: NSDate) -> Bool{
         var startComponents = dateToComponents(startDate)
-        var endComponents = dateToComponents(endDate)
-        var oneDayFuture: NSDate = addDay(startDate, amount: 1)
-        var oneDayFutureComponents = dateToComponents(oneDayFuture)
+        let endComponents = dateToComponents(endDate)
+        let oneDayFuture: NSDate = addDay(startDate, amount: 1)
+        let oneDayFutureComponents = dateToComponents(oneDayFuture)
         
         if (sameDay(startDate, endDate: endDate) || oneDayFutureComponents.day == endComponents.day && oneDayFutureComponents.month == endComponents.month && oneDayFutureComponents.year == endComponents.year){
             return true;
@@ -162,15 +162,15 @@ class Utils {
     
     // Check if two dates are on the same day
     class func sameDay(startDate: NSDate, endDate: NSDate) -> Bool{
-        var startComponents = dateToComponents(startDate)
-        var endComponents = dateToComponents(endDate)
+        let startComponents = dateToComponents(startDate)
+        let endComponents = dateToComponents(endDate)
         return startComponents.day == endComponents.day && startComponents.month == endComponents.month && startComponents.year == endComponents.year
     }
     
     // Add number of day to date given
     class func addDay(date: NSDate, amount: Int) -> NSDate{
         let calendar = NSCalendar.currentCalendar()
-        let oneDay = calendar.dateByAddingUnit(NSCalendarUnit.CalendarUnitDay, value: amount, toDate: date, options: nil)
+        let oneDay = calendar.dateByAddingUnit(NSCalendarUnit.Day, value: amount, toDate: date, options: [])
         return oneDay!
     }
     
@@ -187,7 +187,7 @@ class Utils {
     class func dateToWeekday(date: NSDate) -> Int {
         // Sunday = 1; Monday = 2; Tuesday = 3; Wednesday = 4; Thursday = 5; Friday = 6; Saturday = 7
         let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-        let myComponents = myCalendar?.components(.CalendarUnitWeekday, fromDate: date)
+        let myComponents = myCalendar?.components(.Weekday, fromDate: date)
         let weekDay = myComponents?.weekday
         return weekDay!
     }
@@ -231,8 +231,8 @@ class Utils {
             
         }
         var stamp = ""
-        var start:String = addZeroSingleDigit(String(startTimeHour)) + ":" + addZeroSingleDigit(String(startMinute))
-        var end:String = addZeroSingleDigit(String(endTimeHour)) + ":" + addZeroSingleDigit(String(endMinute))
+        let start:String = addZeroSingleDigit(String(startTimeHour)) + ":" + addZeroSingleDigit(String(startMinute))
+        let end:String = addZeroSingleDigit(String(endTimeHour)) + ":" + addZeroSingleDigit(String(endMinute))
         
         stamp = start + " - " + end
         
@@ -248,7 +248,7 @@ class Utils {
     // add zero in front of single digit
     class func addZeroSingleDigit(num :String) -> String {
         var int = num
-        if (int.toInt() < 10){
+        if (Int(int) < 10){
             int = "0" + int
         }
         return int
@@ -256,8 +256,8 @@ class Utils {
     
     // calculates current beginning school year with current date
     class func currentBegSchoolYear() -> Int {
-        var date = NSDate()
-        var components = dateToComponents(date)
+        let date = NSDate()
+        let components = dateToComponents(date)
         if (components.month >= 9 && components.month <= 12){
             return components.year
         } else {

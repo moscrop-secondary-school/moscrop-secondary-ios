@@ -23,8 +23,10 @@ class CalendarParser {
         var array = [GCalEvent]()
         var events = [NSManagedObject]()
         var task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-            var json = JSON(data: data!)
+            
             if (error == nil){
+                clearEntity()
+                var json = JSON(data: data!) 
                 if let items = json["items"] as? JSON {
                     for var index = 0; index < items.count; ++index {
                         
@@ -62,6 +64,33 @@ class CalendarParser {
         task.resume()
     }
     
+    // Clear Entity
+    class func clearEntity() {
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let request = NSFetchRequest(entityName: "CalendarEvent")
+        
+        var myList = (try! managedContext!.executeFetchRequest(request)) as! [NSManagedObject]
+        
+        
+        var bas: NSManagedObject!
+        for bas in myList {
+            managedContext!.deleteObject(bas as NSManagedObject)
+        }
+        
+        myList.removeAll(keepCapacity: false)
+        
+        do {
+            try managedContext!.save()
+        } catch _ {
+        }
+        
+        
+    }
+    
     // Saves event to Core Data
     class func saveEvent(name: String, desc: String, location: String, startDate: NSDate, endDate: NSDate) {
         
@@ -87,8 +116,11 @@ class CalendarParser {
         
         
         var error: NSError?
-        if !managedContext!.save(&error) {
-            println("Could not save \(error), \(error?.userInfo)")
+        do {
+            try managedContext!.save()
+        } catch let error1 as NSError {
+            error = error1
+            print("Could not save \(error), \(error?.userInfo)")
         }
     }
     

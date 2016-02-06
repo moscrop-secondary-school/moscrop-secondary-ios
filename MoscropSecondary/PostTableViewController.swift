@@ -21,7 +21,7 @@ class PostTableViewController: UITableViewController {
     var wifiChecked = true
     
     func refresh() {
-        println("Refresh")
+        print("Refresh", terminator: "")
         loadFeed()
     }
     
@@ -38,7 +38,7 @@ class PostTableViewController: UITableViewController {
         
         
         // Retrieve NSUserDefaults
-        var defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = NSUserDefaults.standardUserDefaults()
         
         if (defaults.objectForKey("WifiOnly") != nil) {
             wifiChecked = defaults.boolForKey("WifiOnly")
@@ -55,15 +55,8 @@ class PostTableViewController: UITableViewController {
         
         ParseCategoryHelper.downloadCategoriesList { () -> Void in
             
-            var query = PFQuery(className: "Posts")
-            query.whereKey("category", containedIn: ParseCategoryHelper.getFilterCategoriesForTag(self.tag))
-            // TODO select keys
-            query.includeKey("category")
-            query.orderByDescending("published")
-            query.limit = 24
-            if append {
-                query.skip = self.posts.count
-            }
+            let query = PFQuery(className: "Posts")
+            
             if Utils.checkConnection() == NetworkStatus.WiFiConnection && Utils.isConnectedToNetwork() {
                 query.cachePolicy = .NetworkOnly
             } else if Utils.checkConnection() == NetworkStatus.WWANConnection {
@@ -75,9 +68,16 @@ class PostTableViewController: UITableViewController {
             } else {
                 query.cachePolicy = .CacheOnly
             }
+            query.whereKey("category", containedIn: ParseCategoryHelper.getFilterCategoriesForTag(self.tag))
+            // TODO select keys
+            query.includeKey("category")
+            query.orderByDescending("published")
+            query.limit = 24
+            if append {
+                query.skip = self.posts.count
+            }
             
-            query.findObjectsInBackgroundWithBlock { (list: [AnyObject]?, error: NSError?) -> Void in
-                
+            query.findObjectsInBackgroundWithBlock({ (list: [PFObject]?, error: NSError?) -> Void in
                 self.refresher.endRefreshing()
                 if let cell = cell {
                     self.view.userInteractionEnabled = true
@@ -93,9 +93,9 @@ class PostTableViewController: UITableViewController {
                         query.clearCachedResult()
                     }
                     
-                    if let list = list as? [PFObject] {
+                    if let list = list {
                         
-                        println("List has \(list.count) items")
+                        print("List has \(list.count) items")
                         
                         self.hasMoreLoad = list.count == 24
                         
@@ -110,9 +110,47 @@ class PostTableViewController: UITableViewController {
                         self.tableView.reloadData()
                     }
                 } else {
-                    println("Error: \(error!) \(error!.userInfo!)")
+                    print("Error: \(error!) \(error!.userInfo)")
                 }
-            }
+                
+            })
+            //            query.findObjectsInBackgroundWithBlock { (list: [AnyObject]?, error: NSError?) -> Void in
+            //
+            //                self.refresher.endRefreshing()
+            //                if let cell = cell {
+            //                    self.view.userInteractionEnabled = true
+            //                    cell.spinner.stopAnimating()
+            //                    cell.spinner.hidden = true
+            //                    cell.loadLabel.hidden = false
+            //                }
+            //
+            //                if error == nil {
+            //                    // Remove empty cache that might get "orphaned"
+            //                    // before we lose a way to delete it.
+            //                    if list == nil || list!.count == 0 {
+            //                        query.clearCachedResult()
+            //                    }
+            //
+            //                    if let list = list as? [PFObject] {
+            //
+            //                        print("List has \(list.count) items")
+            //
+            //                        self.hasMoreLoad = list.count == 24
+            //
+            //                        if !append {
+            //                            self.posts.removeAll(keepCapacity: false)
+            //                            // TODO ClearOutdatedCachesTask
+            //                            self.posts = Array(list.generate())
+            //                        } else {
+            //                            self.posts += Array(list.generate())
+            //                        }
+            //
+            //                        self.tableView.reloadData()
+            //                    }
+            //                } else {
+            //                    print("Error: \(error!) \(error!.userInfo)")
+            //                }
+            //            }
         }
     }
     
@@ -198,7 +236,7 @@ class PostTableViewController: UITableViewController {
         
         if (indexPath.row == posts.count) {
             self.view.userInteractionEnabled = false
-            var cell = tableView.cellForRowAtIndexPath(indexPath) as! LoadMoreTableViewCell
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as! LoadMoreTableViewCell
             
             cell.loadLabel.hidden = true
             cell.spinner.hidden = false

@@ -27,7 +27,7 @@ class PopoverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view
-         var defaults = NSUserDefaults.standardUserDefaults()
+         let defaults = NSUserDefaults.standardUserDefaults()
         
         if (defaults.objectForKey("Theme") != nil){
             theme = defaults.objectForKey("Theme") as! String
@@ -83,7 +83,7 @@ class PopoverViewController: UIViewController {
     }
     
     func updateTheme(themeType: ThemeType) {
-        var defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = NSUserDefaults.standardUserDefaults()
         theme = themeType.rawValue
         defaults.setObject(theme, forKey: "Theme")
         defaults.synchronize()

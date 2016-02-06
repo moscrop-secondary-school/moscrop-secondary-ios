@@ -12,9 +12,9 @@ import Bolts
 import SwiftyJSON
 
 /*extension JSON {
-    public init (_ jsonArray:[JSON]) {
-        self.init(jsonArray.map { $0.object })
-    }
+public init (_ jsonArray:[JSON]) {
+self.init(jsonArray.map { $0.object })
+}
 }*/
 
 class ParseCacheHelper {
@@ -33,8 +33,8 @@ class ParseCacheHelper {
         if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
             
             let dir = dirs[0]
-            let path = dir.stringByAppendingPathComponent(CACHE_MAP_FILE)
-            let cacheListStr = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil) ?? DEFAULT_CACHE_MAP_JSON
+            let path = (dir as NSString).stringByAppendingPathComponent(CACHE_MAP_FILE)
+            let cacheListStr = (try? String(contentsOfFile: path, encoding: NSUTF8StringEncoding)) ?? DEFAULT_CACHE_MAP_JSON
             
             var jsonObject = Utils.createJsonFromString(cacheListStr)
             var cacheArray = jsonObject["cacheList"].arrayValue
@@ -42,7 +42,7 @@ class ParseCacheHelper {
             let now = Utils.currentTimeMillis()
             let limit = now - ONLINE_CACHE_AGE_THRESHOLD
             
-            for cacheItem:JSON in reverse(cacheArray) {
+            for cacheItem:JSON in cacheArray.reverse() {
                 if cacheItem["timestamp"].int64Value > limit {
                     if cacheItem["id"].stringValue == id {
                         // We found it. There exists a cache
@@ -51,7 +51,7 @@ class ParseCacheHelper {
                         var query = PFQuery(className:"Posts")
                         query.selectKeys(["content"])
                         query.whereKey("objectId", equalTo: id)
-                        if query.hasCachedResult() {
+                        if query.hasCachedResult {
                             return .CacheOnly
                         } else {
                             // Cache is missing.
@@ -77,15 +77,15 @@ class ParseCacheHelper {
     class func addCacheForId(id: String, withTimestamp timestamp: Int64) {
         
         /**
-         * The list of caches is sorted by timestamp in ascending order.
-         * E.g. the first post is the oldest, and the last post is the newest
-         */
+        * The list of caches is sorted by timestamp in ascending order.
+        * E.g. the first post is the oldest, and the last post is the newest
+        */
         
         if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
             
             let dir = dirs[0]
-            let path = dir.stringByAppendingPathComponent(CACHE_MAP_FILE)
-            let cacheListStr = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil) ?? DEFAULT_CACHE_MAP_JSON
+            let path = (dir as NSString).stringByAppendingPathComponent(CACHE_MAP_FILE)
+            let cacheListStr = (try? String(contentsOfFile: path, encoding: NSUTF8StringEncoding)) ?? DEFAULT_CACHE_MAP_JSON
             //let cacheListStr = "{\"cacheList\":[{\"timestamp\":1444018495015,\"id\":\"test1444018495015\"}]}"
             
             var jsonObject = Utils.createJsonFromString(cacheListStr)
@@ -121,7 +121,12 @@ class ParseCacheHelper {
             
             // Save JSONObject to file
             if let string = jsonObject.rawString() {
-                string.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
+                do {
+                    try string.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
+                }
+                catch {
+                    print("Error saving file at path: \(path) with error: \(error)")
+                }
             }
         }
     }

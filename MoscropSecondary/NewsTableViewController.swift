@@ -18,7 +18,7 @@ class NewsTableViewController: PostTableViewController {
         self.navigationItem.title = tag
         
         // Add Swipe Gesture
-        var leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
         leftSwipe.direction = .Left
 
         view.addGestureRecognizer(leftSwipe)
